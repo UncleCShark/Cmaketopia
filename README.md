@@ -11,6 +11,6 @@ Official languages: cmake script, c, c++,c#, python. Recognized language: Englis
 [KISS - keep it simple, stupid](https://en.wikipedia.org/wiki/KISS_principle)<br>
 [WOCA - Write once, compile anywhere](https://en.wikipedia.org/wiki/Write_once,_compile_anywhere)<br>
 [YAGNI - You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)<br>
-[We hate WET - Write Everything Twice, we enjoy typing, waste everyone's time](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
+We hate:<br> [WET - Write Everything Twice, we enjoy typing, waste everyone's time](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
 No worries mate - suck it and see how simple and powerfull cmake is.
 
