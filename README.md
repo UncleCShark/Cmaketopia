@@ -5,5 +5,12 @@
 # Everyone can join us and become a member of our society.
 ## Introduction
 Cmaketopia is a virtual state which is located in a beautiful mysterious country Cmakeland. The Cmaketopians, are the citizens of Cmaketopia. The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. Cmaketopia is based on equality. Every Cmaketopian is equal. Each language is equal. Each platform is equal.
-Official languages: cmake script, c, c++,c#, python. Recognized languages English. vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbb
+Official languages: cmake script, c, c++,c#, python. Recognized language: English.<br> We love:<br>
+[Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)<br>
+[DRY - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
+[KISS - keep it simple, stupid](https://en.wikipedia.org/wiki/KISS_principle)<br>
+[WOCA - Write once, compile anywhere](https://en.wikipedia.org/wiki/Write_once,_compile_anywhere)<br>
+[YAGNI - You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)<br>
+[We hate WET - Write Everything Twice, we enjoy typing, waste everyone's time](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
+No worries mate - suck it and see how simple and powerfull cmake is.
 
