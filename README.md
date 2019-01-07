@@ -15,7 +15,11 @@ This repository contains source code we create during our voyage to Cmakeland. I
 [DRY - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
 [KISS - keep it simple, stupid](https://en.wikipedia.org/wiki/KISS_principle)<br>
 [WOCA - Write once, compile anywhere](https://en.wikipedia.org/wiki/Write_once,_compile_anywhere)<br>
-[YAGNI - You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)<br>
-We hate:<br> [WET - Write Everything Twice, we enjoy typing, waste everyone's time](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
+[YAGNI - You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it),<br>
+we hate:<br> [WET - Write Everything Twice, we enjoy typing, waste everyone's time](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).<br>
+"..You may say I'm a dreamer<br>
+But I'm not the only one<br>
+I hope some day you'll join us<br>
+And the world will be as one..."<br>
 No worries mate - suck it and see how simple and powerfull cmake is. I invite you on a trip [Down the bumpy road to Cmakeland](https://unclecshark.github.io/). [Seeya, speak to you soon](https://unclecshark.github.io/blog/).
 
