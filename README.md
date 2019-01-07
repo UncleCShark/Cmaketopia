@@ -10,6 +10,7 @@ Although freedom is intrinsic part of their personality this community obey the 
 [The documentation of CMake](https://cmake.org/cmake/help/latest/)<br>
 [The Hitchhiker’s Guide to the CMake](https://cgold.readthedocs.io/en/latest/)<br>
 [CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc](https://docs.hunter.sh/en/latest/)<br>
+## Our diary
 This repository contains source code we create during our voyage to Cmakeland. I hope at the end of our trip we can say we love:<br>
 [Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)<br>
 [DRY - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
@@ -21,5 +22,5 @@ we hate:<br> [WET - Write Everything Twice, we enjoy typing, waste everyone's ti
 But I'm not the only one<br>
 I hope some day you'll join us<br>
 And the world will be as one..."<br>
-No worries mate - suck it and see how simple and powerfull cmake is. I invite you on a trip [Down the bumpy road to Cmakeland](https://unclecshark.github.io/). [Seeya, speak to you soon](https://unclecshark.github.io/blog/).
+No worries mate - suck it and see how simple and powerfull cmake is. I invite you on a trip [Down the bumpy road to Cmakeland](https://unclecshark.github.io/blog/).<br>[Seeya, speak to you soon](https://unclecshark.github.io/).
 
