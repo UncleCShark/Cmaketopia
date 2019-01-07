@@ -4,7 +4,7 @@
 # First things first.
 # Everyone can join us and become a member of our society.
 ## Introduction
-Cmaketopia is a virtual state which is located in a beautiful mysterious country Cmakeland. The Cmaketopians, are the citizens of Cmaketopia. The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. Cmaketopia is based on equality. Every Cmaketopian is equal. Every programming language is equal. Every platform is equal. Official languages: cmake script, C, C++, C#, Python. Recognized language: English.<br> We love:<br>
+Cmaketopia is a virtual state which is located in a beautiful mysterious country Cmakeland. The Cmaketopians, are the citizens of Cmaketopia. The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. The notion of borders is not unknown to them, but they don't care much about it. To exchange their ideas they use Github. They utilize CMAKE as cross-platform family of tools designed to build, test and package software. Cmaketopia is based on equality. Every Cmaketopian is equal. Every programming language is equal. Every platform is equal. Official languages: Cmake script, C, C++, C#, Python. Recognized language: English.<br> We love:<br>
 [Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)<br>
 [DRY - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<br>
 [KISS - keep it simple, stupid](https://en.wikipedia.org/wiki/KISS_principle)<br>
