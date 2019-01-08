@@ -29,5 +29,5 @@ we hate:<br> [WET - Write Everything Twice, we enjoy typing, waste everyone's ti
 But I'm not the only one<br>
 I hope some day you'll join us<br>
 And the world will be as one..."<br>
-No worries mate - suck it and see how simple and powerfull cmake is.<br>I invite you on a trip [Down the bumpy road to Cmakeland](https://unclecshark.github.io/blog/).<br>[Seeya, speak to you soon](https://unclecshark.github.io/).<br>C
+No worries mate - suck it and see how simple and powerfull cmake is.<br>I invite you on a trip [down the bumpy road to Cmakeland](https://unclecshark.github.io/blog/).<br>[Seeya, speak to you soon](https://unclecshark.github.io/).<br>C
 
