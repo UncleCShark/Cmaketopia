@@ -1,5 +1,5 @@
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-			 alt="Fork me on GitHub"/>
+<img src=https://user-images.githubusercontent.com/38818698/50577436-49bb4080-0e28-11e9-9427-476621a753d1.png alt="drawing" ALIGN="right" width="280"/>
+
 # Welcome to Cmaketopia
 # First things first.
 # Everyone can join us and become a member of our society.
@@ -16,7 +16,7 @@ Although freedom is intrinsic part of their personality this community obey the 
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 # Dependency injection
 [Wiki](https://en.wikipedia.org/wiki/Dependency_injection)<br>
-[Living In Interesting Times](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/) by Mark Seemann
+[Living In Interesting Times](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/)
 ## Our diary
 This repository contains source code we create during our voyage to Cmakeland. I hope at the end of our trip we can say we love:<br>
 [Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)<br>
