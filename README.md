@@ -15,7 +15,7 @@ Although freedom is intrinsic part of their personality this community obey the 
 [Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)<br>
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 # Dependency injection
-[Wiki](https://en.wikipedia.org/wiki/Dependency_injection)
+[Wiki](https://en.wikipedia.org/wiki/Dependency_injection)<br>
 [Living In Interesting Times by Mark Seemann](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/)
 ## Our diary
 This repository contains source code we create during our voyage to Cmakeland. I hope at the end of our trip we can say we love:<br>
