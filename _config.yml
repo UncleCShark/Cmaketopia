@@ -2,7 +2,7 @@
 title:        Cmaketopians
 project:      Cmaketopia
 tagline:      Go ahead and never say die!
-baseurl:      ""
+baseurl:      "/Cmaketopia"
 #paginate:     1
 locale:       "en-GB"
 
