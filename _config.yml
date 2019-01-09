@@ -1,3 +1,25 @@
+# Setup
+title:        Cmaketopians
+project:      Cmaketopia
+tagline:      Go ahead and never say die!
+baseurl:      ""
+#paginate:     1
+locale:       "en-GB"
 
+# About/contact
+author:
+  name:       UncleCShark
+  url:        https://github.com/UncleCShark1
+  repository: https://github.com/UncleCShark/Cmaketopia
+  leftlogo:   https://unclecshark.github.io/
 
-theme: jekyll-theme-cayman
+# Plugins
+#plugins:
+#  - jekyll-paginate
+
+# Google Analytics
+google_analytics: UA-131675759-1
+
+#Others
+markdown: kramdown
+google_analytics:
