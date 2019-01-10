@@ -14,7 +14,7 @@ Cmaketopia is a virtual state which is located in a beautiful mysterious country
 
 Official languages: Cmake script, C, C++, C#, Python.<br>Recognized language: English.<br>
 The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. The notion of borders is not unknown to them, but they don't care much about it. To exchange their ideas they use Github. They love abstract concepts. In their daily life they utilize CMAKE as cross-platform family of tools designed to build, test and package software.
-Although freedom is intrinsic part of their personality this community obey the laws of [Modern Cmake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1) (do's and don'ts). If you want more theory about programming aspects [see below.](#additional-reading-resources)<br>. If you can't read to the end [Come and kick the tires on this latest of the repository]({{ site.author.repository }}).This repository contains source code we create during our voyage to Cmakeland.<br>I hope at the end of our trip we can say we love:<br>
+Although freedom is intrinsic part of their personality this community obey the laws of [Modern Cmake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1) (do's and don'ts). If you want more theory about programming aspects [see below.](#additional-reading-resources). If you can't read to the end, [come and kick the tires on this latest of the repository]({{ site.author.repository }}). It contains source code we create during our voyage to Cmakeland.<br>I hope at the end of our trip we can say we love:<br>
 - [Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)
 - [DRY - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 - [KISS - keep it simple, stupid](https://en.wikipedia.org/wiki/KISS_principle)
@@ -28,7 +28,7 @@ we hate:<br>
 But I'm not the only one<br>
 I hope some day you'll join us<br>
 And the world will be as one..."<br><br>
-No worries mate - suck it and see how simple and powerfull cmake is.<br>
+No worries mate - suck it and see how the simple and powerfull tool CMAKE is.<br>
 ## Our diary
 I invite you on a trip [down the bumpy road to Cmakeland](https://unclecshark.github.io/blog/).<br>[Seeya, speak to you soon. Please do visit my blog and leave a few words on it](https://unclecshark.github.io/).<br>C
 ## Additional reading resources
@@ -37,6 +37,7 @@ I invite you on a trip [down the bumpy road to Cmakeland](https://unclecshark.gi
 [The Hitchhiker’s Guide to the CMake](https://cgold.readthedocs.io/en/latest/)<br>
 [CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc](https://docs.hunter.sh/en/latest/)<br>
 ### C++
+[C++ Core Guidelines ](https://github.com/isocpp/CppCoreGuidelines)<br>
 [Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)<br>
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 ### Dependency injection
