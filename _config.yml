@@ -17,7 +17,8 @@ author:
   rightimage: https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png
 
 # Plugins
-#plugins:
+plugins:
+  - jekyll-relative-links
 #  - jekyll-paginate
 
 # Google Analytics
