@@ -26,4 +26,4 @@ google_analytics: UA-132222639-1
 #Others
 markdown: kramdown
 
-theme: jekyll-theme-cayman
+#theme: jekyll-theme-cayman
