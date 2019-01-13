@@ -45,7 +45,7 @@ No worries mate - suck it and see how the simple and powerfull tool CMAKE is.
 
 ## Our diary
 
-Rule number One - This tutorial is a constantly evolving document without a strict "release" date.
+Rule number One - This tutorial is a constantly evolving document without a strict "release" date.  
 Rule number Two - I hate [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) thus in this tutorial I use as many links to others as possible. If somebody writes something right, just use it and don't waste your time on typing. I invite you on a trip we are going uphill, working our way up though another level of corners.
 Levels:
 
