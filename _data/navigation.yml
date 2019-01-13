@@ -4,8 +4,14 @@ docs:
 - title: Home
   url:
 
+- title: Introduction
+  url: Docs/Introduction
+
 - title: Dev Environment
   url: Docs/DevelopmentEnvironment
 
 - title: Command Line
   url: Docs/CommandLine
+
+- title: Badge
+  url: Docs/Badge
