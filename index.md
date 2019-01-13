@@ -14,7 +14,7 @@ Rule number One - This tutorial is a constantly evolving document without a stri
 Rule number Two - I hate [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) thus in this tutorial I use as many links to others as possible. If somebody writes something right, just use it and don't waste your time on typing. I invite you on a trip we are going uphill, working our way up though another level of corners.
 Levels:
 
-1. Introduction - [Short and sweet Fairytale](Docs/Introduction);
+1. Introduction - [A short and sweet fairytale](Docs/Introduction);
 2. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment.md);
 3. Command line - [Highway to Hell for a tough guy](Docs/CommandLine.md).
 
