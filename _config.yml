@@ -19,6 +19,7 @@ author:
 # Plugins
 plugins:
   - jekyll-relative-links
+  - jemoji
 #  - jekyll-paginate
 
 # Google Analytics
