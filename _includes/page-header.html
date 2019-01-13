@@ -1,17 +1,37 @@
 <section class="page-header">
-
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    {% assign doclist = site.data.navigation.docs  %}
+    <ol>
+      {% for item in doclist %}
+      <li class="{% if item.url == page.url %}active{% endif %}">
+        <a href="{{ site.baseurl}}/{{ item.url }}">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  <span class="menu-header" onclick="openNav()">&#9776; Menu</span>
   <h1 class="project-name">{{ site.title }}</h1>
   <h2 class="project-tagline">{{ site.tagline }}</h2>
   <a href="{{ site.author.repository }}" class="btn">View on GitHub</a>
   <a class="rightlogo" href="{{ site.author.rightlink }}">
-    <img src="{{ site.author.rightimage }}"
-      alt="Fork me on GitHub"></a>
+    <img src="{{ site.author.rightimage }}" alt="Fork me on GitHub"></a>
 
   <a class="leftlogo" href="{{ site.author.leftlink }}">
-    <img src="{{ site.author.leftimage }}"
-      alt="Cmaketopia"></a>
-<!--
+    <img src="{{ site.author.leftimage }}" alt="Cmaketopia"></a>
+
+
+  <!--
   <a href="#" class="btn">Download .zip</a>
   <a href="#" class="btn">Download .tar.gz</a>
   -->
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 </section>

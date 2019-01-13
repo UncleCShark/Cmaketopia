@@ -45,10 +45,12 @@ No worries mate - suck it and see how the simple and powerfull tool CMAKE is.
 
 ## Our diary
 
-I invite you on a trip we are going uphill, working our way up though another level of corners.
+Rule number One - This tutorial is a constantly evolving document without a strict "release" date.
+Rule number Two - I hate [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) thus in this tutorial I use as many links to others as possible. If somebody writes something right, just use it and don't waste your time for typing. I invite you on a trip we are going uphill, working our way up though another level of corners.
 Levels:
 
-1. Prepare Your Development Environment [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment.md);
+1. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment.md);
+2. Command line - [Highway to Hell for a tough guy](Docs/CommandLine.md)
 
 .
 
