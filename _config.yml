@@ -9,11 +9,12 @@ locale:       "en-GB"
 # About/contact
 author:
   name:       UncleCShark
+  mail:       mailto:unclecshark@gmail.com
   url:        https://github.com/UncleCShark
   repository: https://github.com/UncleCShark/Cmaketopia
   leftlink:   https://unclecshark.github.io/
   rightlink:  https://github.com/unclecshark
-  leftimage:  https://user-images.githubusercontent.com/38818698/50998852-08fab000-1529-11e9-9154-1342e645cb26.png
+  leftimage:  https://user-images.githubusercontent.com/38818698/51142223-9735a580-184b-11e9-928a-eebcb8a0a857.png
   rightimage: https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png
   badge:      https://user-images.githubusercontent.com/38818698/50577436-49bb4080-0e28-11e9-9427-476621a753d1.png
 
