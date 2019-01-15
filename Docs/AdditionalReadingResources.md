@@ -3,7 +3,11 @@ layout: page
 title: Development Environment
 ---
 
-# Additional reading resources
+# Additional Reading Resources
+
+## Command Line
+
+[Build C/C++ code on the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017)
 
 ## Cmake
 

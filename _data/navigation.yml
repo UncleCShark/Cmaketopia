@@ -13,8 +13,8 @@ docs:
 - title: Command Line
   url: Docs/CommandLine
 
-- title: Badge
-  url: Docs/Badge
-
 - title: Additional Reading Resources
   url: Docs/AdditionalReadingResources
+
+- title: Badge
+  url: Docs/Badge
