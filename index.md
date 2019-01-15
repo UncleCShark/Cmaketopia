@@ -17,7 +17,7 @@ Levels:
 
 1. Introduction - [A short and sweet fairytale](Docs/Introduction);
 2. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
-3. Command line - [Highway to Hell for a tough guy](Docs/CommandLine).
+3. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine).
 4. The end - [Our badge](Docs/Badge)
 
 [Seeya, speak to you soon. Please do visit my blog and leave a few words on it](https://unclecshark.github.io/).  

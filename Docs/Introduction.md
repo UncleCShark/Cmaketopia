@@ -58,5 +58,5 @@ No worries mate - suck it and see how the simple and powerfull tool CMAKE is.
 
 ### Dependency injection
 
-[Wiki](https://en.wikipedia.org/wiki/Dependency_injection)
+[Wiki](https://en.wikipedia.org/wiki/Dependency_injection)  
 [Living In Interesting Times](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/)

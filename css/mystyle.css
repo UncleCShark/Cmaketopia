@@ -57,7 +57,7 @@
 .menu-header {
   position: absolute;
   top: 0;
-  right: 150px;
+  left: 400px;
   float: left;
   color: black;
   text-align: left;
