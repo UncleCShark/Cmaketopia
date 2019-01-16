@@ -7,3 +7,6 @@ scripts/python/__pycache__
 scripts/python/*.pyc
 # VS Code
 .vs/
+# Ignore files with extension `.exe` & `.dll`
+*.exe
+*.dll
