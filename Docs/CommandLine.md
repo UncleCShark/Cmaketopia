@@ -50,7 +50,7 @@ Look at the diagram, we are just after the design step. We decided to use the st
 3. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we end up     in the source code directory with a file called hello, and now we can actually execute hello, and of       course no surprise it will print Hello, world! to the console.  
     **Type ./hello in command line and press \<Enter>.**
 
-Piggybackings (the facilities for programmers) set a compiler's environment:
+Piggybackings (the facilities for programmers) set a compilation environment:
 
 1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)
 2. For Mingw64 compiler these shortcuts set [G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html). ![Mingw64](../assets/MSYS2.png)
