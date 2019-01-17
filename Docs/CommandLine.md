@@ -9,7 +9,7 @@ next_page: AdditionalReadingResources
 
 ## Highway to Hell for a tough cookie
 
-Our previous levels were a breeze, but from then on the story shifts gears. Get up on your feet we start grappling with basis of a command line. A wise deviser have to understand the relation between components to solve problems of their domain and how the compilation pipeline looks like. The grasp of this concept is crucial. We must be deft like a swan, which glides across the surface of the lake. Stop being like a rabbit caught in the headlights controlled by your favoured [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).  
+Our previous levels were a breeze, but from then on the story shifts gears. Get up on your feet we start grappling with basis of a command line. A wise deviser:construction_worker: have to understand the relation between components to solve problems of their domain and how the compilation pipeline looks like. The grasp of this concept is crucial. We must be deft like a swan, which glides across the surface of the lake. Stop being like a rabbit:rabbit: caught in the headlights controlled by your favoured [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).  
 
 **Rule No. One - You're a boss and you know the ropes.**  
 **Rule No. Two - The command line is your friend.**  
@@ -18,6 +18,8 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 ## A typical programmer's pipeline
 
 ![Simple flowchart](../assets/ProgrammerFlowChart.png)  
+We need the three basic tools to build C++ applications. These are the compiler, the linker, and
+the librarian. A [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a library (dynamic or static). The object files and static libraries are only needed during building an application. An executable may depend on dynamic libraries thus they are essential during the execution of app.
 It's time for our first Hello example. A source code for hello application is below  
 
 **\#include \<iostream>  
@@ -27,7 +29,7 @@ int main()
  &nbsp;&nbsp;&nbsp;&nbsp;return 0;  
 }**  
 
-Look at the diagram, we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on the  our monitor. No bad, very good design!  
+Look at the diagram, we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on   our monitor. No bad, very good design!  
 **Go on and get your hands dirty !**
 
 1. Coding:smile: :smile: :smile: - preparation App Source Code:
