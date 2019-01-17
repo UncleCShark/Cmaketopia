@@ -52,7 +52,7 @@ Look at the diagram, we are just after the design step. We decided to use the st
 
 Piggybackings (the facilities for programmers) set a compilation environment:
 
-1. [Open a developer command prompt] for Visual Studio (https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)
+1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) for Visual Studio
 2. For Mingw64 compiler these shortcuts set [G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html). ![Mingw64](../assets/MSYS2.png)
 
 It's curtains now, chill out:metal: and press the button below if you want.
