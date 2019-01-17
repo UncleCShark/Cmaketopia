@@ -2,7 +2,7 @@
 layout: page
 title: Development Environment
 previous_page: DevelopmentEnvironment
-next_page: Badge
+next_page: AdditionalReadingResources
 ---
 
 # Command Line

@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Development Environment
+previous_page: CommandLine
+next_page: Badge
 ---
 
 # Additional Reading Resources
