@@ -3,3 +3,17 @@ layout: default
 ---
 
 {{ content }}
+<div class="left align-right">
+    {% if page.previous_page %}
+        <a href="{{ page.previous_page }}">Back</a>
+    {% else %}
+        <span class="prev disabled">Back</span>
+    {% endif %}
+</div>
+<div class="right align-left">
+    {% if page.next_page %}
+        <a href="{{ page.next_page }}">Next</a>
+    {% else %}
+        <span class="prev disabled">Next</span>
+    {% endif %}
+</div>

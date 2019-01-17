@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Development Environment
+previous_page: DevelopmentEnvironment
+next_page: Badge
 ---
 
 # Command Line
@@ -47,8 +49,12 @@ Look at the diagram,we are just after the design step. We decided to use the sta
 Piggybackings:
 
 1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)
-2. Mingw64 compiler use this one ![Mingw64](../assets/MSSYS.png)
+2. Mingw64 compiler use this one ![Mingw64](../assets/MSYS2.png)
 
-The end, chill out press the button below.
+It's curtains now, chill out and press the button below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l482T0yNkeo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/l482T0yNkeo" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line -->

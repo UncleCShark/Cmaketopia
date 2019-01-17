@@ -1,3 +1,27 @@
+.left { float: left; }
+.right { float: right; }
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.prev { position: relative; }
+.disabled {
+  opacity: .5;
+  cursor: default;
+}
+.video_container {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:0;
+    height:0;
+    margin-bottom:15px
+  }
+.video_container iframe,.video_container video {
+    position:absolute;
+    top:0;
+    left:0;
+    width:80%;
+    height:80%
+  }
 .leftlogo {
     display: inline-block;
     position: absolute;
@@ -5,7 +29,7 @@
     left: 2px;
     border: 0;
   }
-  .leftlogo img {
+.leftlogo img {
     width: 100%;
     height:100%;
  }

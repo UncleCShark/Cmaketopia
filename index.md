@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: page
 title: Uncle CShark, Tremendous Imaginer
+next_page: Docs/Introduction
 ---
 
 # Hi everyone
