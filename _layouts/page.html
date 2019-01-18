@@ -5,15 +5,15 @@ layout: default
 {{ content }}
 <div class="left align-right">
     {% if page.previous_page %}
-        <a href="{{ page.previous_page }}">Back</a>
+        <a href="{{ page.previous_page }}">&laquo;Back</a>
     {% else %}
-        <span class="prev disabled">Back</span>
+        <span class="prev disabled">&laquo;Back</span>
     {% endif %}
 </div>
 <div class="right align-left">
     {% if page.next_page %}
-        <a href="{{ page.next_page }}">Next</a>
+        <a href="{{ page.next_page }}">Next &raquo;</a>
     {% else %}
-        <span class="prev disabled">Next</span>
+        <span class="prev disabled">Next &raquo;</span>
     {% endif %}
 </div>
