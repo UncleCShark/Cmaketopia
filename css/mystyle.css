@@ -23,11 +23,11 @@
     height:80%
 }
 
-.foo,
-.foo tr,
-.foo tbody td,
-.foo thead th,
-.foo tfoot th {
+.noborders,
+.noborders tr,
+.noborders tbody td,
+.noborders thead th,
+.noborders tfoot th {
 	border: none;
 }
 

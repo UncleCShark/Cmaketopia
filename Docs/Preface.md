@@ -7,7 +7,7 @@ next_page: DevelopmentEnvironment
 
 # Preface
 
-{:.foo}
+{:.noborders}
 *A dream of Warsaw* | *Sen o Warszawie*
 ------------ | -------------
 |
@@ -47,7 +47,7 @@ Warsaw day.|warszawski dzień.
 ## Code Examples
 
 You can download the example code files for this tutorial from [UncleCShark]({{site.author.repository}}) Github repository.  
-Never say die!  
+Go ahead and never say die!  
 Best regards  
 UncleCShark
 
