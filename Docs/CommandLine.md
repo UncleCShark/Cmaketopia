@@ -18,9 +18,9 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 ## A typical programmer's pipeline
 
 ![Simple flowchart](../assets/ProgrammerFlowChart.png)  
-We need the three basic tools to build C++ applications. These are the compiler, the linker, and
-the librarian. A [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a library (dynamic or static). The object files and static libraries are only needed during building an application. An executable may depend on dynamic libraries thus they are essential during the execution of app.
-It's time for our first Hello example. A source code for hello application is below  
+We need the three basic tools :hammer::hammer::hammer: to build C++ applications. These are the compiler:hammer:, the linker:hammer:, and
+the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a library (dynamic or static). The object files and static libraries are only needed during building an application. An executable may depend on dynamic libraries thus they are essential during the execution of app.
+It's time for our first **Hello**:hand: example. A source code for hello application is below  
 
 **\#include \<iostream>  
 int main()  
@@ -44,16 +44,14 @@ Look at the diagram, we are just after the design step. We decided to use the st
         Microsoft compiler [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)  
         Mingw64: invoke the compiler passing in the name of our file, in this case hello.cpp  
         **g++ -o hello hello.cpp**
-       D'oh!:angry: We've got an error,:bug:  
-       \- back to square one (Coding:smile: :smile: :smile:) -  
-       run your editor open hello.cpp file add **;** after "Hello, World!" save your file;  
-3. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we end up     in the source code directory with a file called hello, and now we can actually execute hello, and of       course no surprise it will print Hello, world! to the console.  
-    **Type ./hello in command line and press \<Enter>.**
 
-Piggybackings (the facilities for programmers) set a compilation environment:
+D'oh!:angry: We've got an error,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app,
+    **Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.
 
-1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) for Visual Studio
-2. For Mingw64 compiler these shortcuts set [G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html). ![Mingw64](../assets/MSYS2.png)
+Available piggybackings (the facilities for programmers). See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
+
+1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) for Visual Studio users ![Visual Studio](../assets/VsCommandPrompt.png)
+2. [Set G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html) for Mingw64 users. ![Mingw64](../assets/MSYS2.png)
 
 It's curtains now, chill out:metal: and press the button below if you want.
 
