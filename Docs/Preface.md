@@ -44,6 +44,13 @@ Warsaw day|warszawski dzień
 Warsaw day|warszawski dzień
 Warsaw day.|warszawski dzień.
 
+## Code Examples
+
+You can download the example code files for this tutorial from [UncleCShark]({{site.author.repository}}) Github repository.  
+Never say die!  
+Best regards  
+UncleCShark
+
 <!-- blank line -->
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/ePNUSmH3dMI" frameborder="0" allowfullscreen="true"> </iframe>
