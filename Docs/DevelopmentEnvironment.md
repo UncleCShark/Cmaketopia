@@ -23,7 +23,7 @@ Find a compiler toolchain and IDE that suit you:
 My development environment  
 ![VS2017](../assets/Vs2017.png)
 ![VsCode](../assets/VsCode.png)
-![QTCreator](../assets/QTCreator)
+![QTCreator](../assets/QTCreator.png)
 ![g++](../assets/g++.png)
 ![Cmake](../assets/cmake.png)
 ![ninja](../assets/ninja.png)
