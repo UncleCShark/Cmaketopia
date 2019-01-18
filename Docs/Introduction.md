@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction
-previous_page: ../
+previous_page: Preface
 next_page: DevelopmentEnvironment
 ---
 

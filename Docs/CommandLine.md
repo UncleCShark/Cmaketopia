@@ -9,7 +9,7 @@ next_page: AdditionalReadingResources
 
 ## Highway to Hell for a tough cookie
 
-Our previous levels were a breeze, but from then on the story shifts gears. Get up on your feet we start grappling with basis of a command line. A wise deviser:construction_worker: have to understand the relation between components to solve problems of their domain and how the compilation pipeline looks like. The grasp of this concept is crucial. We must be deft like a swan, which glides across the surface of the lake. Stop being like a rabbit:rabbit: caught in the headlights controlled by your favoured [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).  
+Our previous levels were a breeze, but from then on the story shifts gears. Get up on your feet we start grappling with basis of a command line. A wise deviser:construction_worker: have to understand the relation between components to solve problems of their domain and how the compilation pipeline looks like. The grasp of this concept is crucial. We must be deft like a swan, which glides:airplane: across the surface of the lake. Stop being like a rabbit:rabbit: caught in the headlights controlled by your favoured [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).  
 
 **Rule No. One - You're a boss and you know the ropes.**  
 **Rule No. Two - The command line is your friend.**  
@@ -45,13 +45,16 @@ Look at the diagram, we are just after the design step. We decided to use the st
         Mingw64: invoke the compiler passing in the name of our file, in this case hello.cpp  
         **g++ -o hello hello.cpp**
 
-D'oh!:angry: We've got an error,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app,
-    **Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.
+D'oh!:angry: We've got an error,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
+**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.
 
 Available piggybackings (the facilities for programmers). See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
 
-1. [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) for Visual Studio users ![Visual Studio](../assets/VsCommandPrompt.png)
-2. [Set G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html) for Mingw64 users. ![Mingw64](../assets/MSYS2.png)
+You could [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) if you are Visual Studio user; ![Visual Studio](../assets/VsCommandPrompt.png)  
+
+or  
+
+you can [Set G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html) if you are Mingw64 user. ![Mingw64](../assets/MSYS2.png)
 
 It's curtains now, chill out:metal: and press the button below if you want.
 

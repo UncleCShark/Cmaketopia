@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uncle CShark, Tremendous Imaginer
-next_page: Docs/Introduction
+next_page: Docs/Preface
 ---
 
 # Hi everyone
@@ -17,11 +17,12 @@ Thus in this tutorial I use as many links to others as possible and don't waste 
  I'd like to invite you on a trip we are going uphill, working our way up though another level of corners.
 Levels:
 
-1. Introduction - [A short and sweet fairytale](Docs/Introduction);
-2. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
-3. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine);
-4. Additional Reading Resources - [Sources of magic](Docs/AdditionalReadingResources);
-5. The end - [Our badge](Docs/Badge).
+1. Preface - [A dream of Warsaw](Docs/Preface)
+2. Introduction - [A short and sweet fairytale](Docs/Introduction);
+3. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
+4. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine);
+5. Additional Reading Resources - [Sources of magic](Docs/AdditionalReadingResources);
+6. The end - [Our badge](Docs/Badge).
 
 [Seeya, speak to you soon. Please do visit my blog and leave a few words on it](https://unclecshark.github.io/).  
 

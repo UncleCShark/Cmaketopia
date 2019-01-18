@@ -14,14 +14,23 @@
     padding-top:0;
     height:0;
     margin-bottom:15px
-  }
+}
 .video_container iframe,.video_container video {
     position:absolute;
     top:0;
     left:0;
     width:80%;
     height:80%
-  }
+}
+
+.foo,
+.foo tr,
+.foo tbody td,
+.foo thead th,
+.foo tfoot th {
+	border: none;
+}
+
 .leftlogo {
     display: inline-block;
     position: absolute;

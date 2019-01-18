@@ -4,6 +4,9 @@ docs:
 - title: Home
   url:
 
+- title: Preface
+  url: Docs/Preface
+
 - title: Introduction
   url: Docs/Introduction
 
