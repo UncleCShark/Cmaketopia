@@ -41,6 +41,7 @@ Look at the diagram, we are just after the design step. We decided to use the st
     - set any environment variables required by your toolset.  
     See [Microsoft Compiler](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)
     and [here](https://blogs.msdn.microsoft.com/vcblog/2017/11/02/visual-studio-build-tools-now-include-the-vs2017-and-vs2015-msvc-toolsets/);  
+    See [GCC](http://gcc.gnu.org/onlinedocs/)
     Mingw64 set Path: set PATH=\<directory where your compiler is>;%PATH%
     - enter a command in command line telling your compiler to compile and link your program.  
         Microsoft compiler [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)  
