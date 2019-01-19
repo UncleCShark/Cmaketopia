@@ -54,7 +54,7 @@ Now Ninja. Type **ninja \-\-version** and press Enter. Look at Ninja documentati
 ![Ninja](../assets/ninja.png)
 
 Although in our daily work we use IDE now you know what is going on under the hood.  
-Additionaly we have available piggybackings (the facilities for programmers). See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
+Additionaly we have available piggybackings (the facilities for programmers) who like building executables from command line. See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
 
 You could [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) if you are Visual Studio user; ![Visual Studio](../assets/VsCommandPrompt.png)  
 
