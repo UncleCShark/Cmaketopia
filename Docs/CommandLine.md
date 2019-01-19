@@ -22,12 +22,14 @@ We need the three basic tools :hammer::hammer::hammer: to build C++ applications
 the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a library (dynamic or static). The object files and static libraries are only needed during building an application. An executable may depend on dynamic libraries thus they are essential during the execution of app.
 It's time for our first **Hello**:hand: example. A source code for hello application is below  
 
-**\#include \<iostream>  
+```c++
+#include <iostream>  
 int main()  
 {  
- &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Hello, World!"  
- &nbsp;&nbsp;&nbsp;&nbsp;return 0;  
-}**  
+ std::cout << "Hello, World!"  
+ return 0;  
+}
+```  
 
 Look at the diagram, we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on   our monitor. No bad, very good design!  
 **Go on and get your hands dirty !**
