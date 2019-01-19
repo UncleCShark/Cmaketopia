@@ -19,8 +19,8 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 
 ![Simple flowchart](../assets/ProgrammerFlowChart.png)  
 We need the three basic tools :hammer::hammer::hammer: to build C++ applications. These are the compiler:hammer:, the linker:hammer:, and
-the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to exist in running environment. What is more one shared library may rely on another shared one or more.  
-It's time for our first **Hello**:hand: example. A source code for hello application is below  
+the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to be accessible when the application is running. What is more one shared library may rely on other shared ones.  
+It's time for our first **Hello**:hand: example. A source code for hello application is below.  
 
 ```c++
 #include <iostream>  
@@ -45,13 +45,27 @@ Look at the diagram, we are just after the design step. We decided to use the st
     "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat",  
     for Mingw64 you need only set Path:  
     set PATH=\<directory where your compiler is>;%PATH%
-    (see details for [Microsoft Compiler](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017), [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/) and [GCC](http://gcc.gnu.org/onlinedocs/));
-    - enter a command in command line telling your compiler to compile and link your program.  
-        MSVC [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)  
-        Mingw64: **g++ -o hello hello.cpp** this command invoke the compiler passing in the name of our file, in this case hello.cpp  
+    (see details for MSVC [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017), [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/), [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017) and [GCC](http://gcc.gnu.org/onlinedocs/));
+    - enter a command in command line telling your compiler to compile and link your program'  
+        **One step building** - compiler automatically invokes the linker after compiling
+
+        | Compiler | Compiling+Linking |
+        | ----------- | ----------- |
+        | MSVC | [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) |
+        | Mingw64 | g++ -o hello hello.cpp|
+
+        **Two steps building** - we have to enter two commands in first step object file is created in second step linker creates executable
+
+        | Compiler | Compiling | Linking |
+        | ----------- | ----------- |
+        | MSVC | cl /c /EHsc hello.cpp | link -out:hello.exe hello.obj
+        | Mingw64 | g++ -c -o hello.o hello.cpp| g++ -o hello hello.o
+
 
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
-**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
+**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.  
+Software projects always need build system to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every
+day, so it is extremely important to ensure that the process is under control and reproducible. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
