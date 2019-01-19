@@ -34,22 +34,24 @@ int main()
 Look at the diagram, we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on   our monitor. No bad, very good design!  
 **Go on and get your hands dirty !**
 
-1. Coding:smile: :smile: :smile: - preparation App Source Code:
+1. Coding:smile: :smile: :smile: - a preparation App Source Code:
     - to do this run a simple text editor for an example Notepad or Notepad++;
     - write a program and save a file to the disk to a location of your choice (I use "**c:/TestCmaketopia**"). Name the file "**hello.cpp**".
-2. Build binaries - creation of an executable to run on your platform
-    - set any environment variables required by your toolset.  
-    See [Microsoft Compiler](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)
-    and [here](https://blogs.msdn.microsoft.com/vcblog/2017/11/02/visual-studio-build-tools-now-include-the-vs2017-and-vs2015-msvc-toolsets/);  
-    See [GCC](http://gcc.gnu.org/onlinedocs/)
-    Mingw64 set Path: set PATH=\<directory where your compiler is>;%PATH%
+2. Building - a creation of an executable to run on your platform  
+    open terminal (cmd.exe or Mingw64-w64 shell on Windows)
+    - set any environment variables required by your toolset;  
+    if you want to use MSVC (Microsoft Visual Studio Compiler) you need run  
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 or  
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat",  
+    for Mingw64 you need only set Path:  
+    set PATH=\<directory where your compiler is>;%PATH%
+    (see details for [Microsoft Compiler](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017), [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/) and [GCC](http://gcc.gnu.org/onlinedocs/));
     - enter a command in command line telling your compiler to compile and link your program.  
-        Microsoft compiler [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)  
-        Mingw64: invoke the compiler passing in the name of our file, in this case hello.cpp  
-        **g++ -o hello hello.cpp**
+        MSVC [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017)  
+        Mingw64: **g++ -o hello hello.cpp** this command invoke the compiler passing in the name of our file, in this case hello.cpp  
 
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
-**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Microsoft. Now an operating system is at our command.  
+**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
