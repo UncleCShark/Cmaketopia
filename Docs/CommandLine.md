@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Development Environment
+title: Command Line
 previous_page: DevelopmentEnvironment
-next_page: AdditionalReadingResources
+next_page: CmakePhilosophy
 ---
 
 # Command Line

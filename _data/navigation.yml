@@ -16,6 +16,9 @@ docs:
 - title: Command Line
   url: Docs/CommandLine
 
+- title: Cmake Philosophy
+  url: Docs/CmakePhilosophy
+
 - title: Additional Reading Resources
   url: Docs/AdditionalReadingResources
 
