@@ -38,14 +38,12 @@ Look at the diagram, we are just after the design step. We decided to use the st
     - to do this run a simple text editor for an example Notepad or Notepad++;
     - write a program and save a file to the disk to a location of your choice (I use "**c:/TestCmaketopia**"). Name the file "**hello.cpp**".
 2. Building - a creation of an executable to run on your platform  
-    open terminal (cmd.exe or Mingw64-w64 shell on Windows)
-    - set any environment variables required by your toolset;  
-    if you want to use MSVC (Microsoft Visual Studio Compiler) you need run  
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 or  
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat",  
-    for Mingw64 you need only set Path:  
-    set PATH=\<directory where your compiler is>;%PATH%
-    (see details for MSVC [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017), [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/), [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017) and [GCC](http://gcc.gnu.org/onlinedocs/));
+    open ([Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) or [MSYS2]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id)) terminal
+    - set any environment variables required by your toolset (see details for [MSVC]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  and [GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id));  
+    [long stories see piggybacking](#piggybackings)  
+    for Mingw64 you need only set Path as follow:  
+    **set PATH=\<directory where your compiler is>;%PATH%**
+    ;
     - enter a command in command line telling your compiler to compile and link your program'  
         **One step building** - the compiler automatically invokes the linker after compiling
 
@@ -70,16 +68,18 @@ Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
 Now Ninja. Type **ninja \-\-version** and press Enter. Look at Ninja documentation, try another command. All is under our control. We are not rabbits :rabbit::rabbit2: now.  
-![Ninja](../assets/ninja.png)
-
+![Ninja](../assets/ninja.png)  
 Although in our daily work we use IDE now you know what is going on under the hood.  
+
+### Piggybackings
+
 Additionaly we have available piggybackings (the facilities for programmers) who like building executables from command line. See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
 
 You could [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) if you are Visual Studio user; ![Visual Studio](../assets/VsCommandPrompt.png)  
 
 or  
 
-you can [Set G++ compiler's environment variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html) if you are Mingw64 user. ![Mingw64](../assets/MSYS2.png)
+you can see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)if you are Mingw64 user. ![Mingw64](../assets/MSYS2.png)
 
 It's curtains now, chill out:metal: and press the button below if you want.
 
