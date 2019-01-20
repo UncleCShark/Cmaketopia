@@ -31,3 +31,8 @@ next_page: Badge
 
 [Wiki](https://en.wikipedia.org/wiki/Dependency_injection)  
 [Living In Interesting Times](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/)
+
+## GNU
+
+[Bash](http://www.gnu.org/software/bash/manual/bashref.html)  
+[GCC](http://gcc.gnu.org/onlinedocs/)

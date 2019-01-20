@@ -47,14 +47,14 @@ Look at the diagram, we are just after the design step. We decided to use the st
     set PATH=\<directory where your compiler is>;%PATH%
     (see details for MSVC [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017), [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/), [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017) and [GCC](http://gcc.gnu.org/onlinedocs/));
     - enter a command in command line telling your compiler to compile and link your program'  
-        **One step building** - compiler automatically invokes the linker after compiling
+        **One step building** - the compiler automatically invokes the linker after compiling
 
         | Compiler | Compiling+Linking |
         | ----------- | ----------- |
         | MSVC | [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) |
         | Mingw64 | g++ -o hello hello.cpp|
 
-        **Two steps building** - we have to enter two commands in first step object file is created in second step linker creates executable
+        **Two steps building** - we have to enter two commands, in first step object file is created, in second step linker creates executable
 
         | Compiler | Compiling | Linking |
         | ----------- | ----------- |
@@ -65,7 +65,7 @@ Look at the diagram, we are just after the design step. We decided to use the st
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
 **Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.  
 Software projects always need build system to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every
-day, so it is extremely important to ensure that the process is under control and reproducible. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
+day, so it is extremely important to ensure that the process is under control and reproducible. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
