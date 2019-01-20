@@ -40,7 +40,7 @@ Look at the diagram, we are just after the design step. We decided to use the st
 2. Building - a creation of an executable to run on your platform  
     open ([Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) or [MSYS2]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id)) terminal
     - set any environment variables required by your toolset (see details for [MSVC]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  and [GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id));  
-    [long stories see piggybacking](#piggybackings)  
+    for MSVC [it's long story see piggybacking vcvarsall.bat](#piggybackings)  
     for Mingw64 you need only set Path as follow:  
     **set PATH=\<directory where your compiler is>;%PATH%**
     ;
@@ -49,8 +49,8 @@ Look at the diagram, we are just after the design step. We decided to use the st
 
         | Compiler | Compiling+Linking |
         | ----------- | ----------- |
-        | MSVC | [cl /EHsc hello.cpp](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) |
-        | Mingw64 | g++ -o hello hello.cpp|
+        | MSVC | cl /EHsc hello.cpp |
+        | Mingw64 | g++ -o hello hello.cpp |
 
         **Two steps building** - we have to enter two commands, in first step object file is created, in second step linker creates executable
 
@@ -59,9 +59,18 @@ Look at the diagram, we are just after the design step. We decided to use the st
         | MSVC | cl /c /EHsc hello.cpp | link -out:hello.exe hello.obj
         | Mingw64 | g++ -c -o hello.o hello.cpp| g++ -o hello hello.o
 
-
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!! Run your editor open hello.cpp file add **;** after "Hello, World!" save your file. Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
-**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.  
+**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal. Here is a correct version of code.
+
+```c++
+#include <iostream>  
+int main()  
+{  
+ std::cout << "Hello, World!";  
+ return 0;  
+}
+```  
+
 Software projects always need build system to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every
 day, so it is extremely important to ensure that the process is under control and reproducible. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
@@ -75,11 +84,37 @@ Although in our daily work we use IDE now you know what is going on under the ho
 
 Additionaly we have available piggybackings (the facilities for programmers) who like building executables from command line. See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
 
-You could [Open a developer command prompt](https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2017) if you are Visual Studio user; ![Visual Studio](../assets/VsCommandPrompt.png)  
+See [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) if you are Visual Studio user. These shortcuts open terminal and set a compiler environment; just use one of them  
+![Visual Studio](../assets/VsCommandPrompt.png)  
+Hey a tough guy wanna more?  
+If you have not standard installation of Visual Studio, do you want to know where a workhorse is?  
+Right click **x86 Native Command Prompt** select **More** select **Open file location**  
+![Developer Prompt](../assets/DeveloperPrompt.png)  
+now right click on **x86 Native Tools Command Prompt** select **Properties** click inside Target fiels select all (cntr-A) copy (cntr-c) open your text editor paste string (cntr-v) save file. **Important!!!**  
+Don't worry we are on home straight now!  
+![Native Command Prompt](../assets/NativeCommandPrompt.png)  
 
-or  
+You should have something like that in your file  
+**%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"**  extract path  
+**C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build**  
+Now it's time for a party! Open file explorer put your path in it, look there is **vcvarsall.bat** .  
+**IT'S OUR WORKING HORSE!!!!**  
+![VC vars](../assets/Vcvars.png)  
+A procedure for CMaketopians how set up MSVC compiler environment:
 
-you can see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)if you are Mingw64 user. ![Mingw64](../assets/MSYS2.png)
+- open command line  
+- set PATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build;%PATH%  
+- **cmd /k "vcvarsall.bat x86"**    or  
+- cmd /k "vcvarsall.bat x64"
+
+[see vcvarsall.bat documentation]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  
+More?  
+Change cmd /k "vcvarsall.bat x64 to **cmd /k "vcvarsall.bat x86 & powershell"** and have fun.  
+From then on you can use Powershell as your terminal.
+
+For Mingw64 user you can see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)  
+![Mingw64](../assets/MSYS2.png)  
+Go ahead! You know what to do.  
 
 It's curtains now, chill out:metal: and press the button below if you want.
 
