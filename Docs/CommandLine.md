@@ -82,7 +82,7 @@ Although in our daily work we use IDE now you know what is going on under the ho
 
 ### Piggybackings
 
-Additionaly we have available piggybackings (the facilities for programmers) who like building executables from command line. See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
+Additionaly we have available piggybackings, the facilities for programmers who like building executables from command line. See below how to use shortcuts to set environment variables beglading your compiler on Windows 10 platform:
 
 See [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) if you are Visual Studio user. These shortcuts open terminal and set a compiler environment; just use one of them  
 ![Visual Studio](../assets/VsCommandPrompt.png)  
