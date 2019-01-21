@@ -13,7 +13,7 @@ next_page: Badge
 
 [The Hitchhiker’s Guide to the CMake](https://cgold.readthedocs.io/en/latest/)  
 
-[CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc](https://docs.hunter.sh/en/latest/)  
+[CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc.](https://docs.hunter.sh/en/latest/)  
 
 ## C++
 
@@ -44,5 +44,7 @@ next_page: Badge
 
 ## MSYS2 {#MSYS2-id}
 
+[Mintty](https://github.com/mintty/mintty/wiki/Tips)
 [MSYS2 installer](https://www.msys2.org/)  
 [msys2_shell.cmd](https://github.com/msys2/msys2/wiki/MSYS2-installation)
+[Terminals](https://github.com/msys2/msys2/wiki/Terminals)
