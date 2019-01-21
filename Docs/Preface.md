@@ -13,7 +13,7 @@ next_page: DevelopmentEnvironment
 |
 I do have - like you -|Mam tak samo jak ty
 my town, and in it;|miasto moje a w nim
-my most beautiful world|najpiękniejszy mój swiat
+my most beautiful world|najpiękniejszy mój świat
 most beautiful days|najpiękniejsze dni
 I left there colourful dreams.|zostawiłem tam kolorowe sny.
 |
@@ -24,14 +24,14 @@ To the place where my dreams are,|tam gdzie moje sny
 And the colourful days of Warsaw.|i warszawskie kolorowe dni.
 |
 If you'd like to see|Gdybyś ujrzeć chciał
-the dawn at the Vistula|nadwislański świt
-Start out there with me already today|juz dziś wyruszaj ze mną tam
+the dawn at the Vistula|nadwiślański świt
+Start out there with me already today|już dziś wyruszaj ze mną tam
 You'll see how nice a welcome is|zobaczysz jak przywita pięknie nas
 awaiting us by the Warsaw day.|warszawski dzień.
 |
 I do have like you,|Mam tak samo jak ty
 my town and in it:|miasto moje a w nim
-my most beautiful world|najpiękniejszy mój swiat
+my most beautiful world|najpiękniejszy mój świat
 most beautiful days|najpiękniejsze dni
 I left there colourful dreams.|zostawiłem tam kolorowe sny.
 |
@@ -44,9 +44,11 @@ Warsaw day|warszawski dzień
 Warsaw day|warszawski dzień
 Warsaw day.|warszawski dzień.
 
+This project try to learn how to use CMAKE cross-platform family of tools designed to build, test and package your software from scratch.
+
 ## Code Examples
 
-You can download the example code files for this tutorial from [UncleCShark]({{site.author.repository}}) Github repository.  
+You can download the example code files for this tutorial from [UncleCShark]({{site.author.repository}}) GitHub repository.  
 Go ahead and never say die!  
 Best regards  
 UncleCShark
