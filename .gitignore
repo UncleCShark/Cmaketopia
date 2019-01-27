@@ -6,7 +6,11 @@ _site/
 scripts/python/__pycache__
 scripts/python/*.pyc
 # VS Code
+.vscode/
+build/
+# Visual Studio
 .vs/
+CMakeSettings.json
 # Ignore files 
 *.exe
 *.dll
