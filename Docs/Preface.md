@@ -44,12 +44,12 @@ Warsaw day|warszawski dzień
 Warsaw day|warszawski dzień
 Warsaw day.|warszawski dzień.
 
-To be effective, software projects always need tools to configure and build the final applications or libraries from sources. Under normal circumstances developers have to repeat build task several times every day, so it is very important to have that process under control and repeatable. The build task should be very fast and efficient. For open source projects it is even more important to have simple unified tools, which can be utilized on many platforms. It will be perfect if developers may use build tools regardless of IDE. For these who want to achieve the high level of portability, CMAKE + Ninja seem to be a good choice. This project try to learn how to use CMAKE cross-platform family of tools designed to build, test and package your software. We begin with no knowledge of the subject at hand, just learning from scratch.
+To be effective, software projects always need tools to configure and build the final applications or libraries from sources. Under normal circumstances developers have to repeat build task several times every day, so it is very important to have that process under control and repeatable. The build task should be very fast and efficient. For open source projects it is even more important to have simple unified tools, which can be utilized on many platforms. It will be perfect if developers may use build tools regardless of IDE. For these who want to achieve the high level of portability, CMAKE + Ninja seem to be a good choice. This project try to learn how to use CMAKE cross-platform family of tools designed to build, test and package your software in a modern way. We begin with no knowledge of the subject at hand, just learning from scratch. If that's what turns you on that's fine by me.
 
 ## Code Examples
 
 You can download the example code files for this tutorial from [UncleCShark]({{site.author.repository}}) GitHub repository.  
-Go ahead and never say die!  
+Go ahead and never say die! It's high time to get our feet wet.  
 Best regards  
 UncleCShark
 
