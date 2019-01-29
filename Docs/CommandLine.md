@@ -18,6 +18,7 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 ## A typical programmer's pipeline
 
 ![Simple flowchart](../assets/ProgrammerFlowChart.png)  
+Figure 1.1 A programmer flowchart
 
 ## Building binaries
 
@@ -25,6 +26,7 @@ We need the three basic tools :hammer::hammer::hammer: to build C++ applications
 the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to be accessible when the application is running. What is more one shared library may rely on other shared ones.  
 
 ![Build process](../assets/buildprocess.png)  
+Figure 1.2 The Three Musketeers (a compiler, librarian and linker) in action
 
 ### Compilation environment
 
@@ -101,8 +103,7 @@ Under construction
 
 ## Build system
 
-Software projects always need build system to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every
-day, so it is extremely important to ensure that the process is under control and reproducible. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
+As cross-platform programmers we need a simple build system which we can leverage on many platforms in the same way irrespective of IDE or toolchain we utilize. We use it to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every day, so it is extremely important to ensure that the process is under control and repeatable. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
@@ -119,7 +120,7 @@ Additionally we have available piggybackings, the facilities for programmers who
 For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). These shortcuts open terminal and set a compiler environment; just use one of them  
 ![Visual Studio](../assets/VsCommandPrompt.png)  
 Hey a tough guy wanna more?  
-If you have not standard installation of Visual Studio, do you want to know where a workhorse is?  
+If you have not standard installation of Visual Studio or you are curious, do you want to know where a workhorse is?  
 Right click **x86 Native Command Prompt** select **More** select **Open file location**  
 ![Developer Prompt](../assets/DeveloperPrompt.png)  
 now right click on **x86 Native Tools Command Prompt** select **Properties** click inside Target field select all (cntr-A) copy (cntr-c) open your text editor paste string (cntr-v) save file. **Important!!!**  
