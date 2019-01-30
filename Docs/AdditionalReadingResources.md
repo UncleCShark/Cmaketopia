@@ -7,6 +7,14 @@ next_page: Badge
 
 # Additional Reading Resources
 
+## C++
+
+[C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines)  
+
+[Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)  
+
+[Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
+
 ## Cmake
 
 [The documentation of CMake](https://cmake.org/cmake/help/latest/)  
@@ -15,13 +23,11 @@ next_page: Badge
 
 [CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc.](https://docs.hunter.sh/en/latest/)  
 
-## C++
+## Compiler
 
-[C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines)  
-
-[Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)  
-
-[Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
+[C++ compilers](http://www.stroustrup.com/compilers.html)  
+[Compilation in details](http://faculty.cs.niu.edu/~mcmahon/CS241/Notes/compile.html)  
+[Translation unit](https://en.wikipedia.org/wiki/Translation_unit_(programming))
 
 ## Dependency injection
 
@@ -37,6 +43,7 @@ next_page: Badge
 ## MSVC {#MSVC-id}
 
 [Build C/C++ code on the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017)  
+[C/C++ Build Tools](https://docs.microsoft.com/en-us/cpp/build/reference/c-cpp-build-tools?view=vs-2017)  
 [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017)  
 [Cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)  
 [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)  

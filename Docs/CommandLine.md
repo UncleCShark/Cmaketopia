@@ -18,7 +18,15 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 ## A typical programmer's pipeline
 
 ![Simple flowchart](../assets/ProgrammerFlowChart.png)  
-Figure 1.1 A programmer flowchart
+Figure 1.1 A programmer flowchart  
+
+[Design](https://en.wikipedia.org/wiki/Software_design) is the process we create a specification of a solution.  
+[Coding](https://en.wikipedia.org/wiki/Computer_programming) is the realization of an application.  
+[Building](https://en.wikipedia.org/wiki/Software_build) is the process of converting source code files into standalone software binaries.  
+[Testing](https://en.wikipedia.org/wiki/Software_testing) is the process of checking quality and finding bugs.:bug::bug::bug:  
+[Deployment](https://en.wikipedia.org/wiki/Software_deployment) is all of the activities that make a software system available for use.  
+
+In this tutorial we'll use [CMake]({{site.baseurl}}/Docs/AdditionalReadingResources#cmake-id). It is a suite of tools which can help us to end up our project successfully. It is useful from building then testing right through to preparing packages ready for distribution.
 
 ## Building binaries
 
@@ -26,11 +34,13 @@ We need the three basic tools :hammer::hammer::hammer: to build C++ applications
 the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to be accessible when the application is running. What is more one shared library may rely on other shared ones.  
 
 ![Build process](../assets/buildprocess.png)  
-Figure 1.2 The Three Musketeers (a compiler, librarian and linker) in action
+Figure 1.2 The compile and link process.  
+
+The figure above presents **The Three Musketeers** (a compiler, librarian and linker) in action. On the left you see a process of creation of a static library, which is later linked to an executable or dynamic link library by the linker.
 
 ### Compilation environment
 
-The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [Mingw64-shell](#mingw64-shell)) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries can be described as follow:
+To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [Mingw64-shell](#mingw64-shell)) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries can be described as follow:
 
 - open your terminal/console;  
 - if it's applicable set any environment variables required by your toolset;  
@@ -38,6 +48,13 @@ The tools in the toolchain are command-line build tools, which need several envi
 
 For Windows users. Very often for Mingw64 compiler setting Path variable is enough. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable**. To set variable write in command line:  
     **set PATH=\<directory where your Mingw64 compiler is>;%PATH%**;
+
+### Compilation process
+
+![Compilation process](../assets/CompilationProcess.png)  
+Figure 1.3 The compilation process.
+
+In the first preprocessor stage the contents of all header files (.h) are included into source file (.cpp). A [translation unit]({{site.baseurl}}/Docs/AdditionalReadingResources#compiler) is created. It means that all macros are expanded, #pragma information is added, each #ifdef/ifndef is validated. Sections of code is included or skipped respectably. The each translation unit is compiled and an object file is generated. The object file contains native machine code and information about external references. In the next stage the linker resolves external references, joins code from other object files or libraries. If the linker finds all externals the executable or dynamic dll is generated. Otherwise no binary is produces and error messages from the linker are sent to the console.
 
 ### Building executable
 
@@ -52,7 +69,7 @@ int main()
 }
 ```  
 
-Look at the diagram, we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on   our monitor. No bad, very good design!  
+Look at the [Figure 1.1](#a-typical-programmers-pipeline), we are just after the design step. We decided to use the standard cout function in our application that writes text to standard output stream which prints the "Hello, World!" string on   our monitor. No bad, very good design!  
 **Go on and get your hands dirty !**
 
 1. Coding:smile: :smile: :smile: - a preparation App Source Code:
@@ -95,6 +112,7 @@ Compile your source code again. Now, after we do that and assuming that we didn'
 
 ### Build static library
 
+Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file. It should not contain any specifying storage-class information (__declspec or __attribute((dll...))).  
 Under construction
 
 ### Build dynamic library
@@ -117,7 +135,8 @@ Additionally we have available piggybackings, the facilities for programmers who
 
 #### MSVC
 
-For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). These shortcuts open terminal and set a compiler environment; just use one of them  
+For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) and [C/C++ Build Tools]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id).  
+These shortcuts below open terminal and set a compiler environment; just use one of them  
 ![Visual Studio](../assets/VsCommandPrompt.png)  
 Hey a tough guy wanna more?  
 If you have not standard installation of Visual Studio or you are curious, do you want to know where a workhorse is?  
