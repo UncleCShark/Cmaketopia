@@ -40,7 +40,7 @@ The figure above presents **The Three Musketeers** (a compiler, librarian and li
 
 ### Compilation environment
 
-To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [Mingw64-shell](#mingw64-shell)) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries can be described as follow:
+To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [Mingw64-shell](#mingw64-shell)) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries manually can be described as follow:
 
 - open your terminal/console;  
 - if it's applicable set any environment variables required by your toolset;  
@@ -55,6 +55,21 @@ For Windows users. Very often for Mingw64 compiler setting Path variable is enou
 Figure 1.3 The compilation process.
 
 In the first preprocessor stage the contents of all header files (.h) are included into source file (.cpp). A [translation unit]({{site.baseurl}}/Docs/AdditionalReadingResources#compiler) is created. It means that all macros are expanded, #pragma information is added, each #ifdef/ifndef is validated. Sections of code is included or skipped respectably. The each translation unit is compiled and an object file is generated. The object file contains native machine code and information about external references. In the next stage the linker resolves external references, joins code from other object files or libraries. If the linker finds all externals the executable or dynamic dll is generated. Otherwise no binary is produces and error messages from the linker are sent to the console.
+
+### Predefined Macros
+
+Although we didn't supply their definitions we can use them as macros. These are [predefined macros]({{site.baseurl}}/Docs/AdditionalReadingResources#compilers). There are four classes of them: standard, common, system-specific and the named operators. The named operators cannot be undefine. Some predefined macros depend on compilers options. How can we check active predefined macros? For gnu compiler it's simple. Open gnu compiler environment and type: **gcc -E -xc++ -dM /dev/null** in your terminal. For MSVC open developer command prompt x86 then x64, compile checkpredefines.cpp from my Cmaketopia repository **cl /c /EHsc checkpredefines.cpp** . See some macros are platform specific. _Win64 macro for instance.  
+To find out how it works see snippet below.
+
+```c++
+#define __STRINGVALUE__(x) #x
+#define __VALUE__(x) __STRINGVALUE__(x)
+#define __PPOUT__(x) "#define " #x " " __VALUE__(x)
+
+#if defined(_ATL_VER)
+    #pragma message(__PPOUT__(_ATL_VER))
+#endif
+```
 
 ### Building executable
 

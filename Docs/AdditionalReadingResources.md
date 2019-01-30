@@ -23,10 +23,12 @@ next_page: Badge
 
 [CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc.](https://docs.hunter.sh/en/latest/)  
 
-## Compiler
+## Compilers
 
 [C++ compilers](http://www.stroustrup.com/compilers.html)  
 [Compilation in details](http://faculty.cs.niu.edu/~mcmahon/CS241/Notes/compile.html)  
+[GCC Predefined Macros](https://gcc.gnu.org/onlinedocs/cpp/Predefined-Macros.html)  
+[MSVC Predefined Macros](https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=vs-2017)  
 [Translation unit](https://en.wikipedia.org/wiki/Translation_unit_(programming))
 
 ## Dependency injection
