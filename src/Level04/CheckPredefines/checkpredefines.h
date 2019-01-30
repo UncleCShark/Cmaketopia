@@ -1,5 +1,6 @@
-/* MSVC check predefined macros for gnu compilers use build-in option: gcc -E -xc++ -dM /dev/null*/
-/* https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=vs-2017 */
+/* To check predefined macros for gnu compilers use build-in option: gcc -E -xc++ -dM /dev/null*/
+/* For MSVC include this header in your source                                                 */
+/* https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=vs-2017            */
 
 #define __STRINGVALUE__(x) #x
 #define __VALUE__(x) __STRINGVALUE__(x)
