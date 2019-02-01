@@ -10,18 +10,15 @@ next_page: Badge
 ## C++
 
 [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines)  
-
+[Declarations and Definitions](https://docs.microsoft.com/en-us/cpp/cpp/declarations-and-definitions-cpp?view=vs-2017)  
 [Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)  
-
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 
 ## Cmake
 
-[The documentation of CMake](https://cmake.org/cmake/help/latest/)  
-
-[The Hitchhiker’s Guide to the CMake](https://cgold.readthedocs.io/en/latest/)  
-
-[CMake driven cross-platform package manager for C/C++. Linux, Windows, macOS, iOS, Android, Raspberry Pi, etc.](https://docs.hunter.sh/en/latest/)  
+[The documentation](https://cmake.org/cmake/help/latest/)  
+[The Hitchhiker’s Guide](https://cgold.readthedocs.io/en/latest/)  
+[Hunter cross-platform package manager: organize freedom](https://docs.hunter.sh/en/latest/)  
 
 ## Compilers
 

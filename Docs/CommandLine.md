@@ -17,7 +17,7 @@ Our previous levels were a breeze, but from then on the story shifts gears. Get 
 
 ## A typical programmer's pipeline
 
-![Simple flowchart](../assets/ProgrammerFlowChart.png)  
+![Simple flowchart](../assets/ProgrammerFlow.png)  
 Figure 1.1 A programmer flowchart  
 
 [Design](https://en.wikipedia.org/wiki/Software_design) is the process we create a specification of a solution.  
@@ -27,16 +27,6 @@ Figure 1.1 A programmer flowchart
 [Deployment](https://en.wikipedia.org/wiki/Software_deployment) is all of the activities that make a software system available for use.  
 
 In this tutorial we'll use [CMake]({{site.baseurl}}/Docs/AdditionalReadingResources#cmake-id). It is a suite of tools which can help us to end up our project successfully. It is useful from building then testing right through to preparing packages ready for distribution.
-
-## Building binaries
-
-We need the three basic tools :hammer::hammer::hammer: to build C++ applications. These are the compiler:hammer:, the linker:hammer:, and
-the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to be accessible when the application is running. What is more one shared library may rely on other shared ones.  
-
-![Build process](../assets/buildprocess.png)  
-Figure 1.2 The compile and link process.  
-
-The figure above presents **The Three Musketeers** (a compiler, librarian and linker) in action. On the left you see a process of creation of a static library, which is later linked to an executable or dynamic link library by the linker.
 
 ### Compilation environment
 
@@ -48,6 +38,26 @@ To work properly a compiler needs a correct operating environment. The tools in 
 
 For Windows users. Very often for Mingw64 compiler setting Path variable is enough. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable**. To set variable write in command line:  
     **set PATH=\<directory where your Mingw64 compiler is>;%PATH%**;
+
+### Source code
+
+C++ supports separate compilation. We can split our program into several files, each of which can be compiled independently. In short .h files contains declaration, .cpp files hold definitions, implementation within themselves.
+
+### Header file
+
+To make a compiler happy all in C++ must be declared before they can be used. Thus header files contains declarations of variables, functions and classes. They cannot contain definitions.
+There is more. See [Declarations and Definitions]({{site.baseurl}}/Docs/AdditionalReadingResources#c).
+
+## Building binaries
+
+We need the three basic tools :hammer::hammer::hammer: to build C++ applications. These are the compiler:hammer:, the linker:hammer:, and
+the librarian:hammer:. **Remember these are command line tools.** Again a [**toolchain**](https://en.wikipedia.org/wiki/Toolchain) is a set of these programs and additional tools. The compiler transforms C++ source code files and produces [object file](https://en.wikipedia.org/wiki/Object_file). The librarian create a static library from a set of object files. The linker takes object files and libraries and resolves their symbolic references to generate an executable (application) or a dynamic/shared library. The object files and static libraries are only needed during building an application. An executable may depend on dynamic/shared libraries thus they are essential during the execution of app and have to be accessible when the application is running. What is more one shared library may rely on other shared ones.  
+
+![Build process](../assets/buildprocess.png)  
+Figure 1.2 The compile and link process.  
+
+The figure above presents **The Three Musketeers** (a compiler, librarian and linker) in action. On the left you see a process of creation of a static library, which is later linked to an executable or dynamic link library by the linker. Every program that uses a library facility must include its associated header.
+Therefore in the previous compilation stage of our application we had to include a library header.
 
 ### Compilation process
 
@@ -140,7 +150,7 @@ As cross-platform programmers we need a simple build system which we can leverag
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
-Now Ninja. Type **ninja \-\-version** and press Enter. Look at Ninja documentation, try another command. All is under our control. We are not rabbits :rabbit::rabbit2: now.  
+Now Ninja. Type **ninja \-\-version** and press Enter. See Ninja documentation for more details and try another command. All is under our control. We are not rabbits :rabbit::rabbit2: now.  
 ![Ninja](../assets/ninja.png)  
 Although in our daily work we use IDE now you know what is going on under the hood.  
 
