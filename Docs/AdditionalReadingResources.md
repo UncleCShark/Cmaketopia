@@ -47,6 +47,7 @@ next_page: Badge
 [Cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)  
 [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)  
 [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/)  
+[Import library](https://docs.microsoft.com/en-us/cpp/build/reference/working-with-import-libraries-and-export-files?view=vs-2017)
 
 ## MSYS2 {#MSYS2-id}
 

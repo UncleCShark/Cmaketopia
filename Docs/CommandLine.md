@@ -45,7 +45,7 @@ C++ supports separate compilation. We can split our program into several files, 
 
 ### Header file
 
-To make a compiler happy all in C++ must be declared before they can be used. Thus header files contains declarations of variables, functions and classes. They cannot contain definitions.
+To make a compiler happy all names in C++ must be declared before they can be used. Thus header files contains declarations of variables, functions and classes. They cannot contain definitions.
 There is more. See [Declarations and Definitions]({{site.baseurl}}/Docs/AdditionalReadingResources#c).
 
 ## Building binaries
@@ -57,7 +57,7 @@ the librarian:hammer:. **Remember these are command line tools.** Again a [**too
 Figure 1.2 The compile and link process.  
 
 The figure above presents **The Three Musketeers** (a compiler, librarian and linker) in action. On the left you see a process of creation of a static library, which is later linked to an executable or dynamic link library by the linker. Every program that uses a library facility must include its associated header.
-Therefore in the previous compilation stage of our application we had to include a library header.
+Therefore in the previous compilation stage of our application we had to include a library header. On Windows when a program contains exports additional [import library]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) is created by the linker. An import library is a library that automates the process of loading and using a dynamic library. On Windows this is a small separated static library, the only exception is GCC which can links shared object (.so) directly. On linux a share object (.so) works as dynamic and import library and can be specified as input to the linker.
 
 ### Compilation process
 
@@ -137,12 +137,13 @@ Compile your source code again. Now, after we do that and assuming that we didn'
 
 ### Build static library
 
-Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file. It should not contain any specifying storage-class information (__declspec or __attribute((dll...))).  
+Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file (.lib). It should not contain any specifying storage-class information (__declspec or __attribute((dll...))).  
 Under construction
 
 ### Build dynamic library
 
-Under construction
+A dynamic library consists of code and data that are loaded into your application at run time. The structure of dynamic library is identical to the nature of executable, the only difference being that dynamic library lacks the startup routines. The dynamic library can't be started as independent
+program by platform alone.
 
 ## Build system
 
