@@ -162,7 +162,7 @@ Additionally we have available piggybackings, the facilities for programmers who
 #### MSVC
 
 For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) and [C/C++ Build Tools]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id).  
-These shortcuts below open terminal and set a compiler environment; just use one of them  
+These shortcuts below open Command Prompt and set a compiler environment; just use one of them  
 ![Visual Studio](../assets/VsCommandPrompt.png)  
 Hey a tough guy wanna more?  
 If you have not standard installation of Visual Studio or you are curious, do you want to know where a workhorse is?  
@@ -192,7 +192,7 @@ From then on you can use **PowerShell** as your terminal.
 
 #### MSYS2
 
-MSYS2 is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create GNU compiler environment x86 or x64 respectively.
+[MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create GNU compiler environment x86 or x64 respectively.
 For details see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)  
 
 ![Mingw64](../assets/MSYS2.png)  
