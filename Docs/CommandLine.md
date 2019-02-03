@@ -215,9 +215,28 @@ For details see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/Add
 ![Mingw64](../assets/MSYS2.png)  
 Go ahead! You know what to do.  
 Although in our daily work we use IDE now you know what is going on under the hood.  
+If you created Sum project together with me, you should have a directory named Sum with many files. What a big mess you must admit. Binaries mixed with headers and source files. Now imagine your project has a hundred source files...
 
-It's curtains now, chill out:metal: and press the button below if you want.  
+```txt
+
+\---Sum
+        Calculator.cpp
+        Calculator.h
+        Calculator.lib
+        Calculator.o
+        DirectLinkingCalculator.dll
+        DirectLinkingSum.exe
+        libCalculator.a
+        Sum.cpp
+        Sum.o
+        Sum.obj
+        SumGCC.exe
+        SumMSVC.exe
+```
+
+Clean up quickly, we need put  all items in apple-pie order.  
 Next topic Project Structure (try Next navigation at the bottom).
+It's curtains now, chill out:metal: and press the button below if you want.  
 
 <!-- blank line -->
 <figure class="video_container">
