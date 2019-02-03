@@ -162,7 +162,15 @@ Static libraries is a set of object files (with typical extension *.obj or *.o),
 ### Build a dynamic library
 
 A dynamic library consists of code and data that are loaded into your application at run time. The structure of dynamic library and the executable is identical, the only difference being that dynamic library lacks the startup routines (main entry point). The dynamic library can't be started as independent
-program by platform alone. Under construction.
+program by platform alone. Another important issue concerning a dynamic library is **symbol visibility**.
+On Windows most toolsets don't export symbols by default. In particular, the Microsoft Visual Studio Compiler doesn't export any symbols. Each symbol must be explicitly exported when the dynamic library is built. It's imported during building an executable or dynamic library that want to refer to it. To export symbols we use the __declspec(dllexport) attribute, again the attribute __declspec(dllimport) to import. Quite the contrary  MinGW exports ALL symbols of a DLL by default. The same on Linux. In this example I show how linking the DLL directly using MinGW compiler.  
+
+| Step | Command |
+| ----------- | ----------- |
+| create dynamic library **DirectLinkingCalculator** | g++ -fPIC --shared -o DirectLinkingCalculator.dll Calculator.cpp |
+| create executable **DirectLinkingSum** | g++ -L. -lDirectLinkingCalculator -o DirectLinkingSum Sum.cpp |
+
+If you want to see __declspec(dllexport/dllimport) example finish reading and jump to [Project Structure]({{site.baseurl}}/Docs/ProjectStructure).
 
 ### Piggybackings
 
@@ -201,7 +209,7 @@ From then on you can use **PowerShell** as your terminal.
 
 #### MSYS2
 
-[MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create GNU compiler environment x86 or x64 respectively.
+[MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create windows GNU compiler environment x86 or x64 respectively.
 For details see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)  
 
 ![Mingw64](../assets/MSYS2.png)  
@@ -209,7 +217,7 @@ Go ahead! You know what to do.
 Although in our daily work we use IDE now you know what is going on under the hood.  
 
 It's curtains now, chill out:metal: and press the button below if you want.  
-Next topic Project Structure (see a navigation at the bottom).
+Next topic Project Structure (try Next navigation at the bottom).
 
 <!-- blank line -->
 <figure class="video_container">
