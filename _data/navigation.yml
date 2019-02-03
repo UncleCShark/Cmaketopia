@@ -16,6 +16,9 @@ docs:
 - title: Command Line
   url: Docs/CommandLine
 
+- title: Project Structure
+  url: Docs/ProjectStructure
+
 - title: Cmake Philosophy
   url: Docs/CmakePhilosophy
 

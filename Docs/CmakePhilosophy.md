@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cmake Philosophy
-previous_page: CommandLine
+previous_page: ProjectStructure
 next_page: AdditionalReadingResources
 ---
 # Cmake Philosophy

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Development Environment
-previous_page: CommandLine
+previous_page: CmakePhilosophy
 next_page: Badge
 ---
 

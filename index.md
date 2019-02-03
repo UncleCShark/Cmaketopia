@@ -21,9 +21,10 @@ Levels:
 2. Introduction - [A short and sweet fairytale](Docs/Introduction);
 3. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
 4. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine);
-5. Cmake Philosophy - [Nothing Compares 2U](Docs/CmakePhilosophy);
-6. Additional Reading Resources - [Sources of magic](Docs/AdditionalReadingResources);
-7. The end - [Our badge](Docs/Badge).
+5. Project Structure - [Final countdown](Docs/ProjectStructure)
+6. Cmake Philosophy - [Nothing Compares 2U](Docs/CmakePhilosophy);
+7. Additional Reading Resources - [Sources of magic](Docs/AdditionalReadingResources);
+8. The end - [Our badge](Docs/Badge).
 
 [Seeya, speak to you soon. Please do visit my blog and leave a few words on it](https://unclecshark.github.io/).  
 

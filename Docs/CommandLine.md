@@ -2,7 +2,7 @@
 layout: page
 title: Command Line
 previous_page: DevelopmentEnvironment
-next_page: CmakePhilosophy
+next_page: ProjectStructure
 ---
 
 # Command Line
@@ -133,27 +133,36 @@ int main()
 ```  
 
 Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
-**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.
+**Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.  
 
-### Build static library
+Our next task is a creation of a math module in two forms - a static or dynamic library. A few words about our Sum project. Sum project are split across multiple source files. Sum.cpp - main program. Calculator.cpp - our math module. Calculator.h contains declarations of Calculator class. We want to group math operations into a library. To build Sum project we have to use a compiler to compile the source files into object files. Next steps depends on what kind of a library we want to create. The last step is always the same, we use linker to resolve externals.
 
-Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file (.lib). It should not contain any specifying storage-class information (__declspec or __attribute((dll...))).  
-Under construction
+### Build a static library
 
-### Build dynamic library
+Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file (.lib). It should not contain any specifying storage-class information (__declspec or __attribute((dll...))). We need create a static library using a librarian. Next we link main Sum object with a library to create executable.
 
-A dynamic library consists of code and data that are loaded into your application at run time. The structure of dynamic library is identical to the nature of executable, the only difference being that dynamic library lacks the startup routines. The dynamic library can't be started as independent
-program by platform alone.
+#### Mingw-w64 toolchain
 
-## Build system
+| Step | Command |
+| ----------- | ----------- |
+| compile **Sum.cpp** into object file | g++ -c -o Sum.o Sum.cpp |
+| compile **Calculator.cpp** into object file | g++ -c -o Calculator.o Calculator.cpp |
+| create static library **libCalculator.a** | ar ru libCalculator.a Calculator.o |
+| create executable **SumGCC** | g++ -o SumGCC Sum.o libCalculator.a |
 
-As cross-platform programmers we need a simple build system which we can leverage on many platforms in the same way irrespective of IDE or toolchain we utilize. We use it to configure the build options and create the final applications or libraries from sources. That tasks developers have to repeat several times every day, so it is extremely important to ensure that the process is under control and repeatable. When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Mingw64-w64 shell on Windows. Now an operating system is at our command.  
-Type **cmake \-\-version** and press Enter.
-![Cmake](../assets/cmake.png)  
-Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
-Now Ninja. Type **ninja \-\-version** and press Enter. See Ninja documentation for more details and try another command. All is under our control. We are not rabbits :rabbit::rabbit2: now.  
-![Ninja](../assets/ninja.png)  
-Although in our daily work we use IDE now you know what is going on under the hood.  
+#### MSVC toolchain
+
+| Step | Command |
+| ----------- | ----------- |
+| compile **Sum.cpp** into object file | cl -c -EHsc -FoSum Sum.cpp |
+| compile **Calculator.cpp** into object file | cl -c -EHsc Calculator.cpp |
+| create static library **libCalculator.a** | lib -out:Calculator.lib Calculator.obj |
+| create executable **SumMSVC** | link -out:SumMSVC.exe Sum.obj Calculator.lib |
+
+### Build a dynamic library
+
+A dynamic library consists of code and data that are loaded into your application at run time. The structure of dynamic library and the executable is identical, the only difference being that dynamic library lacks the startup routines (main entry point). The dynamic library can't be started as independent
+program by platform alone. Under construction.
 
 ### Piggybackings
 
@@ -197,8 +206,10 @@ For details see [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/Add
 
 ![Mingw64](../assets/MSYS2.png)  
 Go ahead! You know what to do.  
+Although in our daily work we use IDE now you know what is going on under the hood.  
 
-It's curtains now, chill out:metal: and press the button below if you want.
+It's curtains now, chill out:metal: and press the button below if you want.  
+Next topic Project Structure (see a navigation at the bottom).
 
 <!-- blank line -->
 <figure class="video_container">
