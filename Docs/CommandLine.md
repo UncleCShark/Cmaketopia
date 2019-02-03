@@ -135,7 +135,7 @@ int main()
 Compile your source code again. Now, after we do that and assuming that we didn't make any typos and the code compiles fine, we have a file called hello in the source code directory, and now we can finally run our hello app.  
 **Type ./hello in command line and press \<Enter>.** and no surprise it will print Hello, world! to the terminal.  
 
-Our next task is a creation of a math module in two forms - a static or dynamic library. A few words about our Sum project. Sum project are split across multiple source files. Sum.cpp - main program. Calculator.cpp - our math module. Calculator.h contains declarations of Calculator class. We want to group math operations into a library. To build Sum project we have to use a compiler to compile the source files into object files. Next steps depends on what kind of a library we want to create. The last step is always the same, we use linker to resolve externals.
+Our next task is a creation of a math module in two forms - a static or dynamic library. A few words about our Sum project. Sum project are split across multiple source files. This splitting simplifies a development and speeds up compilation. The project includes Sum.cpp - main program. Calculator.cpp - our math module. Calculator.h contains declarations of Calculator class. We want to group math operations into a library. To build Sum project we have to use a compiler to compile the source files into object files. Next steps depends on what kind of a library we want to create. The last step is always the same, we use linker to resolve externals.
 
 ### Build a static library
 
@@ -156,7 +156,7 @@ Static libraries is a set of object files (with typical extension *.obj or *.o),
 | ----------- | ----------- |
 | compile **Sum.cpp** into object file | cl -c -EHsc -FoSum Sum.cpp |
 | compile **Calculator.cpp** into object file | cl -c -EHsc Calculator.cpp |
-| create static library **libCalculator.a** | lib -out:Calculator.lib Calculator.obj |
+| create static library **Calculator.lib** | lib -out:Calculator.lib Calculator.obj |
 | create executable **SumMSVC** | link -out:SumMSVC.exe Sum.obj Calculator.lib |
 
 ### Build a dynamic library
