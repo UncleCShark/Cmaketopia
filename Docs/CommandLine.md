@@ -235,7 +235,7 @@ If you created Sum project together with me, you should have a directory named S
 ```
 
 Clean up quickly, we need put  all items in apple-pie order.  
-Next topic Project Structure (try Next navigation at the bottom).  
+Next topic Project Organization (try Next navigation at the bottom).  
 It's curtains now, chill out:metal: and press the button below if you want.  
 
 <!-- blank line -->
