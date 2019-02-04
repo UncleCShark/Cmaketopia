@@ -1,11 +1,15 @@
 ---
 layout: page
-title: Project Structure
+title: Project Organization
 previous_page: CommandLine
 next_page: CmakePhilosophy
 ---
 
-# Project Structure
+# Project Organization
+
+## Project Structure
+
+Under construction
 
 ## Build system
 

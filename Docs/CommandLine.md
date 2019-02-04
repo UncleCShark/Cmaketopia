@@ -2,7 +2,7 @@
 layout: page
 title: Command Line
 previous_page: DevelopmentEnvironment
-next_page: ProjectStructure
+next_page: ProjectOrganization
 ---
 
 # Command Line
