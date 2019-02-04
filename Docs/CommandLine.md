@@ -211,13 +211,11 @@ From then on you can use **PowerShell** as your terminal.
 
 [MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create windows GNU compiler environment x86 or x64 respectively.  
 ![Mingw64](../assets/MSYS2.png)  
-By default, MSYS2 automatically dumb your PATH environment variable down. To display your MSYS2 path setting run MSY2 terminal, **type export -p | grep PATH**. You can change this behavior by setting an Windows system environment variable **MSYS2_PATH_TYPE=inherit** . When you set it, MSYS2 inherits PATH variable from Windows. Fortunately, MSYS2 allows a user to do some a fine-grain customization also. To do that you need to know where your home directory is. Type **export -p | grep HOME**. The default $HOME directory is C:/msys64/home/\<username>. Launch Notepad and edit **bash_profile** file from your home directory. To let Cmake windows installation run into MSYS2 environment I added path referred to Cmake.exe. If you want to use other apps modify PATH settings respectably.  
+By default, MSYS2 automatically dumb your PATH environment variable down. To display your MSYS2 path setting run MSY2 terminal, type **export -p | grep PATH**. You can change this behavior by setting an Windows system environment variable **MSYS2_PATH_TYPE=inherit** . When you set it, MSYS2 inherits PATH variable from Windows. Fortunately, MSYS2 allows a user to do some a fine-grain customization also. To do that you need to know where your home directory is. Type **export -p | grep HOME**. The default $HOME directory is C:/msys64/home/\<username>. Launch Notepad and edit **bash_profile** file from your home directory. To let Cmake windows installation run into MSYS2 environment I added path referred to Cmake.exe. If you want to use other apps modify PATH settings respectably.  
 ![Bash Profile](../assets/bash_profile.png)  
 For more details see [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id) or [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)  
 
-Go ahead! You know what to do.  
-Although in our daily work we use IDE now you know what is going on under the hood.  
-If you created Sum project together with me, you should have a directory named Sum with many files. What a big mess you must admit. Binaries mixed with headers and source files. Now imagine your project has a hundred source files...
+If you created Sum project together with me, you should have a directory named Sum with many files.
 
 ```txt
 
@@ -236,8 +234,12 @@ If you created Sum project together with me, you should have a directory named S
         SumMSVC.exe
 ```
 
-Clean up quickly, we need put  all items in apple-pie order.  
+What a big mess you must admit. Binaries mixed with headers and source files. Now imagine your project has a hundred source files... Well, we'll deal with the problem soon.
+
+Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood.  
+Because we need to keep projects clean and tidy. It's high time to put all items in apple-pie order.  
 Next topic Project Organization (try Next navigation at the bottom).  
+
 It's curtains now, chill out:metal: and press the button below if you want.  
 
 <!-- blank line -->

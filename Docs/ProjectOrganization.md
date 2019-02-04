@@ -9,7 +9,7 @@ next_page: CmakePhilosophy
 
 ## Project Structure
 
-Under construction
+The project is still under construction, so stay tuned.:smile:
 
 ## Build system
 
