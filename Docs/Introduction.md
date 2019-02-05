@@ -39,7 +39,7 @@ I hope some day you'll join us
 And the world will be as one..."  
 
 No worries mate - suck it and see how the simple and powerful tool CMAKE is.  
-Gotta get up and try, and try, and try!  
+**Gotta get up and try, and try, and try!**  
 
 <!-- blank line -->
 <figure class="video_container">

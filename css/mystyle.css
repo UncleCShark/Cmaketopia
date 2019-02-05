@@ -36,12 +36,16 @@
     position: absolute;
     top: 2px;
     left: 2px;
-    border: 0;
   }
+
 .leftlogo img {
     width: 100%;
-    height:100%;
+    padding:0
  }
+@media screen and (min-width: 64em) { .leftlogo { width: 320px; height: 320px;} }
+@media screen and (min-width: 42em) and (max-width: 64em) { .leftlogo { width: 230px;  height: 230px; } }
+@media screen and (max-width: 42em) { .leftlogo { width: 120px; height: 120px; } }
+
  .rightlogo {
   display: inline-block;
   position: absolute;
@@ -87,18 +91,21 @@
   font-size: 36px;
   margin-left: 50px;
 }
-.menu-header {
-  position: absolute;
-  top: 0;
-  left: 400px;
-  float: left;
-  color: black;
-  text-align: left;
-  font-size:30px;
-  cursor:pointer;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.menu-header {
+  color: black;
+  cursor:pointer;
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  width: 35%;
+}
+
+@media screen and (min-width: 64em) { .menu-header { font-size: 2.25rem; } }
+@media screen and (min-width: 42em) and (max-width: 64em) { .menu-header { font-size: 1.75rem; } }
+@media screen and (max-width: 42em) { .menu-header { font-size: 1.5rem; } }
