@@ -18,7 +18,7 @@ Thus in this tutorial I use as many links to others as possible and don't waste 
 Levels:
 
 1. Preface - [A dream of Warsaw](Docs/Preface)
-2. Introduction - [A short and sweet fairytale](Docs/Introduction);
+2. Introduction - [Gotta get up and try, and try, and try](Docs/Introduction);
 3. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
 4. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine);
 5. Project Structure - [Final countdown](Docs/ProjectStructure)

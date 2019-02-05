@@ -16,8 +16,8 @@ Cmaketopia is a virtual state which is located in a beautiful mysterious country
 Official languages: Cmake script, C, C++, C#, Python.  
 Recognized language: English.  
 
-The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. The notion of borders is not unknown to them, but they don't care much about it. To exchange their ideas they use Github. They love abstract concepts. In their daily life they utilize CMAKE as cross-platform family of tools designed to build, test and package software.
-Although freedom is intrinsic part of their personality this community obey the laws of [Modern Cmake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1) (do's and don'ts). If you want more theory about programming aspects [see below](#additional-reading-resources). If you can't read to the end, [come and kick the tires on this latest of the repository]({{ site.author.repository }}). It contains source code we create during our voyage to Cmakeland.  
+The Cmaketopians create an open, evolving society allowing individuals and voluntary groupings to form the institutions and social forms they prefer. The notion of borders is not unknown to them, but they don't care much about it. To exchange their ideas they use GitHub. They love abstract concepts. In their daily life they utilize CMAKE as cross-platform family of tools designed to build, test and package software.
+Although freedom is intrinsic part of their personality this community obey the laws of [Modern Cmake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1) (do's and don'ts). If you want more theory about programming aspects [see here]({{ site.baseurl}}/Docs/AdditionalReadingResources). If you can't read to the end, [come and kick the tires on this latest of the repository]({{ site.author.repository }}). It contains source code we create during our voyage to Cmakeland.  
 I hope that at the end of our trip we can say we love:  
 
 - [Cross-platform software](https://en.wikipedia.org/wiki/Cross-platform_software)
@@ -38,4 +38,11 @@ I hope some day you'll join us
 
 And the world will be as one..."  
 
-No worries mate - suck it and see how the simple and powerfull tool CMAKE is.  
+No worries mate - suck it and see how the simple and powerful tool CMAKE is.  
+Gotta get up and try, and try, and try!  
+
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/yTCDVfMz15M" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line -->
