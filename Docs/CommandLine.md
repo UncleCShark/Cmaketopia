@@ -250,7 +250,7 @@ Please, follow these simple steps:
 7. type powershell in command prompt and press enter
 8. cd c:\SQLite (see a picture below to see a compilation session)
 9. check PowerShell version $PSVersionTable.PSVersion if > 5 you can unzip a file using a command line
-10. [Expand-Archive] -Path sqlite-amalgamation-\<yourversion>.zip -DestinationPath .(https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6)
+10. [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) -Path sqlite-amalgamation-\<yourversion>.zip -DestinationPath .
 11. cd SQLite-Amalgamation-\<yourversion>
 12. run cl shell.c sqlite3.c '-Fesqlite3.exe'
 
