@@ -238,8 +238,8 @@ What a big mess you must admit. Binaries mixed with headers and source files. No
 
 #### Building SQLITE binaries from source code
 
-After wasting your time on reading about all this stuff you may ask "What the heck is going on?". Is it really important to know building toolsets? Let me answer a few of your questions now. There are many fantastic open source projects but I want to show you something special and very popular. This project is in the public domain, it means that you're free to use it for any purpose, commercial or private, and there are no legal restrictions and no copyright notices that you need to distribute. I want you to get to know SQLite. This is an incredible little database engine, very fast and lightweight. SQLite is a database engine implemented entirely in the C programming language with source code freely available. Instead of wasting time on creating a huge project, we will do it very simple. You, PowerShell and MSVC compiler.  
-Please, follow these simple steps:
+After wasting your time on reading about all this stuff you may ask "What the heck is going on?". Is it really important to know building toolsets? Let me answer a few of your questions now. There are many fantastic open source projects but I want to show you something special and very popular. This project is in the public domain, it means that you're free to use it for any purpose, commercial or private, and there are no legal restrictions and no copyright notices that you need to distribute. I want you to get to know of SQLite. This is an incredible little database engine, very fast and lightweight. SQLite is a database engine implemented entirely in the C programming language with source code freely available. Suppose that a new version of SQLite is available with new features, we need in our super project now. You checked NuGet, GitHub but nobody prepared a new release, or you need extra optimized SQLite library  with extra compiler's switches. So we must do it ourselves. Instead of losing time on creating a huge project, we will do it very simple. You, PowerShell and MSVC compiler will be enough.  
+First we'll create the **SQLite shell program** to play with a new toy. Please, follow these simple steps:
 
 1. cd c:\
 2. mkdir SQLite
@@ -250,11 +250,13 @@ Please, follow these simple steps:
 7. type powershell in command prompt and press enter
 8. cd c:\SQLite (see a picture below to see a compilation session)
 9. check PowerShell version $PSVersionTable.PSVersion if > 5 you can unzip a file using a command line
-10. [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) -Path sqlite-amalgamation-\<yourversion>.zip -DestinationPath .
+10. [Expand-Archive]({{site.baseurl}}/Docs/AdditionalReadingResources#powershell) -Path sqlite-amalgamation-\<yourversion>.zip -DestinationPath .
 11. cd SQLite-Amalgamation-\<yourversion>
 12. run cl shell.c sqlite3.c '-Fesqlite3.exe'
 
-![SQLite and msvc](../assets/sqlitemsvc.png)
+![SQLite and msvc](../assets/sqlitemsvc.png)  
+Now run a new toy. Type **./sqlite3** \<Enter>  
+![SQLite3](../assets/sqliteexe.png)
 
 #### Wrap-up
 

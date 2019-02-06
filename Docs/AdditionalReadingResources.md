@@ -57,3 +57,7 @@ next_page: Badge
 [MSYS2 installer](https://www.msys2.org/)  
 [msys2_shell.cmd](https://github.com/msys2/msys2/wiki/MSYS2-installation)  
 [Terminals](https://github.com/msys2/msys2/wiki/Terminals)
+
+## PowerShell
+
+[Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6)
