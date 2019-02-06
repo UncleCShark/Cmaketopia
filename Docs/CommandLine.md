@@ -238,7 +238,8 @@ What a big mess you must admit. Binaries mixed with headers and source files. No
 
 #### Building SQLITE binaries from source code
 
-After wasting your time on reading about all this stuff you may ask "What the heck is going on?". Is it really important to know building toolsets? Let me answer a few of your questions now. There are many fantastic open source projects but I want to show you something special and very popular. This project is in the public domain, it means that you're free to use it for any purpose, commercial or private, and there are no legal restrictions and no copyright notices that you need to distribute. I want you to get to know SQLite. This is an incredible little database engine, very fast and lightweight. SQLite is a database engine implemented entirely in the C programming language with source code freely available. Suppose that a new version of SQLite is available with new features, we need in our super project now. We checked NuGet, GitHub but nobody prepared a new release of SQLite library  with extra compiler's switches we need. So we must do it ourselves. Instead of losing time on creating a huge project, we will do it very simple. You, PowerShell and MSVC compiler will be enough.  
+After wasting your time on reading about all this stuff you may ask "What the heck is going on?". Is it really important to know building toolsets? Let me answer your questions now. There are many fantastic open source projects but I want to show you something special and very popular. This project is in the public domain, it means that you're free to use it for any purpose, commercial or private, and there are no legal restrictions and no copyright notices that you need to distribute. I want you to get to know SQLite. This is an incredible little database engine, very fast and lightweight. SQLite is a database engine implemented entirely in the C programming language with source code freely available. Suppose that a new version of SQLite is available with new features, we need in our super project now. We checked NuGet, GitHub but nobody prepared a new release of SQLite library  with extra compiler's switches we need. So we must do it ourselves. Instead of losing time on creating a huge project, we will do it very simple. You, PowerShell and MSVC compiler will be enough.  
+Try your hands at doing it!  
 First we'll create the **SQLite shell program** to play with a new toy. Please, follow these simple steps:
 
 1. cd c:\
@@ -256,7 +257,18 @@ First we'll create the **SQLite shell program** to play with a new toy. Please, 
 
 ![SQLite and msvc](../assets/sqlitemsvc.png)  
 Now run a new toy. Type **./sqlite3** \<Enter>  
-![SQLite3](../assets/sqliteexe.png)
+![SQLite3.exe](../assets/sqliteexe.png)  
+One small detail, how to check if sqlite3.exe is a x64 application. Run **dumpbin /headers sqlite3.exe**  
+![dumpbin SQLite3](../assets/dumpbinheaders.png)
+
+To build SQLite dll type:
+**cl sqlite3.c -'DSQLITE_API=__declspec(dllexport)' -link -dll '-out:sqlite3.dll'**  
+![SQLite3.dll](../assets/sqlitedll.png)
+and check exports  
+**dumpbin /exports sqlite3.dll**  
+![SQLite3.dll](../assets/dumpbinexports.png)  
+and extra step - static library (you can do it)
+![SQLite3.dll](../assets/sqlite3libx64.png)  
 
 #### Wrap-up
 
