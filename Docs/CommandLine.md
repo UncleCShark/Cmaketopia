@@ -285,16 +285,19 @@ If you don't know how to do it, click the icon at the top-left of this page.
 Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood.  
 After this part of the tutorial should understand notions of:
 
-- object file
-- static library
-- import library
-- executable
-- dynamic link library
+- source code
+- header file
+- predefined macro
 - toolchain
 - compiler environment
 - compiler
 - librarian
 - linker
+- object file
+- static library
+- import library
+- executable
+- dynamic link library
 
 Because we need to keep projects clean and tidy. It's high time to put all items in apple-pie order.  
 Next topic Project Organization (try Next navigation at the bottom).  
