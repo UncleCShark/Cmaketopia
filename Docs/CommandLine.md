@@ -269,10 +269,33 @@ and check exports
 ![SQLite3.dll](../assets/dumpbinexports.png)  
 and extra step - static library (you can do it)
 ![SQLite3.dll](../assets/sqlite3libx64.png)  
+Now the same using gcc compiler, create sqlite3 shell.
+Open Mingw-w64 environment and type:
+
+1. **gcc.exe -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0  -O3 -DNDEBUG  -c shell.c**
+2. **gcc.exe -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0  -O3 -DNDEBUG  -c sqlite3.c**
+3. **gcc shell.o sqlite3.o -o sqlite3**
+
+![SQLite and msvc](../assets/sqlite3gcc.png)  
+It's your turn to create share object (.so) and static library (.lib)  
+If you don't know how to do it write me an e-mail.
 
 #### Wrap-up
 
 Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood.  
+After this part of tutorial should understand notions of:
+
+- object file
+- static library
+- import library
+- executable
+- dynamic link library
+- toolchain
+- compiler environment
+- compiler
+- librarian
+- linker
+  
 Because we need to keep projects clean and tidy. It's high time to put all items in apple-pie order.  
 Next topic Project Organization (try Next navigation at the bottom).  
 
