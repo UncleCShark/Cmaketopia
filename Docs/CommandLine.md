@@ -278,7 +278,9 @@ Open Mingw-w64 environment and type:
 
 ![SQLite and msvc](../assets/sqlite3gcc.png)  
 It's your turn to create share object (.so) and static library (.lib)  
-If you don't know how to do it, click the icon at the top-left of this page.
+If you don't know how to do it, click the icon at the top-left of this page.  
+The fruits of our last work.  
+![SQLite and msvc](../assets/sqlite3.png)  
 
 #### Wrap-up
 
