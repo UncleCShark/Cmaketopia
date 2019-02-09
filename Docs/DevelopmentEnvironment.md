@@ -7,10 +7,12 @@ next_page: CommandLine
 
 # Prepare Your Development Environment
 
+## On the bumpy road to Cmakeland
+
 To start coding together with me you need:
 
 1. Cmake
-2. One C++ compiler or more
+2. One C++ compiler or more:smile:
 3. Ninja build tool
 4. Your favourite IDE with CMAKE support or the preferable text editor
 

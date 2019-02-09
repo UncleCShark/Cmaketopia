@@ -7,6 +7,8 @@ next_page: DevelopmentEnvironment
 
 # Introduction
 
+## Gotta get up and try, and try, and try
+
 Cmaketopia is a virtual state which is located in a beautiful mysterious country Cmakeland. There are many beings in Cmakeland but some of them are Cmaketopians. The Cmaketopians, are the citizens of Cmaketopia. Cmaketopia is [the Republic](https://en.wikipedia.org/wiki/Republic) based on equality:  
 
 - Every Cmaketopian is equal;

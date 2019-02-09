@@ -28,17 +28,6 @@ Figure 1.1 A programmer flowchart
 
 In this tutorial we'll use [CMake]({{site.baseurl}}/Docs/AdditionalReadingResources#cmake-id). It is a suite of tools which can help us to end up our project successfully. It is useful from building then testing right through to preparing packages ready for distribution.
 
-### Compilation environment
-
-To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [MSYS2](#msys2)) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries manually can be described as follow:
-
-- open your terminal/console;  
-- if it's applicable set any environment variables required by your toolset;  
-- enter commands for a building (compile, archive, link)
-
-For Windows users. Very often for Mingw64 compiler setting Path variable is enough. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable**. To set variable write in command line:  
-    **set PATH=\<directory where your Mingw64 compiler is>;%PATH%**;
-
 ### Source code
 
 C++ supports separate compilation. We can split our program into several files, each of which can be compiled independently. In short .h files contains declaration, .cpp files hold definitions, implementation within themselves.
@@ -47,6 +36,36 @@ C++ supports separate compilation. We can split our program into several files, 
 
 To make a compiler happy all names in C++ must be declared before they can be used. Thus header files contains declarations of variables, functions and classes. They cannot contain definitions.
 There is more. See [Declarations and Definitions]({{site.baseurl}}/Docs/AdditionalReadingResources#c).
+
+### Preprocessor Definitions
+
+In C++ source code we utilize [preprocessor definitions]({{site.baseurl}}/Docs/AdditionalReadingResources#c) to adapt a set of source files to create several build configurations depended on a type of compiler or operating system.
+
+### Predefined Macros
+
+Although we didn't supply their definitions we can use them as macros. These are [predefined macros]({{site.baseurl}}/Docs/AdditionalReadingResources#compilers). There are four classes of them: standard, common, system-specific and the named operators. The named operators cannot be undefine. Some predefined macros depend on compilers options. How can we check active predefined macros? For gnu compiler it's simple. [Open gnu compiler environment](#msys2) and type: **gcc -E -xc++ -dM /dev/null** in your terminal. For MSVC open developer command prompt x86 then x64, compile checkpredefines.cpp from my Cmaketopia repository **cl /c /EHsc checkpredefines.cpp** . See some macros are platform specific. _Win64 macro for instance.  
+To find out how it works see snippet below.
+
+```c++
+#define __STRINGVALUE__(x) #x
+#define __VALUE__(x) __STRINGVALUE__(x)
+#define __PPOUT__(x) "#define " #x " " __VALUE__(x)
+
+#if defined(_ATL_VER)
+    #pragma message(__PPOUT__(_ATL_VER))
+#endif
+```
+
+### Compilation environment
+
+To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [MSYS2](#msys2) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries manually can be described as follow:
+
+- open your terminal/console;  
+- if it's applicable set any environment variables required by your toolset;  
+- enter commands for a building (compile, archive, link)
+
+For Windows users. Very often for Mingw64 compiler setting Path variable is enough. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable**. To set variable write in command line:  
+    **set PATH=\<directory where your Mingw64 compiler is>;%PATH%**;
 
 ## Building binaries
 
@@ -65,21 +84,6 @@ Therefore in the previous compilation stage of our application we had to include
 Figure 1.3 The compilation process.
 
 In the first preprocessor stage the contents of all header files (.h) are included into source file (.cpp). A [translation unit]({{site.baseurl}}/Docs/AdditionalReadingResources#compiler) is created. It means that all macros are expanded, #pragma information is added, each #ifdef/ifndef is validated. Sections of code is included or skipped respectably. The each translation unit is compiled and an object file is generated. The object file contains native machine code and information about external references. In the next stage the linker resolves external references, joins code from other object files or libraries. If the linker finds all externals the executable or dynamic dll is generated. Otherwise no binary is produces and error messages from the linker are sent to the console.
-
-### Predefined Macros
-
-Although we didn't supply their definitions we can use them as macros. These are [predefined macros]({{site.baseurl}}/Docs/AdditionalReadingResources#compilers). There are four classes of them: standard, common, system-specific and the named operators. The named operators cannot be undefine. Some predefined macros depend on compilers options. How can we check active predefined macros? For gnu compiler it's simple. Open gnu compiler environment and type: **gcc -E -xc++ -dM /dev/null** in your terminal. For MSVC open developer command prompt x86 then x64, compile checkpredefines.cpp from my Cmaketopia repository **cl /c /EHsc checkpredefines.cpp** . See some macros are platform specific. _Win64 macro for instance.  
-To find out how it works see snippet below.
-
-```c++
-#define __STRINGVALUE__(x) #x
-#define __VALUE__(x) __STRINGVALUE__(x)
-#define __PPOUT__(x) "#define " #x " " __VALUE__(x)
-
-#if defined(_ATL_VER)
-    #pragma message(__PPOUT__(_ATL_VER))
-#endif
-```
 
 ### Building executable
 
@@ -281,15 +285,18 @@ It's your turn to create share object (.so) and static library (.lib)
 If you don't know how to do it, click the icon at the top-left of this page.  
 The fruits of our last work.  
 ![SQLite and msvc](../assets/sqlite3.png)  
+Additionally see what [preprocessor definitions](https://sqlite.org/compile.html) can we use to customize our build.
 
 #### Wrap-up
 
 Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood.  
-After this part of the tutorial should understand notions of:
+After this part of the tutorial you should understand notions of:
 
 - source code
 - header file
 - predefined macro
+- preprocessor definition
+- translation unit
 - toolchain
 - compiler environment
 - compiler

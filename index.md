@@ -14,7 +14,7 @@ Thus in this tutorial I use as many links to others as possible and don't waste 
 
 ## Our diary
 
- I'd like to invite you on a trip we are going uphill, working our way up though another level of corners.
+I'd like to invite you on a trip we are going uphill, working our way up though another level of corners.
 Levels:
 
 1. Preface - [A dream of Warsaw](Docs/Preface)

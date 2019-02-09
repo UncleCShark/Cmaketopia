@@ -11,6 +11,7 @@ next_page: Badge
 
 [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines)  
 [Declarations and Definitions](https://docs.microsoft.com/en-us/cpp/cpp/declarations-and-definitions-cpp?view=vs-2017)  
+[Preprocessor Definitions](https://docs.microsoft.com/en-us/cpp/build/reference/d-preprocessor-definitions?view=vs-2017)  
 [Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)  
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 
