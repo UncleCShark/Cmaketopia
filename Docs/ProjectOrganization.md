@@ -11,6 +11,45 @@ next_page: CmakePhilosophy
 
 The most natural way of organizing c++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a directory for each library and executable. We are Cmaketopians thus we leverage a GitHub repository to backup and share our ideas. So, in addition to the code, our repository should have the appropriate structure and files.  
 In this part of the tutorial we'll develop a project SophisticatedMath.  We will do it in a three-person team. Each member of the team will use a different type of IDE, Visual Studio, Vs Code, QT Creator respectably. We'll be utilize IDE only for writing code. We'll compile source code outside of the IDE manually. Our task will be to create two executable and two libraries, one static and one dynamic. A master directory name of project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. One application will count area of figures and the other perimeters. Binaries will be placed in a folder named "build" inside of a project directory. GitHub repository should only contains source code, a license, a readme file and documentation of project. Because we have common repository for our tutorial we'll place SophisticatedMath directory in src/Level05 folder. In a typical repository the project directory is located in src folder. Let's do it!
+
+```txt
+The directory structure of a project
+
+\---SophisticatedMath
+    +---AreaCalculation
+    |       AreaCalculator.cpp
+    |
+    +---Calculator
+    |       Calculator.cpp
+    |       Calculator.h
+    |       shared_EXPORTS.h
+    |
+    +---Docs
+    |       readme.txt
+    |
+    \---PerimeterCalculation
+            PerimeterCalculator.cpp
+```
+
+Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) we'll be building static and dynamic library from the same code. To do that we'll use of preprocessor definition and this piece of code.  
+
+```c++
+#ifndef _SHARED_EXPORTS_H__
+#define _SHARED_EXPORTS_H__
+
+#if defined(_WIN32) && defined(DLL_BUILD)
+    #ifdef shared_EXPORTS
+        #define SHARED_EXPORT __declspec(dllexport)
+    #else
+        #define SHARED_EXPORT __declspec(dllimport)
+    #endif
+#else
+    #define SHARED_EXPORT
+#endif
+
+#endif /* _SHARED_EXPORTS_H__ */
+```
+
 The project is still under construction, so stay tuned.:smile:
 
 ## Build system
