@@ -308,7 +308,7 @@ After this part of the tutorial you should understand notions of:
 - executable
 - dynamic link library
 
-Remember, you don't need a sledgehammer to crack a nut. [Keep it simple stupid](https://www.interaction-design.org/literature/article/kiss-keep-it-simple-stupid-a-design-principle)! The [kiss](https://en.wikipedia.org/wiki/KISS_principle):kiss: principle for everyone.  
+Remember, you don't need a sledgehammer to crack a nut. [Make everything as simple as possible but not simpler](https://www.interaction-design.org/literature/article/kiss-keep-it-simple-stupid-a-design-principle)! The [kiss](https://en.wikipedia.org/wiki/KISS_principle):kiss: principle for everyone.  
 Because we need to keep projects clean and tidy. It's high time to put all items in apple-pie order.  
 Next topic Project Organization (try Next navigation at the bottom).  
 
