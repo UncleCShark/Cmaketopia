@@ -1,6 +1,7 @@
 _site/
 .sass-cache/
 .jekyll-cache/
-.jekyll-metadata
-# VS Code
+.jekyll-metadata/
+# VS Code and Visual Studio
 .vs/
+.vscode/
