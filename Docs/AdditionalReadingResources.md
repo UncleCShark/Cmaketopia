@@ -7,6 +7,10 @@ next_page: Badge
 
 # Additional Reading Resources
 
+## Bash
+
+[Manual](http://www.gnu.org/software/bash/manual/bashref.html)  
+
 ## C++
 
 [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines)  
@@ -20,6 +24,11 @@ next_page: Badge
 [The documentation](https://cmake.org/cmake/help/latest/)  
 [The Hitchhiker’s Guide](https://cgold.readthedocs.io/en/latest/)  
 [Hunter cross-platform package manager: organize freedom](https://docs.hunter.sh/en/latest/)  
+
+## Cmd
+
+[Command Interpreter](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)  
+[Windows Commands](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
 ## Compilers
 
@@ -36,7 +45,6 @@ next_page: Badge
 
 ## GNU {#GNU-id}
 
-[Bash](http://www.gnu.org/software/bash/manual/bashref.html)  
 [Environment Variables Affecting GCC](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html)  
 [GCC](http://gcc.gnu.org/onlinedocs/)
 
@@ -45,7 +53,6 @@ next_page: Badge
 [Build C/C++ code on the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017)  
 [C/C++ Build Tools](https://docs.microsoft.com/en-us/cpp/build/reference/c-cpp-build-tools?view=vs-2017)  
 [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017)  
-[Cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)  
 [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)  
 [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/)  
 [Import library](https://docs.microsoft.com/en-us/cpp/build/reference/working-with-import-libraries-and-export-files?view=vs-2017)
@@ -61,4 +68,5 @@ next_page: Badge
 
 ## PowerShell
 
+[Documentation](https://docs.microsoft.com/en-us/powershell/)  
 [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6)
