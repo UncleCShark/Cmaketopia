@@ -13,6 +13,7 @@ build/
 CMakeSettings.json
 # QT Creator
 build*/
+CMakeLists.txt.user
 # Ignore files 
 *.exe
 *.dll
