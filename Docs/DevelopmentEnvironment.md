@@ -24,11 +24,15 @@ Find a compiler toolchain and IDE that suit you:
 
 My development environment  
 ![VS2017](../assets/Vs2017.png)
-![VsCode](../assets/VsCode.png)
+![VsCode](../assets/VsCode.png)  
+For VsCode users:
+To make your IDE fully fledged C++ environment for cmake projects you need to install 2 additional extensions.  
+![Cpp for Vs Code](../assets/cppextvscode.png)  
+![Cmake for Vs Code](../assets/cmakeextvscode.png)  
 ![QTCreator](../assets/QTCreator.png)
 ![g++](../assets/g++.png)
 ![Cmake](../assets/cmake.png)
-![ninja](../assets/ninja.png)
+![ninja](../assets/ninja.png)  
 
 Phew we are done. :+1:  
 ![It' time for a coffee break](http://events.hooverlibrary.org/images/events/hoover/coffeepitch.jpg "It' time for a coffee break")
