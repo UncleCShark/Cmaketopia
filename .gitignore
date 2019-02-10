@@ -1,7 +1,7 @@
 _site/
 .sass-cache/
 .jekyll-cache/
-.jekyll-metadata
+.jekyll-metadata/
 # Python
 scripts/python/__pycache__
 scripts/python/*.pyc
@@ -11,6 +11,8 @@ build/
 # Visual Studio
 .vs/
 CMakeSettings.json
+# QT Creator
+build*/
 # Ignore files 
 *.exe
 *.dll
