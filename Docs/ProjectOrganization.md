@@ -31,7 +31,7 @@ The directory structure of a project
             PerimeterCalculator.cpp
 ```
 
-Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) we'll be building static and dynamic library from the same code. To do that we'll use of preprocessor definition and this piece of code.  
+Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) we'll be building static and dynamic library from the same source code. To do that we'll use of preprocessor definition and this piece of code.  
 
 ```c++
 #ifndef _SHARED_EXPORTS_H__
@@ -50,6 +50,7 @@ Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourse
 #endif /* _SHARED_EXPORTS_H__ */
 ```
 
+How does it work? If it's Windows platform and we defined DLL_BUILD symbol, the value of SHARE_EXPORT depends on shared_EXPORTS symbol. If shared_EXPORTS is defined SHARED_EXPORT equals __declspec(dllexport). If not, SHARED_EXPORT equals __declspec(dllimport). Otherwise SHARED_EXPORT is empty. This trick allows us to define exports for a linker. Then we use SHARED_EXPORT in Calculator.h file.  
 The project is still under construction, so stay tuned.:smile:
 
 ## Build system
