@@ -11,8 +11,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites to run the samples
 
-* Install Cmake your prefered C++ compiler toolset and optionally with IDE supporting CMAKE project (
-  CMAKELists.txt file ) for your platform
+* Install Cmake, your preferred C++ compiler toolset and optionally IDE supporting CMAKE project (
+  CMAKELists.txt file ) for your platform.
 
 For instance:
 
