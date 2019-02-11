@@ -13,6 +13,52 @@ In this part of the tutorial we'll develop a project SophisticatedMath.  We will
 
 We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. Because we create a cross-platform project our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. In general our repository contains source code, data and documentation of projects, as well as a license, a readme and .gitignore files.
 
+```txt
+GitHub Repository
+|
+|   .gitignore
+|   LICENSE
+|   README.md
+|
++---Docs
+|       Settings.md
+|
+\---src
+    +---Level04
+    |   +---CheckPredefines
+    |   |       checkpredefines.cpp
+    |   |       checkpredefines.h
+    |   |
+    |   +---Hello
+    |   |       hello.cpp
+    |   |       hellowitherror.cpp
+    |   |
+    |   +---SQLite
+    |   |       sqlite-amalgamation-3270000.zip
+    |   |
+    |   \---Sum
+    |           Calculator.cpp
+    |           Calculator.h
+    |           Sum.cpp
+    |
+    +---Level05
+           \---SophisticatedMath
+            |
+            +---AreaCalculation
+            |       AreaCalculator.cpp
+            |
+            +---Calculator
+            |       Calculator.cpp
+            |       Calculator.h
+            |       shared_EXPORTS.h
+            |
+            +---Docs
+            |       readme.txt
+            |
+            \---PerimeterCalculation
+                    PerimeterCalculator.cpp
+```
+
 ## C++ Project Structure
 
 The most natural way of organizing C++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a subdirectory for each library and executable.  A master directory name of project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. One application will count area of figures and the other perimeters. Binaries will be placed in a folder named "build" inside of a project directory.  Because we have common repository for our tutorial we'll place SophisticatedMath directory in src/Level05 folder. In a typical repository the project directory is located in src folder. Let's do it!
