@@ -11,7 +11,7 @@ In this part of the tutorial we'll develop a project SophisticatedMath.  We will
 
 ## GitHub Repository
 
-We are Cmaketopians thus we leverage a GitHub repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. Because we create a cross-platform project our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. In general our repository contains source code and data, documentation of project, a license, a readme and .gitignore files.
+We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. Because we create a cross-platform project our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. In general our repository contains source code and data, documentation of project, a license, a readme and .gitignore files.
 
 ## C++ Project Structure
 
