@@ -285,7 +285,7 @@ It's your turn to create share object (.so) and static library (.lib)
 If you don't know how to do it, click the icon at the top-left of this page.  
 The fruits of our last work.  
 ![SQLite and msvc](../assets/sqlite3.png)  
-Additionally see what [preprocessor definitions](https://sqlite.org/compile.html) we can use to customize our build.
+Additionally see what [preprocessor definitions](https://sqlite.org/compile.html) we can use to customize our build. There is more on [my blog]({{ site.author.blog }}) "Okay, Houston, we've had a problem here".
 
 #### Wrap-up
 

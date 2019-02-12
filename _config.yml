@@ -10,6 +10,7 @@ locale:       "en-GB"
 author:
   name:       UncleCShark
   mail:       mailto:unclecshark@gmail.com
+  blog:       https://unclecshark.github.io/
   url:        https://github.com/UncleCShark
   repository: https://github.com/UncleCShark/Cmaketopia
   leftlink:   https://unclecshark.github.io/
