@@ -54,8 +54,10 @@ next_page: Badge
 [C/C++ Build Tools](https://docs.microsoft.com/en-us/cpp/build/reference/c-cpp-build-tools?view=vs-2017)  
 [CL Environment Variables](https://docs.microsoft.com/en-us/cpp/build/reference/cl-environment-variables?view=vs-2017)  
 [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)  
+[Compiler Options](https://docs.microsoft.com/en-us/cpp/build/reference/compiler-options?view=vs-2017)  
+[Import library](https://docs.microsoft.com/en-us/cpp/build/reference/working-with-import-libraries-and-export-files?view=vs-2017)  
+[Linker Options](https://docs.microsoft.com/en-us/cpp/build/reference/linker-options?view=vs-2017)  
 [MSVC Toolsets](https://blogs.msdn.microsoft.com/vcblog/2016/08/22/the-lightweight-visual-studio-15-installer/)  
-[Import library](https://docs.microsoft.com/en-us/cpp/build/reference/working-with-import-libraries-and-export-files?view=vs-2017)
 
 ## MSYS2 {#MSYS2-id}
 
