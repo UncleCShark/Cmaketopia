@@ -19,6 +19,9 @@ docs:
 - title: Project Organization
   url: Docs/ProjectOrganization
 
+- title: Build System
+  url: Docs/BuildSystem
+
 - title: Cmake Philosophy
   url: Docs/CmakePhilosophy
 

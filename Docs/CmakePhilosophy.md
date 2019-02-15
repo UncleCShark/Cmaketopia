@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cmake Philosophy
-previous_page: ProjectOrganization
+previous_page: BuildSystem
 next_page: AdditionalReadingResources
 ---
 # Cmake Philosophy
