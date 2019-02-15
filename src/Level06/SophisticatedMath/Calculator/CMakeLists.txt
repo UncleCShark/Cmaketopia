@@ -6,15 +6,11 @@ cmake_minimum_required(VERSION 3.8)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-# Always include the source and build directories in the include path.
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-
 # create the shared library
 add_library(calc-dll SHARED Calculator.cpp)
-target_include_directories(calc-dll PUBLIC .)
+target_include_directories(calc-dll PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_definitions(calc-dll PRIVATE shared_EXPORTS PUBLIC DLL_BUILD)
 
 # create the shared library
 add_library(calc-static STATIC Calculator.cpp)
-target_include_directories(calc-static PUBLIC .)
+target_include_directories(calc-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
