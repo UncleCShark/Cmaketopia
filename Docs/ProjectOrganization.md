@@ -70,8 +70,13 @@ The directory structure of a project
     +---AreaCalculation
     |       AreaCalculator.cpp
     +---build
-    |       bin
-    |       lib
+    |     \
+    |      |
+    |      +--bin
+    |      |   *.exe; *.dll
+    |      |
+    |      \--lib
+    |          *.a; ^.lib; *.exp
     |
     +---Calculator
     |       Calculator.cpp
@@ -106,29 +111,42 @@ Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourse
 ```
 
 How does it work? If it's Windows platform and we defined DLL_BUILD symbol, the value of SHARE_EXPORT depends on shared_EXPORTS symbol. If shared_EXPORTS is defined SHARED_EXPORT equals __declspec(dllexport). If not, SHARED_EXPORT equals __declspec(dllimport). Otherwise SHARED_EXPORT is empty. This trick allows us to define exports for a linker. Then we use SHARED_EXPORT symbol in Calculator.h file.  
-Now time for a party. We'll be building **64-bit** apps so open a correct compiler environment. Let's do it!  
-**Building AreaCalculator app (areacalc.exe)**  
+Now time for a party. We'll be building **64-bit** apps so open a correct compiler environment.
+Irrespective of a used compiler we can describe a process of building AreaCalculator very simple:
 
-Irrespective of used compiler we can describe a process of building AreaCalculator very simple:
-
-- make directory build
+- make directory build if not exists
 - switch to build directory
-- create bin subfolder
-- create lib subfolder
+- create bin subfolder if not exists
+- create lib subfolder if not exists
 - create Calculator object file
 - create static library from Calculator object file and put it in lib folder
-- create AreaCalculation object
-- link all together to produce executable and place it in bin folder
+- create AreaCalculation object file
+- link all together to produce areacalc.exe executable and place it in bin folder  
 
-To compile objects without errors we must inform the compiler in what folder it can find includes files.
-For this we use -I option.
+and similar steps to create PerimeterCalculator app:
 
-Comman operation:
+- make directory build if not exists
+- switch to build directory
+- create bin subfolder if not exists
+- create lib subfolder if not exists
+- create Calculator object file
+- create dynamic library from Calculator object file and put it in lib folder
+- create PerimeterCalculator object file
+- link all together to produce perimcalc.exe executable and place it in bin folder  
+
+Let's do it!  
+First we create build folder structure inside our master folder.
 
 - mkdir build
 - cd build
 - mkdir bin
-- mkdir lib
+- mkdir lib  
+
+Now we are in build subfolder, so we begin to build our solution.
+
+**Building AreaCalculator app (areacalc.exe)**  
+To compile objects without errors we must inform the compiler in what folder it can find header files.
+For this we use -I option.
 
 Build with GNU compiler
 
@@ -155,10 +173,13 @@ GNU compiler
 
 | Create | GCC
 | ----------- | ----------- |
-| Calculator object file | g++.exe  -DDLL_BUILD -Dshared_EXPORTS -I../Calculator -fvisibility=hidden -o Calculator.o -c ../Calculator/Calculator.cpp
+| Calculator object file | g++.exe  -DDLL_BUILD -Dshared_EXPORTS[^2] -I../Calculator -fvisibility=hidden[^3] -o Calculator.o -c ../Calculator/Calculator.cpp
 | Dynamic library | g++.exe  -shared -o bin/libcalc-dll.dll -Wl,--out-implib,lib/libcalc-dll.dll.a Calculator.o  
 | Main object file | g++.exe  -DDLL_BUILD -I../Calculator -o PerimeterCalculator.o -c ../PerimeterCalculation/PerimeterCalculator.cpp
 | Executable | g++.exe PerimeterCalculator.o  -o bin/perimcalc.exe lib/libcalc-dll.dll.a
+
+[^2]: To correctly export symbols to the object file we have to define preprocessor symbols.
+[^3]: Because g++ by default exports all symbols we must change this. When we -fvisibility=hidden option, only symbols tagged by an __declspec(dllexport) attribute will be exported.
 
 Microsoft compiler
 
@@ -169,4 +190,30 @@ Microsoft compiler
 | Main object file | cl.exe  /nologo -DDLL_BUILD -I..\Calculator /EHsc /FoPerimeterCalculator.obj -c ..\PerimeterCalculation\PerimeterCalculator.cpp
 | Executable | link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib
 
+After finishing a building process your build folder should look similar like that.
+
+```txt
+build
+|   AreaCalculator.o
+|   AreaCalculator.obj
+|   Calculator.o
+|   Calculator.obj
+|   PerimeterCalculator.o
+|   PerimeterCalculator.obj
+|
++---bin
+|       areacalc.exe
+|       calc-dll.dll
+|       libcalc-dll.dll
+|       perimcalc.exe
+|
+\---lib
+        calc-dll.exp
+        calc-dll.lib
+        calc-static.lib
+        libcalc-dll.dll.a
+        libcalc-static.a
+```
+
+Look at lib subfolder, there is  calc-dll.exp file. When LIB creates an import library, it also creates an export file. For more details see [Working with Import Libraries and Export Files]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)
 The project is still under construction, so stay tuned.:smile:
