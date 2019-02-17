@@ -21,7 +21,7 @@ Levels:
 2. Introduction - [Gotta get up and try, and try, and try](Docs/Introduction);
 3. Prepare Your Development Environment - [On the bumpy road to Cmakeland](Docs/DevelopmentEnvironment);
 4. Command line - [Highway to Hell for a tough cookie](Docs/CommandLine);
-5. Project Structure - [Final countdown](Docs/ProjectOrganization)
+5. Project Structure - [Without a paddle](Docs/ProjectOrganization)
 6. Build System - [Final countdown](Docs/BuildSystem)
 7. Cmake Philosophy - [Nothing Compares 2U](Docs/CmakePhilosophy);
 8. Additional Reading Resources - [Sources of magic](Docs/AdditionalReadingResources);
