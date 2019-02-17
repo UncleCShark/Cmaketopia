@@ -7,6 +7,8 @@ next_page: CommandLine
 
 # Prepare Your Development Environment
 
+To get started C++ programming you should know something about C++ language and building tools. Please head on over to [IsoCpp]({{site.baseurl}}/Docs/AdditionalReadingResources#iso-cpp) to get a hang of some ideas and piece of information on C++ infrastucture, recommended books, useful links, draft documents .
+
 ## On the bumpy road to Cmakeland
 
 To start coding together with me you need:

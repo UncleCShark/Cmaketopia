@@ -106,9 +106,31 @@ Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourse
 ```
 
 How does it work? If it's Windows platform and we defined DLL_BUILD symbol, the value of SHARE_EXPORT depends on shared_EXPORTS symbol. If shared_EXPORTS is defined SHARED_EXPORT equals __declspec(dllexport). If not, SHARED_EXPORT equals __declspec(dllimport). Otherwise SHARED_EXPORT is empty. This trick allows us to define exports for a linker. Then we use SHARED_EXPORT symbol in Calculator.h file.  
-Now time for a party. Let's do it!  
+Now time for a party. We'll be building **64-bit** apps so open a correct compiler environment. Let's do it!  
 **Building AreaCalculator app (areacalc.exe)**  
-GNU compiler  
+
+Irrespective of used compiler we can describe a process of building AreaCalculator very simple:
+
+- make directory build
+- switch to build directory
+- create bin subfolder
+- create lib subfolder
+- create Calculator object file
+- create static library from Calculator object file and put it in lib folder
+- create AreaCalculation object
+- link all together to produce executable and place it in bin folder
+
+To compile objects without errors we must inform the compiler in what folder it can find includes files.
+For this we use -I option.
+
+Comman operation:
+
+- mkdir build
+- cd build
+- mkdir bin
+- mkdir lib
+
+Build with GNU compiler
 
 | Create | GCC
 | ----------- | ----------- |
@@ -117,14 +139,16 @@ GNU compiler
 | Main object file | g++.exe   -I../Calculator -c ../AreaCalculation/AreaCalculator.cpp
 | Executable | g++.exe  AreaCalculator.o  -o bin/areacalc.exe lib/libcalc-static.a
 
-Microsoft compiler
+Build with Microsoft compiler
 
 | Create | MSVC
 | ----------- | ----------- |
 | Calculator object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /FoCalculator.obj -c ..\Calculator\Calculator.cpp
-| Static library | link.exe /lib /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj
+| Static library | link.exe /lib[^1] /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj
 | Main object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /FoAreaCalculator.obj -c ..\AreaCalculation\AreaCalculator.cpp
 | Executable | link.exe /nologo AreaCalculator.obj  /out:bin\areacalc.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
+
+[^1]: Another way of lib.exe /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj.
 
 **Building PerimeterCalculator app (perimcalc.exe)**  
 GNU compiler  
