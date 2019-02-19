@@ -34,3 +34,7 @@ link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /s
 Create test static lib with GNU compiler:
 g++.exe   -I../Calculator -c ../Tests/test.cpp
 g++.exe  test.o  -o bin/test.exe lib/libcalc-static.a
+
+Create test static lib with MSVC compiler:
+cl.exe  /nologo -I..\Calculator\. /EHsc  /Fotest.obj -c ..\Tests\test.cpp
+link.exe /nologo test.obj  /out:bin\test.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
