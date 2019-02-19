@@ -206,34 +206,36 @@ Build with GNU compiler
 
 | Create | GCC
 | ----------- | ----------- |
-| Calculator object file | g++.exe   -I../Calculator -c ../Calculator/Calculator.cpp
+| Calculator object file | g++.exe   -I../Calculator[^1] -c ../Calculator/Calculator.cpp
 | Static library | ar.exe qc lib/libcalc-static.a  Calculator.o
 | Main object file | g++.exe   -I../Calculator -c ../AreaCalculation/AreaCalculator.cpp
 | Executable | g++.exe  AreaCalculator.o  -o bin/areacalc.exe lib/libcalc-static.a
+
+[^1]:Instruct a compiler to search a directory for include files.
 
 Build with Microsoft compiler
 
 | Create | MSVC
 | ----------- | ----------- |
 | Calculator object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /FoCalculator.obj -c ..\Calculator\Calculator.cpp
-| Static library | link.exe /lib[^1] /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj
+| Static library | link.exe /lib[^2] /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj
 | Main object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /FoAreaCalculator.obj -c ..\AreaCalculation\AreaCalculator.cpp
 | Executable | link.exe /nologo AreaCalculator.obj  /out:bin\areacalc.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
 
-[^1]: Another way of lib.exe /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj.
+[^2]: Another way of lib.exe /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj.
 
 **Building PerimeterCalculator app (perimcalc.exe)**  
 GNU compiler  
 
 | Create | GCC
 | ----------- | ----------- |
-| Calculator object file | g++.exe  -DDLL_BUILD -Dshared_EXPORTS[^2] -I../Calculator -fvisibility=hidden[^3] -o Calculator.o -c ../Calculator/Calculator.cpp
+| Calculator object file | g++.exe  -DDLL_BUILD -Dshared_EXPORTS[^3] -I../Calculator -fvisibility=hidden[^4] -o Calculator.o -c ../Calculator/Calculator.cpp
 | Dynamic library | g++.exe  -shared -o bin/libcalc-dll.dll -Wl,--out-implib,lib/libcalc-dll.dll.a Calculator.o  
 | Main object file | g++.exe  -DDLL_BUILD -I../Calculator -o PerimeterCalculator.o -c ../PerimeterCalculation/PerimeterCalculator.cpp
 | Executable | g++.exe PerimeterCalculator.o  -o bin/perimcalc.exe lib/libcalc-dll.dll.a
 
-[^2]: To correctly export symbols to the object file we have to define preprocessor symbols.
-[^3]: Because g++ by default exports all symbols we must change this. When we set -fvisibility=hidden option, only symbols tagged by an __declspec(dllexport) attribute will be exported.
+[^3]: To correctly export symbols to the object file we have to define preprocessor symbols.
+[^4]: Because g++ by default exports all symbols we must change this. When we set -fvisibility=hidden option, only symbols tagged by an __declspec(dllexport) attribute will be exported.
 
 Microsoft compiler
 
