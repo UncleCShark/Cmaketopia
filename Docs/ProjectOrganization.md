@@ -55,8 +55,11 @@ GitHub Repository
             +---Docs
             |       readme.txt
             |
-            \---PerimeterCalculation
-                    PerimeterCalculator.cpp
+            +---PerimeterCalculation
+            |        PerimeterCalculator.cpp
+            |
+            \---Tests
+                     test.cpp
 ```
 
 We should create README file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to  license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file. See an example below.
@@ -108,8 +111,11 @@ The directory structure of a project
     +---Docs
     |       readme.txt
     |
-    \---PerimeterCalculation
-            PerimeterCalculator.cpp
+    +---PerimeterCalculation
+    |       PerimeterCalculator.cpp
+    |
+    \---Tests
+            test.cpp
 ```
 
 **Remark ! Build subdirectory is not placed on GitHub. This is a local folder utilized to store project binaries on a developer's machine.**  
