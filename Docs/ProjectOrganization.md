@@ -11,7 +11,7 @@ In this part of the tutorial we'll develop a project SophisticatedMath.  We will
 
 ## GitHub Repository
 
-We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. Because we create a cross-platform project our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. In general our repository contains source code, data and documentation of projects, as well as a license, a readme and .gitignore files.
+We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. In general our repository contains source code, data and documentation of projects, as well as a license, a readme and .gitignore files.
 
 ```txt
 GitHub Repository
@@ -62,7 +62,16 @@ GitHub Repository
                      test.cpp
 ```
 
-We should create README.md file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to  license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file. See an example below.
+The GitHub repository is organized as follows:
+
+- .gitignore file - specifies intentionally untracked files to ignore
+- LICENSE file - help other persons to understand an official permission you give to them
+- README.md file - contains general information about a repository
+- Docs subfolder - includes additional files of documentation
+- src subfolder - embraces source code
+
+For the sake of this tutorial src directory is divided into suites/kits/bundles. Each suite represents topics/projects created in a particular part of the tutorial. We should create README.md file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file.  
+See an example below.
 
 ```txt
 # VS Code
@@ -84,9 +93,11 @@ CMakeLists.txt.user
 *.a
 ```
 
+For example this .gitignore blocks .vscode, .vs, build folders and binary files to be copied to the repository.
+
 ## C++ Project Structure
 
-The most natural way of organizing C++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a subdirectory for each library and executable.  A master directory name of our project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. Our project has tree parts, two parts for applications and  one for libraries (static or dynamic). AreaCalculation application counts area of figures and depends on static library created from source code located in Calculator folder. On the other hand PerimeterCalculation app counts a perimeter of figure and depends this time on a dynamic library from the same source code like the static library (a common code located Calculator in subdirectory. To achieve this we use a solution bases on defining symbols) . The products of building will be placed in build folder. Inside build folder there are two folders bin and lib subfolders. Bin folder is for binaries and lib one is intended for static libraries, import libraries and export files.
+We are beginners thus the full GNU C++ standard template is overkill for our simple projects. We try to structure the project into a form as simple as possible. Because we create cross-platform projects our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. We split source files into subdirectories to form logical file tree. The most natural way of organizing C++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a subdirectory for each library and executable.  A master directory name of our project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. Our project has tree parts, two parts for applications and  one for libraries (static or dynamic). AreaCalculation application counts area of figures and depends on static library created from source code located in Calculator folder. On the other hand PerimeterCalculation app counts a perimeter of figure and depends this time on a dynamic library from the same source code like the static library (a common code located Calculator in subdirectory. To achieve this we use a solution bases on defining symbols) . The products of building will be placed in build folder. Inside build folder there are two folders bin and lib subfolders. Bin folder is for binaries and lib one is intended for static libraries, import libraries and export files.
 
 ```txt
 The directory structure of a project
