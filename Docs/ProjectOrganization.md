@@ -70,7 +70,7 @@ The GitHub repository is organized as follows:
 - Docs subfolder - includes additional files of documentation
 - src subfolder - embraces source code
 
-For the sake of this tutorial src directory is divided into suites/kits/bundles. Each suite represents topics/projects created in a particular part of the tutorial. We should create README.md file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file.  
+For the sake of this tutorial src directory is divided into suites/kits/bundles. Each suite represents topics/projects created in a particular part of the tutorial. We should create README.md file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. This is where you should place basic documentation of your repository. When we share open source software we ought to license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file.  
 See an example below.
 
 ```txt
@@ -93,11 +93,11 @@ CMakeLists.txt.user
 *.a
 ```
 
-For example this .gitignore blocks .vscode, .vs, build folders and binary files to be copied to the repository.
+For example this .gitignore blocks .vscode, .vs, build folders and binary files to be copied to the GitHub repository.
 
 ## C++ Project Structure
 
-We are beginners thus the full GNU C++ standard template is overkill for our simple projects. We try to structure the project into a form as simple as possible. Because we create cross-platform projects our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. We split source files into subdirectories to form logical file tree. The most natural way of organizing C++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a subdirectory for each library and executable.  A master directory name of our project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. Our project has tree parts, two parts for applications and  one for libraries (static or dynamic). AreaCalculation application counts area of figures and depends on static library created from source code located in Calculator folder. On the other hand PerimeterCalculation app counts a perimeter of figure and depends this time on a dynamic library from the same source code like the static library (a common code located Calculator in subdirectory. To achieve this we use a solution bases on defining symbols) . The products of building will be placed in build folder. Inside build folder there are two folders bin and lib subfolders. Bin folder is for binaries and lib one is intended for static libraries, import libraries and export files.
+We are beginners thus the full GNU C++ standard template is overkill for our simple projects. We try to structure the project into a form as simple as possible. Because we create cross-platform projects our domain project repository should be platform independent. Additional platform specific modules should create platform specific projects. We split source files into subdirectories to form logical file tree. The most natural way of organizing C++ project is spreading source code into smaller parts. The modularity, code reuse and separation of concerns should be taken into account while dividing the code into logical parts. Common tasks can be grouped into functions and classes. They based on code reuse can be joined into file. Files predicated on separation of concerns can create a library. Libraries should be spread across different subdirectories in the source tree. Each executable should be placed in a different subdirectory also. This practice helps organizing code within a project. Because each library and executable can be build separately it simplifies and speeds up recompilation of a project during development. The source tree creates a hierarchy thus we call this source organization hierarchical project. We have a master directory and a subdirectory for each library and executable.  A master directory name of our project is SophisticatedMath. Each logical part of source code should be located in its own subdirectory. Our project has five parts, two parts for applications, one for libraries (static or dynamic), one for documentation and last for tests. AreaCalculation application counts area of figures and depends on static library created from source code located in Calculator folder. On the other hand PerimeterCalculation app counts a perimeter of figure and depends this time on a dynamic library from the same source code like the static library (a common code located Calculator in subdirectory. To achieve this we use a solution bases on defining symbols). Docs folder contains information about projects. Tests folder includes tests. The products of building will be placed in build folder. Inside build folder there are two folders bin and lib subfolders. Bin folder is for executables and dynamic libraries. Lib folder is intended for static, import libraries and export files.
 
 ```txt
 The directory structure of a project
@@ -150,6 +150,21 @@ Because we are funs of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourse
 ```
 
 How does it work? If it's Windows platform and we defined DLL_BUILD symbol, the value of SHARE_EXPORT depends on shared_EXPORTS symbol. If shared_EXPORTS is defined SHARED_EXPORT equals __declspec(dllexport). If not, SHARED_EXPORT equals __declspec(dllimport). Otherwise SHARED_EXPORT is empty. This trick allows us to define exports for a linker. Then we use SHARED_EXPORT symbol in Calculator.h file.  
+For the purposes of testing we create a very simple test application with no unit test framework. Then the app is placed in Tests subfolder.
+
+```txt
+#include <assert.h>
+#include "Calculator.h"
+#undef NDEBUG /* Force assert output if any */
+
+void main()
+{
+    Calculator calc;
+    assert(calc.Add(2.0,2.0)==4.0);
+    assert(calc.Add(2.0,3.0)==4.0); /* Error in the test case to show output of assertion*/
+}
+```
+
 Now time for a party. We'll be building **64-bit** apps so open a correct compiler environment.
 Irrespective of a used compiler we can describe a process of building AreaCalculator very simple:
 
@@ -181,7 +196,7 @@ First we create build folder structure inside our master folder.
 - mkdir bin
 - mkdir lib  
 
-Now we are in build subfolder, so we begin to build our solution.
+Now we are in "build" subfolder, so we begin to compile our solution.
 
 **Building AreaCalculator app (areacalc.exe)**  
 To compile objects without errors we must inform the compiler in what folder it can find header files.
@@ -227,7 +242,22 @@ Microsoft compiler
 | Calculator object file | cl.exe  /nologo  -DDLL_BUILD -Dshared_EXPORTS -I..\Calculator /EHsc /FoCalculator.obj -c ..\Calculator\Calculator.cpp
 | Dynamic library | link.exe /nologo Calculator.obj  /out:bin\calc-dll.dll /implib:lib\calc-dll.lib /dll /machine:x64
 | Main object file | cl.exe  /nologo -DDLL_BUILD -I..\Calculator /EHsc /FoPerimeterCalculator.obj -c ..\PerimeterCalculation\PerimeterCalculator.cpp
-| Executable | link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib
+| Executable | link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib  
+
+**Building test app (test.exe)**  
+GNU compiler  
+
+| Create | GCC
+| ----------- | ----------- |
+| Test object file | g++.exe   -I../Calculator -c ../Tests/test.cpp
+| Executable | g++.exe  test.o  -o bin/test.exe lib/libcalc-static.a
+
+Microsoft compiler  
+
+| Create | MSVC
+| ----------- | ----------- |
+| Test object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /Fotest.obj -c ..\Tests\test.cpp
+| Executable | link.exe /nologo test.obj  /out:bin\test.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
 
 After finishing a building process your build folder should look similar like that.
 
@@ -239,12 +269,15 @@ build
 |   Calculator.obj
 |   PerimeterCalculator.o
 |   PerimeterCalculator.obj
+|   test.o
+|   test.obj
 |
 +---bin
 |       areacalc.exe
 |       calc-dll.dll
 |       libcalc-dll.dll
 |       perimcalc.exe
+|       test.exe
 |
 \---lib
         calc-dll.exp
