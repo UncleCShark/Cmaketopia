@@ -1,4 +1,5 @@
-Remember to open a correct compiler environment change directory to src\Level05\SophisticatedMath and then copy and paste commands
+Remember to open a correct compiler environment !!!
+Change directory to src\Level05\SophisticatedMath and then copy and paste commands
 one by one into your console !!!
 Create subfolder build with a correct structure:
 mkdir build
