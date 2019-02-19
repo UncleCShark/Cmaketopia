@@ -287,5 +287,12 @@ build
         libcalc-static.a
 ```
 
-Look at lib subfolder, there is  calc-dll.exp file. When LIB creates an import library, it also creates an export file. For more details see [Working with Import Libraries and Export Files]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)
-The project is still under construction, so stay tuned.:smile:
+Look at lib subfolder, there is  calc-dll.exp file. When LIB creates an import library, it also creates an export file. For more details see [Working with Import Libraries and Export Files]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  
+Let’s knock off for a cuppa, I’m parched. But wait, we received a mail from our company. We need add a data layer to persist our calculations. Oh my, extra modules, compilations, librarian and linker, oh no.  
+Sounds like you're up shit creek without a paddle, mate. Instead of running around like a headless chicken, make a list of the things you need to have to solve the problem. Don't worry, a build system comes to our rescue.:smile:. See next part of the tutorial- A build system.
+
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/3LvOzwgDw50" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line -->
