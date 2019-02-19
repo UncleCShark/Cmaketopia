@@ -62,7 +62,7 @@ GitHub Repository
                      test.cpp
 ```
 
-We should create README file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to  license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file. See an example below.
+We should create README.md file in your repository to explain other people what is a goal of our project, why it's useful and how they can use it. When we share open source software we ought to  license it. A software license will tells others what they can and can't do with our source code. Our local repository may contain configuration files, build output, or just backup files or user specific files created by IDE. To avoid pushing these files to GitHub repository we need specify unique file, types of files or directories in our .gitignore file. See an example below.
 
 ```txt
 # VS Code
