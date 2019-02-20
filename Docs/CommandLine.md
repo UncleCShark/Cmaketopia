@@ -289,7 +289,7 @@ Additionally see what [preprocessor definitions](https://sqlite.org/compile.html
 
 #### Wrap-up
 
-Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood.  
+Go ahead! From then on, you have knowledge what to do and where are the knobs. Although in our daily work we use IDE now you know what is going on under the hood. All is under our control. We are not rabbits :rabbit::rabbit2: now.  
 After this part of the tutorial you should understand notions of:
 
 - source code
