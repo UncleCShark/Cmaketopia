@@ -7,11 +7,11 @@ next_page: BuildSystem
 
 # Project Organization
 
-In this part of the tutorial we'll develop a project SophisticatedMath.  We will do it in a three-person team. Each member of the team will use a different type of IDE, Visual Studio, Vs Code, QT Creator respectably. We'll be utilize IDE only for writing code. We'll compile source code outside of the IDE manually. Our task will be to create two executable and two libraries, one static and one dynamic. We will consider how to organize the work of our team, so that local settings of one person's programming environment do not have a destructive impact on the work of other team members. The structure of our projects should be easy to read and follow the same pattern.
+In this part of the tutorial we'll develop a project SophisticatedMath.  We will do it in a three-person team. Each member of the team will use a different type of IDE, Visual Studio, Vs Code, QT Creator respectably. We'll be utilize IDE only for writing code. We'll compile source code outside of the IDE manually. Our task will be to create two executable and two libraries (static and dynamic ones). We will consider how to organize the work of our team, so that local settings of one person's programming environment do not have a destructive impact on the work of other team members. The structure of our projects should be easy to read and follow the same pattern.
 
 ## GitHub Repository
 
-We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. In general our repository contains source code, data and documentation of projects, as well as a license, a readme and .gitignore files.
+We are Cmaketopians thus we leverage a GitHub version control repository to backup and share our ideas. Our repositories should have the appropriate structure of directories and files based on convention. The similar structure help us reading easily other projects. In general our repository contains source code, data and documentation of projects, as well as LICENSE, README.md and .gitignore files.
 
 ```txt
 GitHub Repository
@@ -290,8 +290,8 @@ build
 ```
 
 Look at lib subfolder, there is  calc-dll.exp file. When LIB creates an import library, it also creates an export file. For more details see [Working with Import Libraries and Export Files]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  
-Let’s knock off for a cuppa, I’m parched. But wait, we received a mail from our company. We need add a data layer to persist our calculations. Oh my, extra modules, compilations, librarian and linker, oh no.  
-Sounds like you're up shit creek without a paddle, mate. Instead of running around like a headless chicken, make a list of the things you need to have to solve the problem. Don't worry, a build system comes to our rescue.:smile:. See next part of the tutorial- A build system.
+Let’s knock off for a cuppa :tea:, I’m parched. But wait, we received a mail :facepunch: from our company. We need add a data layer to persist our calculations. Oh my, extra modules, compilations, librarian and linker, oh no.  
+Sounds like we're up shit creek without a paddle, mate. Instead of running around like a headless chicken, let's make a list of the things we need to have so that we can solve the problem. The most tedious and time-consuming part of our activity is a building process. So we require to do that in a more effective way. We crave for building automation tools. Let's find out, Google is your friend. Googling.... Don't worry fellow, I found something. A build system comes to our rescue :muscle::smile::+1:. See next part of the tutorial- A build system.
 
 <!-- blank line -->
 <figure class="video_container">
