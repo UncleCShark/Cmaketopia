@@ -28,7 +28,8 @@ Type **cmake \-\-version** and press Enter.
 Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
 Now Ninja. Type **ninja \-\-version** and press Enter.  
 ![Ninja](../assets/ninja.png)  
-See Ninja documentation for more details and try another command.  
+Before we delve into building processes, we have the opportunity to strut our stuff.  
+![Cmake stuff](../assets/cmakestuff.png)  
 Under construction stay tuned :smile:  
 <!-- blank line -->
 <figure class="video_container">
