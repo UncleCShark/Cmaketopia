@@ -18,7 +18,7 @@ To start coding together with me you need:
 3. Ninja build tool
 4. Your favourite IDE with CMAKE support or the preferable text editor
 
-The minimum CMake version 3.8 is required for this tutorial. Run quickly:runner: to your computer grab [Cmake for your platform](https://cmake.org/download/) and install it, remember to tick any add to path option. Download [Ninja](https://ninja-build.org/) and plant it in your platform. Be quick on the draw:zap:, just copy ninja.exe to Cmake/bin installation folder.  
+The minimum CMake version 3.8 is required for this tutorial. Run quickly:runner: to your computer grab [Cmake for your platform](https://cmake.org/download/) and install it, remember to tick any "add to path" option. Download [Ninja](https://ninja-build.org/) and plant it in your platform. Be quick on the draw:zap:, just copy ninja.exe to Cmake/bin installation folder.  
 There are many good free C++ compilers you can use:
 
 - [Gnu Compiler Collection](http://gcc.gnu.org/);
