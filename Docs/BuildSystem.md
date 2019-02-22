@@ -29,7 +29,15 @@ Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-comm
 Now Ninja. Type **ninja \-\-version** and press Enter.  
 ![Ninja](../assets/ninja.png)  
 Before we'll delve into building processes, we have the opportunity to strut our stuff.  
-![Cmake stuff](../assets/cmakestuff.png)  
+![Cmake stuff](../assets/cmakestuff.png)
+
+- [cmake.exe](https://cmake.org/cmake/help/v3.14/manual/cmake.1.html) command-line tool of the cross-platform buildsystem generator
+- cmake-gui.exe
+- cmcldeps.exe
+- [cpack.exe](https://gitlab.kitware.com/cmake/community/wikis/doc/cpack/Packaging-With-CPack) a Cmake packaging tool
+- [ctest.exe](https://cmake.org/cmake/help/v3.14/manual/ctest.1.html) is a Cmake test runner tool
+- ninja.exe
+
 Under construction stay tuned :smile:  
 <!-- blank line -->
 <figure class="video_container">
