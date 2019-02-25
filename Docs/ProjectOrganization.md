@@ -291,7 +291,7 @@ build
 
 Look at lib subfolder, there is  calc-dll.exp file. When LIB creates an import library, it also creates an export file. For more details see [Working with Import Libraries and Export Files]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  
 Let’s knock off for a cuppa :tea:, I’m parched. But wait, we received a mail :facepunch: from our company. We need add a data layer to persist our calculations. Oh my, extra modules, compilations, librarian and linker, oh no.  
-Sounds like we're up shit creek without a paddle, mate. Instead of running around like a headless chicken, let's make a list of the things we need to have so that we can solve the problem. The most tedious and time-consuming part of our activity is a building process. So we require to do that in a more effective way. We crave for building automation tools. Let's find out, Google is your friend. Googling.... Don't worry fellow, I found something. A build system comes to our rescue :muscle::smile::+1:. See next part of the tutorial- A build system.
+Sounds like we're up shit creek without a paddle, mate. Instead of running around like a headless chicken, let's make a list of the things we need to have so that we can solve the problem. The most tedious and time-consuming part of our activity is a building process. So we require to do that in a more effective way. We crave for building automation tools. Let's find out, Google is our friend. Googling.... Don't worry fellow, I found something. A build system comes to our rescue :muscle::smile::+1:. See next part of the tutorial- A build system.
 
 <!-- blank line -->
 <figure class="video_container">
