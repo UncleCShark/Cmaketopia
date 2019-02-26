@@ -39,10 +39,15 @@ Also there are many IDEs supporting a cmake project development. On:
 
 ## My development environment
 
-OS - Windows 10 1809  
+OS - Windows 10 1809 64-bit  
 
 **CMake + Ninja**  
-During a cmake installation remember to tick any "add to path" option. Be quick on the draw:zap:, just copy ninja.exe to Cmake/bin installation folder.  
+Run cmake installer.  
+![Cmake installation](../assets/cmakeinstall.png)  
+During a cmake installation remember to tick any "add to path" option.  
+![Cmake installation](../assets/cmakestuff.png)  
+Be quick on the draw:zap:!  
+To "install" ninja just copy a binary ninja.exe to Cmake/bin installation folder.  
 
 I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them either follow simple steps.  
 **To setup the Mingw-w64[^2] environment, you need to:**
@@ -70,6 +75,7 @@ pacman -S mingw-w64-i686-gcc
 pacman -S mingw-w64-x86_64-gdb mingw-w64-i686-gdb
 ```
 
+To make cmake+ninja tools accessible in MSYS2 terminals modify your [MSYS2 settings]({{site.baseurl}}/Docs/CommandLine#msys2)  
 Additionally I installed:
 
 ![VS2017](../assets/Vs2017.png)  
