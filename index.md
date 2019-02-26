@@ -14,7 +14,7 @@ Everyone can join us and become a member of our society. [A picture is worth a t
 - **This tutorial is a constantly evolving document without a strict "release" date;**
 - **We hate [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) so if somebody describes something right, we use it.**  
 
-Thus in this tutorial I use as many links to others as possible and don't waste my time on typing.
+Thus in this tutorial I use as many links to others as possible and don't waste my time on typing.  
 A source code for this tutorial is [freely available](https://github.com/UncleCShark/Cmaketopia).
 
 ## Our diary
