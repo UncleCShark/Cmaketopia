@@ -52,13 +52,16 @@ I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them 
 3. use pacman to install packages needed for c++ development
 
 [^2]:another way to install MSYS2 and Mingw-w64 tools is using the package manager for Windows [Chocolatey](https://chocolatey.org/search?q=mingw-w64).
+The following packages will be installed:
 
-GNU make  
-gettext a localization package  
-base-devel developer's tools  
-mingw-w64-x86_64-gcc c++ 64-bit compiler toolchain  
-mingw-w64-i686-gcc   c++ 32-bit compiler toolchain  
-mingw-w64-x86_64-gdb mingw-w64-i686-gdb  64-bit and 32-bit debuggers  
+- GNU make  
+- gettext a localization package  
+- base-devel developer's tools  
+- mingw-w64-x86_64-gcc c++ 64-bit compiler toolchain  
+- mingw-w64-i686-gcc   c++ 32-bit compiler toolchain  
+- mingw-w64-x86_64-gdb mingw-w64-i686-gdb  64-bit and 32-bit debuggers.  
+
+In your terminal type (copy/paste is OK too:smile:) line by line and press ENTER
 
 ```txt
 pacman -S make gettext base-devel
