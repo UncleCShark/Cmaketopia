@@ -76,7 +76,7 @@ Additionally I installed:
 a second IDE  
 ![VsCode](../assets/VsCode.png)  
 For VsCode users!  
-To make your IDE fully fledged C++ environment for cmake projects you need to install 2 additional extensions.  
+To make your VsCode fully fledged C++ environment that supports cmake projects you need to install two additional extensions.  
 ![Cpp for Vs Code](../assets/cppextvscode.png)  
 ![Cmake for Vs Code](../assets/cmakeextvscode.png)  
 and another one  
