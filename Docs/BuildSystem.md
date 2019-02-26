@@ -32,11 +32,13 @@ Before we'll delve into building processes, we have the opportunity to strut our
 ![Cmake stuff](../assets/cmakestuff.png)
 
 - [cmake.exe](https://cmake.org/cmake/help/v3.14/manual/cmake.1.html) command-line tool of the cross-platform buildsystem generator
-- [cmake-gui.exe](https://cmake.org/cmake/help/v3.14/manual/cmake-gui.1.html#manual:cmake-gui(1)) a Cmake GUI program
-- cmcldeps.exe
-- [cpack.exe](https://gitlab.kitware.com/cmake/community/wikis/doc/cpack/Packaging-With-CPack) a Cmake packaging tool
+- [cmake-gui.exe](https://cmake.org/cmake/help/v3.14/manual/cmake-gui.1.html#manual:cmake-gui(1)) is Cmake GUI program
+- cmcldeps.exe - wrapper around cl.exe (MSVC compiler) that adds /showIncludes to command line. /showIncludes option is an equivalent of gcc -MD
+- [cpack.exe](https://gitlab.kitware.com/cmake/community/wikis/doc/cpack/Packaging-With-CPack) is Cmake packaging tool
 - [ctest.exe](https://cmake.org/cmake/help/v3.14/manual/ctest.1.html) is a Cmake test runner tool
-- ninja.exe
+- [ninja.exe](https://ninja-build.org/) is a small build system with a focus on speed.
+
+## Our first cmake project - HelloWord
 
 Under construction stay tuned :smile:  
 <!-- blank line -->
