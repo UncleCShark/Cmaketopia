@@ -55,11 +55,11 @@ I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them 
 The following packages will be installed:
 
 - GNU make  
-- gettext a localization package  
-- base-devel developer's tools  
-- mingw-w64-x86_64-gcc c++ 64-bit compiler toolchain  
-- mingw-w64-i686-gcc   c++ 32-bit compiler toolchain  
-- mingw-w64-x86_64-gdb mingw-w64-i686-gdb  64-bit and 32-bit debuggers.  
+- gettext - a localization package  
+- base-devel - developer's tools  
+- mingw-w64-x86_64-gcc - c++ 64-bit compiler toolchain  
+- mingw-w64-i686-gcc -   c++ 32-bit compiler toolchain  
+- mingw-w64-x86_64-gdb mingw-w64-i686-gdb - 64-bit and 32-bit debuggers.  
 
 In your terminal type (copy/paste is OK too:smile:) line by line and press ENTER
 
@@ -72,12 +72,14 @@ pacman -S mingw-w64-x86_64-gdb mingw-w64-i686-gdb
 
 Additionally I installed:
 
-![VS2017](../assets/Vs2017.png)
+![VS2017](../assets/Vs2017.png)  
+a second IDE  
 ![VsCode](../assets/VsCode.png)  
-For VsCode users:
+For VsCode users!  
 To make your IDE fully fledged C++ environment for cmake projects you need to install 2 additional extensions.  
 ![Cpp for Vs Code](../assets/cppextvscode.png)  
 ![Cmake for Vs Code](../assets/cmakeextvscode.png)  
+and another one  
 ![QTCreator](../assets/QTCreator.png)  
 
 To check your environment run MSYS2 terminal and run g++, cmake and ninja  
