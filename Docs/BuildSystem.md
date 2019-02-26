@@ -40,6 +40,50 @@ Before we'll delve into building processes, we have the opportunity to strut our
 
 ## Our first cmake project - HelloWord
 
+Open command line and create HelloWord folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
+
+```c++
+#include <iostream>
+int main()
+{
+    std::cout << "Hello, World!";
+    return 0;
+}
+```
+
+Save a written source code as hello.cpp in HelloWord folder.  
+Create a new file inside the editor (File->New) and type:
+
+```cmake
+# CMakeList.txt : HelloWord CMake project file
+cmake_minimum_required (VERSION 3.8 FATAL_ERROR)
+
+project("HelloWord" LANGUAGES CXX)
+
+add_executable(hello hello.cpp)
+
+```
+
+Save text as CMakeLists.txt file. Close the editor. Make build directory. Your project folder structure should look like as follows:  
+
+```txt
+   HelloWorld
+    \   CMakeLists.txt
+    |   hello.cpp
+    |
+    \---build
+```
+
+You should be inside HelloWorld folder.  
+Create and run hello executable.
+
+```txt
+cd build
+cmake -GNinja ..
+cmake --build .
+./hello
+```
+
 Under construction stay tuned :smile:  
 <!-- blank line -->
 <figure class="video_container">
