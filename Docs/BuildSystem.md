@@ -40,7 +40,7 @@ Before we'll delve into building processes, we have the opportunity to strut our
 
 ## Our first cmake project - HelloWord
 
-Open command line and create HelloWord folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
+Open MSYS2 Mingw-w64 command line and create HelloWord folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
 
 ```c++
 #include <iostream>
