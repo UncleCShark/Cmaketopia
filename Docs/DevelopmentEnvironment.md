@@ -47,9 +47,9 @@ During a cmake installation remember to tick any "add to path" option. Be quick 
 I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them either follow simple steps.  
 **To setup the Mingw-w64[^2] environment, you need to:**
 
-1. Install [MSYS2](http://www.msys2.org/) and follow a instruction
-2. Open MSYS2 terminal
-3. Use pacman to install devel packages
+1. install [MSYS2](http://www.msys2.org/) and follow a instruction
+2. open MSYS2 MSYS terminal
+3. use pacman to install packages needed for c++ development
 
 [^2]:another way to install MSYS2 and Mingw-w64 tools is using the package manager for Windows [Chocolatey](https://chocolatey.org/search?q=mingw-w64).
 
@@ -75,7 +75,9 @@ For VsCode users:
 To make your IDE fully fledged C++ environment for cmake projects you need to install 2 additional extensions.  
 ![Cpp for Vs Code](../assets/cppextvscode.png)  
 ![Cmake for Vs Code](../assets/cmakeextvscode.png)  
-![QTCreator](../assets/QTCreator.png)
+![QTCreator](../assets/QTCreator.png)  
+
+To check your environment run MSYS2 terminal and run g++, cmake and ninja  
 ![g++](../assets/g++.png)
 ![Cmake](../assets/cmake.png)
 ![ninja](../assets/ninja.png)  
