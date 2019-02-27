@@ -75,7 +75,7 @@ Save text as CMakeLists.txt file. Close the editor. Make build directory. Your p
 ```
 
 You should be inside HelloWorld folder.  
-Create and run hello executable.
+Please follow a simple recipe to create and run hello executable.
 
 ```txt
 cd build
@@ -84,7 +84,9 @@ cmake --build .
 ./hello
 ```
 
+Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?".  
 Under construction stay tuned :smile:  
+
 <!-- blank line -->
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/5A4k0q0KY1o" frameborder="0" allowfullscreen="true"> </iframe>
