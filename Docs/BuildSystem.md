@@ -84,7 +84,14 @@ cmake --build .
 ./hello
 ```
 
-Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?".  
+### Discourse
+
+Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?". First CMakeLists.txt is a human-readable text file containing platform independent directives giving a description how to build the whole project. Let's analyze it line by line:  
+
+- [cmake_minimum_required](https://cmake.org/cmake/help/v3.14/command/cmake_minimum_required.html) (VERSION 3.8 FATAL_ERROR) - sets the minimum required version of cmake and  establish policy settings for a project. It should be called **at the beginning** of the top-level CMakeLists.txt file;
+- [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
+- [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - adds an executable target called hello to be built from the source file hello.cpp.
+
 Under construction stay tuned :smile:  
 
 <!-- blank line -->
