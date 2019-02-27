@@ -14,7 +14,7 @@ Build automation is the process of automating the creation of a software package
 - to support different OSs
 - to use CI (continuous integration)  
 
- When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application.
+ When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application, whereas a project is a logical group of targets gathered together into a self-contained collection that can be built on its own. Projects are the containers that developers use to organize source code files and other resources. When we think about building of software project two new concepts emerge. A source directory and a binary directory. The source directory is where source code and resources files are located. The build system needs them to create binaries. Inside the source directory there are build system files contain a set of directives describing how to build, test, and deploy a project. The source directory is frequently under version control (GIT, SVN, Mercurial etc). The binary directory is where every items created by the build system are placed. These are object and temporary files, executables, libraries, test output and packages created during the build process.
 
 ## Cross-platform solution
 
@@ -38,9 +38,9 @@ Before we'll delve into building processes, we have the opportunity to strut our
 - [ctest.exe](https://cmake.org/cmake/help/v3.14/manual/ctest.1.html) is a Cmake test runner tool
 - [ninja.exe](https://ninja-build.org/) is a small build system with a focus on speed.
 
-## Our first cmake project - HelloWord
+## Our first cmake project - HelloWorld
 
-Open MSYS2 Mingw-w64 command line and create HelloWord folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
+Open MSYS2 Mingw-w64 command line and create HelloWorld folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
 
 ```c++
 #include <iostream>
@@ -51,14 +51,14 @@ int main()
 }
 ```
 
-Save a written source code as hello.cpp in HelloWord folder.  
+Save a written source code as hello.cpp in HelloWorld folder.  
 Create a new file inside the editor (File->New) and type:
 
 ```cmake
-# CMakeList.txt : HelloWord CMake project file
+# CMakeList.txt : HelloWorld CMake project file
 cmake_minimum_required (VERSION 3.8 FATAL_ERROR)
 
-project("HelloWord" LANGUAGES CXX)
+project("HelloWorld" LANGUAGES CXX)
 
 add_executable(hello hello.cpp)
 
