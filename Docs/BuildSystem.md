@@ -105,7 +105,7 @@ This chooses the kind of buildsystem to generate. See the cmake-generators manua
 When using one of the Command-Line Build Tool Generators CMake expects that the environment needed by the compiler toolchain is already configured in the shell. When using one of the IDE Build Tool Generators, no particular environment is needed.  
 
 **CMakeLists.txt**  
-A human-readable text file containing the entire platform independent build specification giving a description how to build the whole project. CMakeLists.txt file located in the top-level source directory is the entry point for cmake during configuring the project source tree.  
+A human-readable text file containing the entire platform independent build specification which gives a description how to build the whole project. CMakeLists.txt file located in the top-level source directory is the entry point for cmake during configuring the project source tree.  
 Let's analyze hello cmake project top-level configuration file line by line:  
 
 - [cmake_minimum_required (VERSION 3.8 FATAL_ERROR)](https://cmake.org/cmake/help/v3.14/command/cmake_minimum_required.html)  - sets the minimum required version of cmake and  establish policy settings for a project. It should be called **at the beginning** of the top-level CMakeLists.txt file;
