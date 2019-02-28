@@ -38,7 +38,9 @@ Before we'll delve into building processes, we have the opportunity to strut our
 - [ctest.exe](https://cmake.org/cmake/help/v3.14/manual/ctest.1.html) is a Cmake test runner tool
 - [ninja.exe](https://ninja-build.org/) is a small build system with a focus on speed.
 
-## Our first cmake project - HelloWorld
+## Get our feet wet
+
+### Simple executable project - HelloWorld
 
 Open MSYS2 Mingw-w64 command line and create HelloWorld folder (mkdir HelloWorld) for a project. Then run your favourite text editor (notepad for example) and write code as below:
 
@@ -86,11 +88,30 @@ cmake --build .
 
 ### Discourse
 
-Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?". First CMakeLists.txt is a human-readable text file containing platform independent directives giving a description how to build the whole project. Let's analyze it line by line:  
+Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?". To start with we have to get familiar with a few ideas (I took definitions of Source Tree, Build Tree and Generator from cmake documentation):  
 
-- [cmake_minimum_required](https://cmake.org/cmake/help/v3.14/command/cmake_minimum_required.html) (VERSION 3.8 FATAL_ERROR) - sets the minimum required version of cmake and  establish policy settings for a project. It should be called **at the beginning** of the top-level CMakeLists.txt file;
+**Source Tree**  
+The top-level directory containing source files provided by the project. The project specifies its buildsystem using files as described in the cmake-language manual, starting with a top-level file named CMakeLists.txt. These files specify build targets and their dependencies as described in the cmake-buildsystem manual.  
+
+**Build Tree**  
+The top-level directory in which buildsystem files and build output artifacts (e.g. executables and libraries) are to be stored. CMake will write a CMakeCache.txt file to identify the directory as a build tree and store persistent information such as buildsystem configuration options.
+
+To maintain a pristine source tree, perform an out-of-source build by using a separate dedicated build tree. An in-source build in which the build tree is placed in the same directory as the source tree is also supported, but discouraged.
+
+**Generator**  
+This chooses the kind of buildsystem to generate. See the cmake-generators manual for documentation of all generators. Run cmake --help to see a list of generators available locally. Optionally use the -G option below to specify a generator, or simply accept the default CMake chooses for the current platform.
+
+When using one of the Command-Line Build Tool Generators CMake expects that the environment needed by the compiler toolchain is already configured in the shell. When using one of the IDE Build Tool Generators, no particular environment is needed.  
+
+**CMakeLists.txt**  
+A human-readable text file containing the entire platform independent build specification giving a description how to build the whole project. CMakeLists.txt file located in the top-level source directory is the entry point for cmake during configuring the project source tree.  
+Let's analyze hello cmake project top-level configuration file line by line:  
+
+- [cmake_minimum_required (VERSION 3.8 FATAL_ERROR)](https://cmake.org/cmake/help/v3.14/command/cmake_minimum_required.html)  - sets the minimum required version of cmake and  establish policy settings for a project. It should be called **at the beginning** of the top-level CMakeLists.txt file;
 - [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
-- [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - adds an executable target called hello to be built from the source file hello.cpp.
+- [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - creates target hello and adds executable target hello to be built from the source file hello.cpp.
+
+### Hierarchical project - Area and Perimeter Calculation
 
 Under construction stay tuned :smile:  
 
