@@ -112,6 +112,15 @@ Let's analyze hello cmake project top-level configuration file line by line:
 - [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
 - [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - creates target hello and adds executable target hello to be built from the source file hello.cpp.
 
+Now time for describing our build process details step by step:  
+
+```txt
+mkdir build      - to avoid a hotch-potch create a build directory for buildsystem files  
+cd build         - go inside the build directory  
+cmake -GNinja .. - create files for Ninja (-GNinja) look for CMakelists.txt in a parent directory (..)
+cmake --build .  - build project (--build) using current directory (.) as the build tree
+```
+
 ### Hierarchical project - Area and Perimeter Calculation
 
 Under construction stay tuned :smile:  
