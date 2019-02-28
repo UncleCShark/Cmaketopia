@@ -80,6 +80,7 @@ You should be inside HelloWorld folder.
 Please follow a simple recipe to create and run hello executable.
 
 ```txt
+mkdir build
 cd build
 cmake -GNinja ..
 cmake --build .
