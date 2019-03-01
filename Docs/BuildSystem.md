@@ -112,7 +112,7 @@ Let's analyze hello cmake project top-level configuration file line by line:
 - [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
 - [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - creates target hello and adds executable target hello to be built from the source file hello.cpp.
 
-Now time for describing our build process details step by step:  
+Cheer up, still only the building process remained for us to discuss in detail. We do it short and sweet but step by step:  
 
 ```txt
 mkdir build      - to avoid a hotch-potch create a build directory for buildsystem files  
