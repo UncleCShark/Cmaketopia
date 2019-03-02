@@ -43,6 +43,10 @@ next_page: Badge
 [Wiki](https://en.wikipedia.org/wiki/Dependency_injection)  
 [Living In Interesting Times](http://blog.ploeh.dk/2009/01/28/LivingInInterestingTimes/)
 
+## Graphviz
+
+[Documentation](https://graphviz.gitlab.io/documentation/)
+
 ## GNU {#GNU-id}
 
 [Environment Variables Affecting GCC](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html)  

@@ -25,9 +25,24 @@ As cross-platform programmers we need a simple build system which we can leverag
 Our project is growing. More and more modules come into play. That will be harder to do all things manually. We need automate a build process. It's about time we need to get familiar with the main actors of our story. Ladies and gentlemen let me introduce a fantastic couple:couple: [Cmake](https://cmake.org/) and [Ninja](https://ninja-build.org/). As we may expect these are command line tools too. It means we need run they from a shell. [Run your shell](https://en.wikipedia.org/wiki/Shell_\(computing\)) such a bash on Unix , cmd.exe or Msys2 shell on Windows. Now an operating system is at our command.  
 Type **cmake \-\-version** and press Enter.
 ![Cmake](../assets/cmake.png)  
-Type **cmake \-\-help** don't forget about **enter**, now  **cmake \-\-help-command-list** and **cmake \-\-help-manual-list**. I feel we got the hang of the first tool.  
+Type **cmake \-\-help** don't forget about **enter**, then try out:
+
+```txt
+cmake --help-command-list
+cmake --help-manual-list
+```
+
+I feel we got the hang of the tools.  
+On the whole while working with cmake we mainly perform a simple workflow:
+
+- generate a project buildsystem
+- build a project.
+
+During the generation stage the scripts for the native build tools are created. Next Cmake invokes the native build tools which uses scripts previously generated to build a project.
+
 Now Ninja. Type **ninja \-\-version** and press Enter.  
 ![Ninja](../assets/ninja.png)  
+
 Before we'll delve into building processes, we have the opportunity to strut our stuff.  
 ![Cmake stuff](../assets/cmakestuff.png)
 

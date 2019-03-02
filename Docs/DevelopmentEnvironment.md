@@ -15,8 +15,9 @@ To start coding together with me you need:
 
 1. Cmake
 2. One C++ compiler or more:smile:
-3. Ninja build tool
-4. Your favourite IDE with CMAKE support or the preferable text editor
+3. Ninja build-automation tool
+4. Graphviz
+5. Your favourite IDE with CMAKE support or the preferable text editor
 
 The minimum CMake version 3.8 is required for this tutorial. Run quickly:runner: to your computer grab [Cmake for your platform](https://cmake.org/download/) and install it. Download [Ninja](https://ninja-build.org/) and plant it in your platform.  
 
@@ -39,15 +40,20 @@ Also there are many IDEs supporting a cmake project development. On:
 
 ## My development environment
 
-OS - Windows 10 1809 64-bit  
+### Operating System
 
-**CMake + Ninja**  
+Windows 10 1809 64-bit  
+
+### CMake + Ninja
+
 Run cmake installer.  
 ![Cmake installation](../assets/cmakeinstall.png)  
 During a cmake installation remember to tick any "add to path" option.  
 ![Cmake installation](../assets/cmakestuff.png)  
 Be quick on the draw:zap:!  
 To "install" ninja just copy a binary ninja.exe to Cmake/bin installation folder.  
+
+### C++ Mingw-w64 toolchain
 
 I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them either follow simple steps.  
 **To setup the Mingw-w64[^2] environment, you need to:**
@@ -76,22 +82,33 @@ pacman -S mingw-w64-x86_64-gdb mingw-w64-i686-gdb
 ```
 
 To make cmake+ninja tools accessible in MSYS2 terminals modify your [MSYS2 settings]({{site.baseurl}}/Docs/CommandLine#msys2)  
-Additionally I installed:
 
-![VS2017](../assets/Vs2017.png)  
-a second IDE  
-![VsCode](../assets/VsCode.png)  
-For VsCode users!  
-To make your VsCode fully fledged C++ environment that supports cmake projects you need to install two additional extensions.  
-![Cpp for Vs Code](../assets/cppextvscode.png)  
-![Cmake for Vs Code](../assets/cmakeextvscode.png)  
-and another one  
-![QTCreator](../assets/QTCreator.png)  
+### Graphviz
 
-To check your environment run MSYS2 terminal and run g++, cmake and ninja  
+![Graphviz](../assets/graphviz.png)  
+Download [Graphviz](https://graphviz.gitlab.io/download/) installer. Run it.  
+Remember to add Graphviz installation bin folder to Windows Path. To run graphviz tools in Mingw-w64 environment modify [MSYS2 settings]({{site.baseurl}}/Docs/CommandLine#msys2) and add Graphviz/bin path to your export in .bash_profile file  
+(**export PATH="/c/Program Files/CMake/bin:/c/Program Files (x86)/Graphviz2.38/bin:$PATH"**).  
+
+### Additional software
+
+1. ![VS2017](../assets/Vs2017.png)  
+2. ![VsCode](../assets/VsCode.png)  
+    For VsCode users!  
+    To make your VsCode fully fledged C++ environment that supports cmake projects you need to install two additional extensions.  
+    ![Cpp for Vs Code](../assets/cppextvscode.png)  
+    ![Cmake for Vs Code](../assets/cmakeextvscode.png)  
+3. ![QTCreator](../assets/QTCreator.png)  
+
+### Checkpoint
+
+:muscle::wink::+1:  
+
+To check your "devel":facepunch: environment run MSYS2 terminal and run g++, cmake, ninja and dot.  
 ![g++](../assets/g++.png)
 ![Cmake](../assets/cmake.png)
 ![ninja](../assets/ninja.png)  
+![dot](../assets/dot.png)  
 
 Phew we are done. :+1:  
 ![It' time for a coffee break](http://events.hooverlibrary.org/images/events/hoover/coffeepitch.jpg "It' time for a coffee break")
