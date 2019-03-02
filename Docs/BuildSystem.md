@@ -14,7 +14,7 @@ Build automation is the process of automating the creation of a software package
 - to support different OSs
 - to use CI (continuous integration)  
 
- When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application, whereas a project is a logical group of targets gathered together into a self-contained collection that can be built on its own. Projects are the containers that developers use to organize source code files and other resources. When we think about building of software project two new concepts emerge. A source directory and a binary directory. The source directory is where source code and resources files are located. The build system needs them to create binaries. Inside the source directory there are build system files contain a set of directives describing how to build, test, and deploy a project. The source directory is frequently under version control (GIT, SVN, Mercurial etc). The binary directory is where every items created by the build system are placed. These are object and temporary files, executables, libraries, test output and packages created during the build process.
+ When the [build systems](https://en.wikipedia.org/wiki/List_of_build_automation_software) come into play we should be familiar with a notion of a [target](https://cmake.org/cmake/help/v3.13/manual/cmake-buildsystem.7.html). The build systems:construction_worker::construction_worker: organize files into targets. Each target corresponds to an executable or library, or is a custom target containing custom commands or actions the build tool must perform, such as installing an application, whereas a project is a logical group of targets gathered together into a self-contained collection that can be built on its own. Projects are the containers that developers use to organize source code files and other resources. When we think about building of software project two new concepts emerge. A source directory and a binary directory. The source directory is where source code and resource files are located. The build system needs them to create binaries. Inside the source directory there are build system files contain a set of directives describing how to build, test, and deploy a project. The source directory is frequently under version control (GIT, SVN, Mercurial etc). The binary directory is where every items created by the build system are placed. These are object and temporary files, executables, libraries, test output and packages created during the build process.
 
 ## Cross-platform solution
 
@@ -32,18 +32,23 @@ cmake --help-command-list
 cmake --help-manual-list
 ```
 
-I feel we got the hang of the tools.  
-On the whole while working with cmake we mainly perform a simple workflow:
+Now play with Ninja:
 
-- generate a project buildsystem
-- build a project.
+```txt
+ninja --version
+ninja --help
+```
 
-During the generation stage the scripts for the native build tools are created. Next Cmake invokes the native build tools which uses scripts previously generated to build a project.
-
-Now Ninja. Type **ninja \-\-version** and press Enter.  
 ![Ninja](../assets/ninja.png)  
+I feel we got the hang of the tools.  Although [command-line](https://en.wikipedia.org/wiki/Command-line_interface) tools often require manuals for the user's reference, we can frequently try out  a "help" option and "version" one too. A more interesting matter is why we use command-line tools. From our developers' point of view two things are important and crucial. We want to:
 
-Before we'll delve into building processes, we have the opportunity to strut our stuff.  
+- perform building tasks more efficiently and faster
+- automate process of building by using scripts
+- and finally migrate a building process from local machine to a CI server.
+
+### Strutting  our stuff
+
+Before we'll delve into building processes, we have the opportunity to present our tools.  
 ![Cmake stuff](../assets/cmakestuff.png)
 
 - [cmake.exe](https://cmake.org/cmake/help/v3.14/manual/cmake.1.html) command-line tool of the cross-platform buildsystem generator
@@ -54,6 +59,13 @@ Before we'll delve into building processes, we have the opportunity to strut our
 - [ninja.exe](https://ninja-build.org/) is a small build system with a focus on speed.
 
 ## Get our feet wet
+
+On the whole while working with cmake we mainly perform a simple workflow:
+
+- generate a project buildsystem
+- build a project.
+
+During the generation stage the scripts for the native build tools are created. Next Cmake invokes the native build tools which uses scripts previously generated to build a project.
 
 ### Simple executable project - HelloWorld
 
@@ -84,11 +96,11 @@ add_executable(hello hello.cpp)
 Save text as CMakeLists.txt file. Close the editor. Make build directory. Your project folder structure should look like as follows:  
 
 ```txt
-   HelloWorld
-    \   CMakeLists.txt
-    |   hello.cpp
-    |
-    \---build
++HelloWorld
+|   CMakeLists.txt
+|   hello.cpp
+|
+\---build
 ```
 
 You should be inside HelloWorld folder.  
