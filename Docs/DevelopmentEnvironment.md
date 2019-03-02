@@ -40,6 +40,8 @@ Also there are many IDEs supporting a cmake project development. On:
 
 ## My development environment
 
+Here you find some hints concerning the installation process of individual elements of my developer's tools.
+
 ### Operating System
 
 Windows 10 1809 64-bit  
