@@ -1,4 +1,4 @@
-For details see https://unclecshark.github.io/Cmaketopia/
+For details see https://unclecshark.github.io/Cmaketopia/Docs/ProjectOrganization
 Remember to open a correct compiler environment !!!
 Change directory to src\Level05\SophisticatedMath and then copy and paste commands
 one by one into your console !!!
