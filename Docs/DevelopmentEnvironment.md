@@ -40,7 +40,7 @@ Also there are many IDEs supporting a cmake project development. On:
 
 ## My development environment
 
-Here you find some hints concerning the installation process of individual elements of my developer's tools.
+Here you find some hints concerning the installation process of individual elements of my developer's tools. See [here]({{site.baseurl}}/Docs/AdditionalReadingResources) for more details.
 
 ### Operating System
 

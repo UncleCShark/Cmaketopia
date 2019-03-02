@@ -73,8 +73,8 @@ next_page: Badge
 [The documentation](https://github.com/msys2/msys2/wiki)  
 [From scratch](https://sourceforge.net/p/msys2/discussion/general/thread/dcf8f4d3/#8473/588e)  
 [Mintty](https://github.com/mintty/mintty/wiki/Tips)  
-[MSYS2 installer](https://www.msys2.org/)  
-[msys2_shell.cmd](https://github.com/msys2/msys2/wiki/MSYS2-installation)  
+[Installation](https://github.com/msys2/msys2/wiki/MSYS2-installation)  
+[Installer](https://www.msys2.org/)  
 [Terminals](https://github.com/msys2/msys2/wiki/Terminals)
 
 ## PowerShell
