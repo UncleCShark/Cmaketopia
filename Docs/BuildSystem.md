@@ -40,11 +40,11 @@ ninja --help
 ```
 
 ![Ninja](../assets/ninja.png)  
-I feel we got the hang of the tools.  Although [command-line](https://en.wikipedia.org/wiki/Command-line_interface) tools often require manuals for the user's reference, we can frequently try out  a "help" option and "version" one too. A more interesting matter is why we use command-line tools. From our developers' point of view two things are important and crucial. We want to:
+I feel we got the hang of the tools.  Although [command-line](https://en.wikipedia.org/wiki/Command-line_interface) tools often require manuals for the user's reference, we can frequently try out  a "help" option and "version" one too. A more interesting matter is why we use command-line tools. From our developers' point of view three things are important and crucial. We want to:
 
 - perform building tasks more efficiently and faster
 - automate process of building by using scripts
-- and finally migrate a building process from local machine to a CI server.
+- and finally migrate a building process from a developer's local machine to a CI server.
 
 ### Strutting  our stuff
 
@@ -60,12 +60,19 @@ Before we'll delve into building processes, we have the opportunity to present o
 
 ## Get our feet wet
 
-On the whole while working with cmake we mainly perform a simple workflow:
+As you may recall from section [A typical programmer's pipeline]({{site.baseurl}}/Docs/CommandLine#a-typical-programmers-pipeline) there are a few \" green boxes \"(processes) in the flowchart/workflow. Here is a list of processes we don't want to do manually:
+
+- building
+- testing
+- deployment.
+
+As you can guess, we want to automate these processes using scripts and CMAKE command-line tools. We will be utilizing cmake.exe to build, ctest.exe to test and cpack.exe to deploy a software package. Let's start learning how to build a software with cmake.exe.
+On the whole while triggering a build with cmake we mainly perform a simple workflow:
 
 - generate a project buildsystem
 - build a project.
 
-During the generation stage the scripts for the native build tools are created. Next Cmake invokes the native build tools which uses scripts previously generated to build a project.
+During the generation stage the scripts for the native build tools are created. In next step we use cmake.exe to invoke the native build tools which uses scripts previously generated to create binaries.
 
 ### Simple executable project - HelloWorld
 
