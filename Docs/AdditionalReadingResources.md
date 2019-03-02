@@ -47,7 +47,7 @@ next_page: Badge
 
 [Documentation](https://graphviz.gitlab.io/documentation/)
 
-## GNU {#GNU-id}
+## GNU
 
 [Environment Variables Affecting GCC](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html)  
 [GCC](http://gcc.gnu.org/onlinedocs/)
@@ -56,7 +56,7 @@ next_page: Badge
 
 [isocpp.org](https://isocpp.org/get-started)
 
-## MSVC {#MSVC-id}
+## MSVC
 
 [Build C/C++ code on the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017)  
 [C/C++ Build Tools](https://docs.microsoft.com/en-us/cpp/build/reference/c-cpp-build-tools?view=vs-2017)  
@@ -68,7 +68,7 @@ next_page: Badge
 [Setting the path and environment variables](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=vs-2017)  
 [Working with Import Libraries and Export Files](https://docs.microsoft.com/en-us/cpp/build/reference/working-with-import-libraries-and-export-files?view=vs-2017)
 
-## MSYS2 {#MSYS2-id}
+## MSYS2
 
 [The documentation](https://github.com/msys2/msys2/wiki)  
 [From scratch](https://sourceforge.net/p/msys2/discussion/general/thread/dcf8f4d3/#8473/588e)  

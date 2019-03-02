@@ -26,7 +26,7 @@ Figure 1.1 A programmer flowchart
 [Testing](https://en.wikipedia.org/wiki/Software_testing) is the process of checking quality and finding bugs.:bug::bug::bug:  
 [Deployment](https://en.wikipedia.org/wiki/Software_deployment) is all of the activities that make a software system available for use.  
 
-In this tutorial we'll use [CMake]({{site.baseurl}}/Docs/AdditionalReadingResources#cmake-id). It is a suite of tools which can help us to end up our project successfully. It is useful from building then testing right through to preparing packages ready for distribution.
+In this tutorial we'll use [CMake]({{site.baseurl}}/Docs/AdditionalReadingResources#cmake). It is a suite of tools which can help us to end up our project successfully. It is useful from building then testing right through to preparing packages ready for distribution.
 
 ### Source code
 
@@ -58,7 +58,7 @@ To find out how it works see snippet below.
 
 ### Compilation environment
 
-To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#GNU-id). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#bash), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#cmd) or [PowerShell]({{ site.baseurl}}/Docs/AdditionalReadingResources#powershell). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [MSYS2](#msys2) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries manually can be described as follow:
+To work properly a compiler needs a correct operating environment. The tools in the toolchain are command-line build tools, which need several environment variables to work properly. Variables are customized for your installation and build configuration. For instance Visual C++ command-line tools use the PATH, TMP, INCLUDE, LIB, and LIBPATH environment variables. (see detail [Set the Path and Environment Variables for Command-Line Builds]({{site.baseurl}}/Docs/AdditionalReadingResources#msvc)). For GNU compilers see [Environment Variables Affecting GCC]({{site.baseurl}}/Docs/AdditionalReadingResources#gnu). As a cross-platform programmers we should think abstractively. Try to think of building process in general terms and treat your build tools as a implementation of a part of this abstraction. Just like [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming). When I write a terminal or a console I mean any implementation of it, [macOS](https://en.wikipedia.org/wiki/Terminal_(macOS)), [Mintty]({{ site.baseurl}}/Docs/AdditionalReadingResources#msys2) for example. A shell, it can be [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#bash), [Cmd]({{ site.baseurl}}/Docs/AdditionalReadingResources#cmd) or [PowerShell]({{ site.baseurl}}/Docs/AdditionalReadingResources#powershell). To prepare a compilation environment Windows toolchains provide scripts (see details [piggybacking](#piggybackings) for [MSVC](#msvc)  and [MSYS2](#msys2) that set a number of environment variables required for build tools. On Linux there is typically a dominant C++ compiler and the compiling environment is set out of box. A process of building binaries manually can be described as follow:
 
 - open your terminal/console;  
 - if it's applicable set any environment variables required by your toolset;  
@@ -76,7 +76,7 @@ the librarian:hammer:. **Remember these are command line tools.** Again a [**too
 Figure 1.2 The compile and link process.  
 
 The figure above presents **The Three Musketeers** (a compiler, librarian and linker) in action. On the left you see a process of creation of a static library, which is later linked to an executable or dynamic link library by the linker. Every program that uses a library facility must include its associated header.
-Therefore in the previous compilation stage of our application we had to include a library header. On Windows when a program contains exports additional [import library]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) is created by the linker. An import library is a library that automates the process of loading and using a dynamic library. On Windows this is a small separated static library, the only exception is GCC which can links shared object (.so) directly. On linux a share object (.so) works as dynamic and import library and can be specified as input to the linker.
+Therefore in the previous compilation stage of our application we had to include a library header. On Windows when a program contains exports additional [import library]({{site.baseurl}}/Docs/AdditionalReadingResources#msvc) is created by the linker. An import library is a library that automates the process of loading and using a dynamic library. On Windows this is a small separated static library, the only exception is GCC which can links shared object (.so) directly. On linux a share object (.so) works as dynamic and import library and can be specified as input to the linker.
 
 ### Compilation process
 
@@ -182,7 +182,7 @@ Additionally we have available piggybackings, the facilities for programmers who
 
 #### MSVC
 
-For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id) and [C/C++ Build Tools]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id).  
+For detail see [Build C/C++ code on the command line]({{site.baseurl}}/Docs/AdditionalReadingResources#msvc) and [C/C++ Build Tools]({{site.baseurl}}/Docs/AdditionalReadingResources#msvc).  
 These shortcuts below open Command Prompt and set a compiler environment; just use one of them  
 ![Visual Studio](../assets/VsCommandPrompt.png)  
 Hey a tough guy wanna more?  
@@ -206,18 +206,18 @@ A procedure for CMaketopians how set up MSVC compiler environment:
 - **cmd /k "vcvarsall.bat x86"**    or  
 - cmd /k "vcvarsall.bat x64"
 
-[see vcvarsall.bat documentation]({{site.baseurl}}/Docs/AdditionalReadingResources#MSVC-id)  
+[see vcvarsall.bat documentation]({{site.baseurl}}/Docs/AdditionalReadingResources#msvc)  
 More?  
 Change cmd /k "vcvarsall.bat x64 to **cmd /k "vcvarsall.bat x64 & PowerShell"** and have fun.  
 From then on you can use **PowerShell** as your terminal.
 
 #### MSYS2
 
-[MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#MSYS2-id) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create windows GNU compiler environment x86 or x64 respectively.  
+[MSYS2]({{site.baseurl}}/Docs/AdditionalReadingResources#msys2) is software distribution and a building platform for Windows. It provides a Unix-like environment, a command-line interface and a software repository. MSYS2 MSYS shortcut opens POSIX-compliant environment. Use it for package management, shell scripting and building POSIX projects. When you click MING-w64 shortcuts they create windows GNU compiler environment x86 or x64 respectively.  
 ![Mingw64](../assets/MSYS2.png)  
 By default, MSYS2 automatically dumb your PATH environment variable down. To display your MSYS2 path setting run MSY2 terminal, type **export -p | grep PATH**. You can change this behavior by setting an Windows system environment variable **MSYS2_PATH_TYPE=inherit** . When you set it, MSYS2 inherits PATH variable from Windows. Fortunately, MSYS2 allows a user to do some a fine-grain customization also. To do that you need to know where your home directory is. Type **export -p | grep HOME**. The default $HOME directory is C:/msys64/home/\<username>. Launch Notepad and edit **bash_profile** file from your home directory. To let Cmake windows installation run into MSYS2 environment I added path referred to Cmake.exe. If you want to use other apps modify PATH settings respectably.  
 ![Bash Profile](../assets/bash_profile.png)  
-For more details see [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id) or [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#GNU-id)  
+For more details see [Bash]({{ site.baseurl}}/Docs/AdditionalReadingResources#bash) or [Environment Variables Affecting GCC]({{ site.baseurl}}/Docs/AdditionalReadingResources#gnu)  
 
 If you created Sum project together with me, you should have a directory named Sum with many files.
 
