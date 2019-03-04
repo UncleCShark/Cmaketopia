@@ -23,8 +23,8 @@ The minimum CMake version 3.8 is required for this tutorial. Run quickly:runner:
 
 There are many good free C++ compilers you can use:
 
-- [Gnu Compiler Collection](http://gcc.gnu.org/)
 - [Clang](http://clang.llvm.org/get_started.html)
+- [Gnu Compiler Collection](http://gcc.gnu.org/)
 - [Visual C++ 2017 Community](https://visualstudio.microsoft.com/vs/features/cplusplus/) [^1]
 - [Embarcadero](https://www.embarcadero.com/free-tools/ccompiler)
 - [Oracle Solaris Studio C++ Compiler](https://www.oracle.com/technetwork/server-storage/developerstudio/overview/index.html)
@@ -35,7 +35,7 @@ There are many good free C++ compilers you can use:
 Install a compiler toolchain you prefer.
 Also there are many IDEs supporting a cmake project development. On:
 
-- Linux, Android, IOS (a place for your documentation)
+- Linux, Android, IOS (a place for your work)
 - Windows, as your integrated development environment [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) you can use [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2017), [VS Code](https://code.visualstudio.com/), [Clion](https://www.jetbrains.com/clion/), [Code::Block](http://www.codeblocks.org/) or [QT Creator](https://www.qt.io/qt-features-libraries-apis-tools-and-ide/) which provide CMake support.  
 
 ## My development environment
@@ -55,9 +55,16 @@ During a cmake installation remember to tick any "add to path" option.
 Be quick on the draw:zap:!  
 To "install" ninja just copy a binary ninja.exe to Cmake/bin installation folder.  
 
+### Clang
+
+![Clang](../assets/clang.png)  
+Grab [Clang](http://releases.llvm.org/download.html) installer for your platform. Run it and setup [Clang]({{site.baseurl}}/Docs/AdditionalReadingResources#clang).
+Modify [MSYS2 settings]({{site.baseurl}}/Docs/CommandLine#msys2) adding LLVM/bin to windows Path environment variable and your export in .bash_profile file  
+(export PATH="**/c/Program Files/LLVM/bin:**/c/AddAnotherPathsIfNeeded/bin:$PATH")
+
 ### C++ Mingw-w64 toolchain
 
-I decided to install Mingw-w64 toolchains as c++ tools. If you want to use them either follow simple steps.  
+I decided to install Mingw-w64 toolchains as c++ toolkit. If you want to use them either follow simple steps.  
 **To setup the Mingw-w64[^2] environment, you need to:**
 
 1. install [MSYS2](http://www.msys2.org/) and follow a instruction
@@ -106,11 +113,17 @@ Remember to add Graphviz installation bin folder to Windows Path. To run graphvi
 
 :muscle::wink::+1:  
 
-To check your "devel":facepunch: environment run MSYS2 terminal and run g++, cmake, ninja and dot.  
+To check your "devel":facepunch: environment run MSYS2 terminal and run clang, clang++, g++, cmake, ninja and dot.  
+![clang](../assets/clangmsys2.png)
 ![g++](../assets/g++.png)
 ![Cmake](../assets/cmake.png)
 ![ninja](../assets/ninja.png)  
 ![dot](../assets/dot.png)  
+Sneak a peek at my MSYS2 .bash_profile file:
+
+```txt
+export PATH="/c/Program Files/LLVM/bin:/c/Program Files/CMake/bin:/c/Program Files (x86)/Graphviz2.38/bin:$PATH
+```
 
 Phew we are done. :+1:  
 ![It' time for a coffee break](http://events.hooverlibrary.org/images/events/hoover/coffeepitch.jpg "It' time for a coffee break")

@@ -19,10 +19,14 @@ next_page: Badge
 [Thinking in C++, 2nd ed. Volume 1](http://web.mit.edu/merolish/ticpp/Frames.html)  
 [Thinking In C++ Volume 2: Practical Programming](http://web.mit.edu/merolish/ticpp/TicV2.html)
 
+## Clang
+
+[Documentation](http://clang.llvm.org/docs/)
+
 ## Cmake
 
-[The documentation](https://cmake.org/cmake/help/latest/)  
-[The Hitchhiker’s Guide](https://cgold.readthedocs.io/en/latest/)  
+[Documentation](https://cmake.org/cmake/help/latest/)  
+[Hitchhiker’s Guide](https://cgold.readthedocs.io/en/latest/)  
 [Hunter cross-platform package manager: organize freedom](https://docs.hunter.sh/en/latest/)  
 
 ## Cmd
