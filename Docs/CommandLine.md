@@ -111,17 +111,22 @@ Look at the [Figure 1.1](#a-typical-programmers-pipeline), we are just after the
     - enter a command in command line to compile and link your program  
         **One step building** - the compiler automatically invokes the linker after compiling
 
-        | Compiler | Compiling+Linking |
-        | ----------- | ----------- |
-        | MSVC | cl /EHsc hello.cpp |
-        | Mingw64 | g++ -o hello hello.cpp |
+        | Compiler | Compiling+Linking | Compilator Environment
+        | ----------- | ----------- |--|
+        | Clang | clang-cl hello.cpp | Developer Command Prompt for VS
+        | MSVC | cl /EHsc hello.cpp | Developer Command Prompt for VS
+        | Mingw64 | g++ -o hello hello.cpp | Mingw-w64 Shell
 
         **Two steps building** - we have to enter two commands, in first step object file is created, in second step linker creates executable
 
         | Compiler | Compiling | Linking |
         | ----------- | ----------- |
+        | Clang | clang-cl[^1] /EHsc -c hello.cpp | lld-link[^2] hello.obj /out:hello.exe
         | MSVC | cl /c /EHsc hello.cpp | link -out:hello.exe hello.obj
         | Mingw64 | g++ -c -o hello.o hello.cpp| g++ -o hello hello.o
+
+[^1]:A driver program for clang that attempts to be compatible with MSVC’s cl.exe. It works in  Developer Command Prompt for VS environment.
+[^2]: LLVM Clang linker. It's also possible to use Microsoft link.exe with the same options instead.
 
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!!  
 Run your editor open hello.cpp file add **;** after "Hello, World!" save your file.  
