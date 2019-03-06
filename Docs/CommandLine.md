@@ -125,7 +125,10 @@ Look at the [Figure 1.1](#a-typical-programmers-pipeline), we are just after the
         | MSVC | cl /c /EHsc hello.cpp | link -out:hello.exe hello.obj
         | Mingw64 | g++ -c -o hello.o hello.cpp| g++ -o hello hello.o
 
-[^1]:A driver program for clang that attempts to be compatible with MSVC’s cl.exe. It works in  Developer Command Prompt for VS environment.
+[^1]:A driver program for clang that attempts to be compatible with MSVC’s cl.exe. It works in  Developer           Command Prompt for VS environment. **Remember about consistence of your compiler environment,
+      your  compiler version (32 or 64 bit) and a version of build target**. For example: I use 64-bit clang-cl compiler and want to build 32-bit version of app. I need to open x86 Native Tools Command Prompt for VS 2017 and force 32-bit build. To do that I should enter command: clang-cl **--target=i686-pc-windows-msvc** -v /EHsc -c hello.cpp  in my terminal. -v option gives me additional piece of information about the current compiler environment ( libs, includes etc. ). To force building 64-bit app open 64-bit compiler environment and try:  
+      clang-cl **--target=x86_64-pc-windows-msvc** -v /EHsc -c hello.cpp  
+
 [^2]: LLVM Clang linker. It's also possible to use Microsoft link.exe with the same options instead.
 
 D'oh!:angry: We've got a bug,:bug:.Back to square one (Coding:smile: :smile: :smile:)!!!  
@@ -149,6 +152,15 @@ Our next task is a creation of a math module in two forms - a static or dynamic 
 ### Build a static library
 
 Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file (.lib). It should not contain any specifying storage-class information (__declspec or __attribute((dll...))). We need create a static library using a librarian. Next we link main Sum object with a library to create executable.
+
+#### Clang toolchain
+
+| Step | Command |
+| ----------- | ----------- |
+| compile **Sum.cpp** into object file | clang-cl -c -EHsc Sum.cpp |
+| compile **Calculator.cpp** into object file | clang-cl -c -EHsc Calculator.cpp |
+| create static library **Calculator.lib** | lld-link /lib -out:Calculator.lib Calculator.obj |
+| create executable **SumMSVC** | lld-link -out:SumClang.exe Sum.obj Calculator.lib |
 
 #### Mingw-w64 toolchain
 
@@ -174,10 +186,12 @@ A dynamic library consists of code and data that are loaded into your applicatio
 program by platform alone. Another important issue concerning a dynamic library is **symbol visibility**.
 On Windows most toolsets don't export symbols by default. In particular, the Microsoft Visual Studio Compiler doesn't export any symbols. Each symbol must be explicitly exported when the dynamic library is built. It's imported during building an executable or dynamic library that want to refer to it. To export symbols we use the __declspec(dllexport) attribute, again the attribute __declspec(dllimport) to import. Quite the contrary  MinGW exports ALL symbols of a DLL by default. The same on Linux. In this example I show how linking the DLL directly using MinGW compiler.  
 
+#### In Mingw-w64 shell
+
 | Step | Command |
 | ----------- | ----------- |
-| create dynamic library **DirectLinkingCalculator** | g++ -fPIC --shared -o DirectLinkingCalculator.dll Calculator.cpp |
-| create executable **DirectLinkingSum** | g++ -L. -lDirectLinkingCalculator -o DirectLinkingSum Sum.cpp |
+| create dynamic library **CalculatorDll** | g++ -fPIC --shared -o CalculatorDll.dll Calculator.cpp |
+| create executable **DynamicSum** | g++ -L. -lCalculatorDll -o DynamicSum Sum.cpp |
 
 If you want to see __declspec(dllexport/dllimport) example finish reading and jump to [Project Organization]({{site.baseurl}}/Docs/ProjectOrganization).
 
@@ -233,8 +247,8 @@ If you created Sum project together with me, you should have a directory named S
         Calculator.h
         Calculator.lib
         Calculator.o
-        DirectLinkingCalculator.dll
-        DirectLinkingSum.exe
+        CalculatorDll.dll
+        DynamicSum.exe
         libCalculator.a
         Sum.cpp
         Sum.o
