@@ -153,7 +153,7 @@ Our next task is a creation of a math module in two forms - a static or dynamic 
 
 Static libraries is a set of object files (with typical extension *.obj or *.o), composed into a single file (.lib). It should not contain any specifying storage-class information (__declspec or __attribute((dll...))). We need create a static library using a librarian. Next we link main Sum object with a library to create executable.
 
-#### Clang toolchain
+#### Clang-cl toolchain
 
 | Step | Command |
 | ----------- | ----------- |
