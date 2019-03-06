@@ -160,7 +160,7 @@ Static libraries is a set of object files (with typical extension *.obj or *.o),
 | compile **Sum.cpp** into object file | clang-cl -c -EHsc Sum.cpp |
 | compile **Calculator.cpp** into object file | clang-cl -c -EHsc Calculator.cpp |
 | create static library **Calculator.lib** | lld-link /lib -out:Calculator.lib Calculator.obj |
-| create executable **SumMSVC** | lld-link -out:SumClang.exe Sum.obj Calculator.lib |
+| create executable **SumClang** | lld-link -out:SumClang.exe Sum.obj Calculator.lib |
 
 #### Mingw-w64 toolchain
 
