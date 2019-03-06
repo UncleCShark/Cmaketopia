@@ -253,6 +253,7 @@ If you created Sum project together with me, you should have a directory named S
         Sum.cpp
         Sum.o
         Sum.obj
+        SumClang.exe
         SumGCC.exe
         SumMSVC.exe
 ```
