@@ -7,7 +7,7 @@ next_page: Docs/Preface
 # Hi everyone
 
 First things first,
-Everyone can join us and become a member of our society. [A picture is worth a thousand words](Docs/Badge) - please see it, I'm sure you get the drift. Learning how to become a master of CMAKE takes time. It's a skill you learn as you go along. But remember even [a journey of a thousand miles begins with a single step](https://en.wiktionary.org/wiki/a_journey_of_a_thousand_miles_begins_with_a_single_step).  
+Everyone can join us and become a member of our society. [A picture is worth a thousand words](Docs/Badge) - please see it, I'm sure you get the drift. Learning how to become a master of CMAKE takes time. It's a skill you learn as you go along. But remember even [a journey of a thousand miles begins with a single step](https://en.wiktionary.org/wiki/a_journey_of_a_thousand_miles_begins_with_a_single_step). The main purpose of this work is to interest and get you thinking about software building as another form of cross-platform programming. The software development process should be effective and portable and as much as possible separated from the target platform as well as used development tools.  
 
 ## Assumptions
 

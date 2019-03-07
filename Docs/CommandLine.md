@@ -293,12 +293,12 @@ and check exports
 ![SQLite3.dll](../assets/dumpbinexports.png)  
 and extra step - static library (you can do it)
 ![SQLite3.dll](../assets/sqlite3libx64.png)  
-Repeat the same with clang-cl:  
+Repeat the same with **clang-cl**:  
 
-- clang-cl shell.c sqlite3.c '-Fesqlite3.exe'
-- clang-cl sqlite3.c -'DSQLITE_API=__declspec(dllexport)' -link -dll '-out:sqlite3.dll'
+- **clang-cl** shell.c sqlite3.c '-Fesqlite3.exe'
+- **clang-cl** sqlite3.c -'DSQLITE_API=__declspec(dllexport)' -link -dll '-out:sqlite3.dll'
 
-Now the same using gcc compiler to create sqlite3 shell.  
+Next use **gcc compiler** to create sqlite3 shell.  
 Open Mingw-w64 environment and type:
 
 1. **gcc.exe -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0  -O3 -DNDEBUG  -c shell.c**
