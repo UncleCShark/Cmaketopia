@@ -1,6 +1,6 @@
 # Cmaketopia
 
-The main purpose of this work is to interest and get you thinking about software building as another form of cross-platform programming. The software development process should be effective and portable and as much as possible separated from the target platform as well as used development tools. This project try to learn from scratch how to use CMAKE cross-platform family of tools designed to build, test and package your software. This repository contains the source code regarding topics discussed on [my blog](https://unclecshark.github.io/) on using CMAKE.
+The main purpose of this work is to interest and get you thinking about software building as another form of cross-platform programming. The software build process should be effective and portable and as much as possible separated from the target platform as well as used development tools. This project try to learn from scratch how to use CMAKE cross-platform family of tools designed to build, test and package your software. This repository contains the source code regarding topics discussed on [my blog](https://unclecshark.github.io/) on using CMAKE.
 
 * Documentation:    <https://unclecshark.github.io/Cmaketopia/>
 * Sources:          <https://github.com/UncleCShark/Cmaketopia>
