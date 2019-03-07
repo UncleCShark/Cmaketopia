@@ -198,11 +198,12 @@ First we create build folder structure inside our master folder.
 
 Now we are in "build" subfolder, so we begin to compile our solution.
 
-**Building AreaCalculator app (areacalc.exe)**  
+### Building AreaCalculator app (areacalc.exe)
+
 To compile objects without errors we must inform the compiler in what folder it can find header files.
 For this we use -I option.
 
-Build with GNU compiler
+#### GNU toolchain
 
 | Create | GCC
 | ----------- | ----------- |
@@ -213,7 +214,7 @@ Build with GNU compiler
 
 [^1]:Instruct a compiler to search a directory for include files.
 
-Build with Microsoft compiler
+#### Microsoft toolchain
 
 | Create | MSVC
 | ----------- | ----------- |
@@ -224,8 +225,9 @@ Build with Microsoft compiler
 
 [^2]: Another way of lib.exe /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj.
 
-**Building PerimeterCalculator app (perimcalc.exe)**  
-GNU compiler  
+### Building PerimeterCalculator app (perimcalc.exe)
+
+#### GNU toolset  
 
 | Create | GCC
 | ----------- | ----------- |
@@ -237,7 +239,7 @@ GNU compiler
 [^3]: To correctly export symbols to the object file we have to define preprocessor symbols.
 [^4]: Because g++ by default exports all symbols we must change this. When we set -fvisibility=hidden option, only symbols tagged by an __declspec(dllexport) attribute will be exported.
 
-Microsoft compiler
+#### Microsoft toolset
 
 | Create | MSVC
 | ----------- | ----------- |
@@ -246,20 +248,37 @@ Microsoft compiler
 | Main object file | cl.exe  /nologo -DDLL_BUILD -I..\Calculator /EHsc /FoPerimeterCalculator.obj -c ..\PerimeterCalculation\PerimeterCalculator.cpp
 | Executable | link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib  
 
-**Building test app (test.exe)**  
-GNU compiler  
+#### Clang toolset
+
+| Create | MSVC
+| ----------- | ----------- |
+| Calculator object file | clang-cl.exe  /nologo  -DDLL_BUILD -Dshared_EXPORTS -I..\Calculator /EHsc /FoCalculator.obj -c ..\Calculator\Calculator.cpp
+| Dynamic library | lld-link.exe /nologo Calculator.obj  /out:bin\calc-dll.dll /implib:lib\calc-dll.lib /dll /machine:x64
+| Main object file | clang-cl.exe  /nologo -DDLL_BUILD -I..\Calculator /EHsc /FoPerimeterCalculator.obj -c ..\PerimeterCalculation\PerimeterCalculator.cpp
+| Executable | lld-link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib  
+
+### Building test app (test.exe)
+
+#### GNU
 
 | Create | GCC
 | ----------- | ----------- |
 | Test object file | g++.exe   -I../Calculator -c ../Tests/test.cpp
 | Executable | g++.exe  test.o  -o bin/test.exe lib/libcalc-static.a
 
-Microsoft compiler  
+#### MSVC  
 
 | Create | MSVC
 | ----------- | ----------- |
 | Test object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /Fotest.obj -c ..\Tests\test.cpp
 | Executable | link.exe /nologo test.obj  /out:bin\test.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
+
+#### Clang  
+
+| Create | MSVC
+| ----------- | ----------- |
+| Test object file | clang-cl.exe  /nologo -I..\Calculator\. /EHsc  /Fotest.obj -c ..\Tests\test.cpp
+| Executable | lld-link.exe /nologo test.obj  /out:bin\test.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
 
 After finishing a building process your build folder should look similar like that.
 
