@@ -121,6 +121,38 @@ cmake --build .
 ./hello
 ```
 
+Close MSYS2 terminal. Now open Developer Command prompt for VS and go where your project is located:
+
+```txt
+REM remove build directory
+rmdir build /s
+mkdir build
+cd build
+cmake -GNinja ..
+```
+
+![g++ Ninja bug](../assets/g++Ninjabug.png)  
+Whoops! A wrong compiler is selected (if you have two or more compilers installed). Although this is MSVC environment I don't know why but cmake chooses g++ compiler when you use Ninja generator (-GNinja). We have to fix it. We can do that in two ways:  
+settings environment variables
+
+```txt
+REM you can omit .exe I leeave it for clarity
+set CC=cl.exe
+set CXX=cl.exe
+```
+
+or adding additional parameters to cmake call. I prefer the second one. Go back to the top:smile:
+
+```txt
+REM remove build directory
+rmdir build /s
+mkdir build
+cd build
+cmake -G "Ninja" -DCMAKE_C_COMPILER=cl.exe -DCMAKE_CXX_COMPILER=cl.exe
+cmake --build .
+./hello
+```
+
 ### Discourse
 
 Now when we've completed the whole work, it's time to shed some light on to answer the question "What on earth is going on here?". To start with we have to get familiar with a few ideas (I took definitions of Source Tree, Build Tree and Generator from cmake documentation):  
@@ -146,7 +178,7 @@ Let's analyze hello cmake project top-level configuration file line by line:
 - [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
 - [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - creates target hello and adds executable target hello to be built from the source file hello.cpp.
 
-Cheer up, still only the building process remained for us to discuss in detail. We do it short and sweet but step by step:  
+Cheer up, still only the building process remained for us to discuss in detail. We do it short and sweet but step by step (it's a common part of building procedure ):  
 
 ```txt
 mkdir build      - to avoid a hotch-potch create a build directory for buildsystem files  
