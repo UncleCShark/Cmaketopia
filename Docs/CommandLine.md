@@ -128,6 +128,7 @@ Look at the [Figure 1.1](#a-typical-programmers-pipeline), we are just after the
 [^1]:A driver program for clang that attempts to be compatible with MSVC’s cl.exe. It works in  Developer           Command Prompt for VS environment. **Remember about consistence of your compiler environment,
       your  compiler version (32 or 64 bit) and a version of build target**. For example: I use 64-bit clang-cl compiler and want to build 32-bit version of app. I need to open x86 Native Tools Command Prompt for VS 2017 and force 32-bit build. To do that I should enter command: clang-cl **--target=i686-pc-windows-msvc** -v /EHsc -c hello.cpp  in my terminal. -v option gives me additional piece of information about the current compiler environment ( libs, includes etc. ). To force building 64-bit app open 64-bit compiler environment and try:  
       clang-cl **--target=x86_64-pc-windows-msvc** -v /EHsc -c hello.cpp  
+      When your compiler environment is compatible with the compiler version (32/64-bit) --target option can be omitted.
 
 [^2]: LLVM Clang linker. It's also possible to use Microsoft link.exe with the same options instead.
 

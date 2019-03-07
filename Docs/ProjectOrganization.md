@@ -223,6 +223,15 @@ For this we use -I option.
 | Main object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /FoAreaCalculator.obj -c ..\AreaCalculation\AreaCalculator.cpp
 | Executable | link.exe /nologo AreaCalculator.obj  /out:bin\areacalc.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
 
+#### Clang-cl toolchain
+
+| Create | MSVC
+| ----------- | ----------- |
+| Calculator object file | clang-cl.exe  /nologo -I..\Calculator\. /EHsc  /FoCalculator.obj -c ..\Calculator\Calculator.cpp
+| Static library | lld-link.exe /lib[^2] /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj
+| Main object file | clang-cl.exe  /nologo -I..\Calculator\. /EHsc  /FoAreaCalculator.obj -c ..\AreaCalculation\AreaCalculator.cpp
+| Executable | lld-link.exe /nologo AreaCalculator.obj  /out:bin\areacalc.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
+
 [^2]: Another way of lib.exe /nologo /machine:x64 /out:lib\calc-static.lib Calculator.obj.
 
 ### Building PerimeterCalculator app (perimcalc.exe)
@@ -248,7 +257,7 @@ For this we use -I option.
 | Main object file | cl.exe  /nologo -DDLL_BUILD -I..\Calculator /EHsc /FoPerimeterCalculator.obj -c ..\PerimeterCalculation\PerimeterCalculator.cpp
 | Executable | link.exe /nologo PerimeterCalculator.obj  /out:bin\perimcalc.exe /machine:x64 /subsystem:console  lib\calc-dll.lib  
 
-#### Clang toolset
+#### Clang-cl toolset
 
 | Create | MSVC
 | ----------- | ----------- |
@@ -273,7 +282,7 @@ For this we use -I option.
 | Test object file | cl.exe  /nologo -I..\Calculator\. /EHsc  /Fotest.obj -c ..\Tests\test.cpp
 | Executable | link.exe /nologo test.obj  /out:bin\test.exe  /machine:x64  /subsystem:console  lib\calc-static.lib
 
-#### Clang  
+#### Clang-cl  
 
 | Create | MSVC
 | ----------- | ----------- |
