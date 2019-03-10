@@ -136,7 +136,7 @@ Whoops! A wrong compiler is selected (if you have two or more compilers installe
 settings environment variables
 
 ```txt
-REM you can omit .exe I leeave it for clarity
+REM you can omit .exe I leave it for clarity
 set CC=cl.exe
 set CXX=cl.exe
 ```
@@ -178,13 +178,13 @@ Let's analyze hello cmake project top-level configuration file line by line:
 - [project("HelloWorld" LANGUAGES CXX)](https://cmake.org/cmake/help/v3.14/command/project.html?highlight=project) - sets the name  and c++ as the supported language of the project. The target name must be globally unique within a project;
 - [add_executable(hello hello.cpp)](https://cmake.org/cmake/help/v3.14/command/add_executable.html?highlight=add_executable) - creates target hello and adds executable target hello to be built from the source file hello.cpp.
 
-Cheer up, still only the building process remained for us to discuss in detail. We do it short and sweet but step by step (it's a common part of building procedure ):  
+Cheer up, still only the building process remained for us to discuss in detail. We do it short and sweet but step by step. It's a common pattern of building procedure. Because we want to use Ninja build system we have to specify a generator explicitly otherwise a default platform generator will be used. To list available generators for current platform type **cmake \--help** command in your terminal. See below we call cmake.exe twice first time when we want to generate files for a native build system and second one when we run build process. You may ask why we don't run ninja.exe in a second step directly. Well, let's imagine that we saved that list of commands in a script, in this case if you change the generator, you must change the call of the native build tool too. If you call cmake.exe in the second step it runs a proper build tool automatically for you. Additionally we don't need to remember mappings the generator <-> the native tool.
 
 ```txt
-mkdir build      - to avoid a hotch-potch create a build directory for buildsystem files  
-cd build         - go inside the build directory  
-cmake -GNinja .. - create files for Ninja (-GNinja) look for CMakelists.txt in a parent directory (..)
-cmake --build .  - build project (--build) using current directory (.) as the build tree
+mkdir build               - to avoid a hotch-potch create a build directory for buildsystem files  
+cd build                  - go inside the build directory  
+cmake -GNinja [params] .. - generate files for Ninja (-GNinja) look for CMakelists.txt in a parent directory (..) specify additional parameters for a project buildsystem generating process
+cmake --build .           - build project (--build) using current directory (.) as the build tree
 ```
 
 ### Hierarchical project - Area and Perimeter Calculation
