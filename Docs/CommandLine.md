@@ -7,6 +7,8 @@ next_page: ProjectOrganization
 
 # Command Line
 
+In everyday work as a beginner we usually work with IDE and we don't use command line tools thus so naturally simple questions come into a head "Mouse isn't enough?" "Command Line -  why bother?". An answer is simple "Crawl! Walk! Run!". From a software developer's perspective the most important reason to do that is - "Running, compiling, and testing software can be much more efficient when using the command line". Just close IDE and you have more memory for a build process. Additionally, tasks can be performed far more efficiently, some diagnostic tools are available only through a command line.  But for me the most important reason is **FREEDOM**!!! We can separate a build process from our IDE, create a pipeline and get to utilize **advantages of automation**.
+
 ## Highway to Hell for a tough cookie
 
 Our previous levels were a breeze, but from then on the story shifts gears. Get up on your feet we start grappling with basis of a command line. A wise deviser:construction_worker: have to understand the relation between components to solve problems of their domain and how the compilation pipeline looks like. The grasp of this concept is crucial. We must be deft like a swan, which glides:airplane: across the surface of the lake. Stop being like a rabbit:rabbit: caught in the headlights controlled by your favored [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).  
@@ -64,7 +66,7 @@ To work properly a compiler needs a correct operating environment. The tools in 
 - if it's applicable set any environment variables required by your toolset;  
 - enter commands for a building (compile, archive, link)
 
-For Windows users. Very often for Mingw64 compiler setting Path variable is enough. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable**. To set variable write in command line:  
+For Windows users. Although using shortcut [Mingw64-shell](#mingw64-shell) is **preferable** very often for Mingw64 compiler setting Path variable is enough to make the compiler work. To set variable write in command line:  
     **set PATH=\<directory where your Mingw64 compiler is>;%PATH%**;
 
 ## Building binaries
